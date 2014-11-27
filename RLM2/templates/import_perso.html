@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-md-2 col-centered">
+		<error_message>
+		<fieldset>
+			<legend>Importation du personnage</legend>
+			<form method="post" action="index.php">
+				<error_import>
+				<input type="hidden" name="action_form" value="import_perso" />
+				<div class="input-group">
+					<span class="input-group-addon glyphicon glyphicon-user"></span>
+					<input type="text" id="perso_name" name="perso_name" class="form-control" placeholder="Nom du personnage" /><br />
+				</div>
+				<br />
+				<button type="submit" class="btn btn-default form-control">
+					 Importer
+				</button>
+			</form>
+		</fieldset>
+	</div>
+</div>

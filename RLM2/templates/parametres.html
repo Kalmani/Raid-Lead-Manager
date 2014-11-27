@@ -1,0 +1,68 @@
+<div class="row">
+	<left_col>
+	<div class="col-md-8">
+		<div class="col-md-12 nopadding">
+			<div class="panel panel-default">
+				<div class="panel-heading">Identifiants</div>
+				<div class="panel-body">
+					<form method="post" action="index.php?page=params" class="form-horizontal" role="form">
+					<div class="form-group">
+						<input type="hidden" name="action_form" value="change_log" />
+						<label class="control-label col-sm-3" for="identifiant">Identifiant:</label>
+						<div class="col-sm-9">
+							<input type="text" id="identifiant" name="identifiant" class="form-control" value="<user_name>" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="old_password" class="control-label col-sm-3">Ancien mot de passe :</label>
+						<div class="col-sm-9">
+							<input type="password" id="old_password" name="old_password" class="form-control" value="" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="new_password" class="control-label col-sm-3">Nouveau mot de passe :</label>
+						<div class="col-sm-9">
+							<input type="password" id="new_password" name="new_password" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="new_password_conf" class="control-label col-sm-3">Confirmer :</label>
+						<div class="col-sm-9">
+							<input type="password" id="new_password_conf" name="new_password_conf" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-3">&nbsp;</label>
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-default">Valider</button>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 nopadding">
+			<div class="panel panel-default">
+				<div class="panel-heading">Autres param&egrave;tres</div>
+				<div class="panel-body">
+					<form method="post" action="index.php?page=params" class="form-horizontal" role="form">
+						<div class="form-group">
+							<input type="hidden" name="action_form" value="change_mail" />
+							<label for="email" class="control-label col-sm-3">Votre adresse Email :</label>
+							<div class="col-sm-9">
+								<input type="text" id="email" name="email" class="form-control" value="<user_mail>" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3">&nbsp;</label>
+							<div class="col-sm-9">
+								<button type="submit" class="btn btn-default">Valider</button>
+							</div>
+						</div>
+					</form>
+					<actions_perso>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

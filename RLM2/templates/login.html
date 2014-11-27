@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-3 col-centered">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Identification
+			</div>
+			<div class="panel-body">
+				<error_message>
+				<form method="post" action="index.php">
+					<input type="hidden" name="action_form" value="try_log" />
+					<div class="input-group">
+						<span class="input-group-addon glyphicon glyphicon-user"></span>
+						<input type="text" id="identifiant" name="identifiant_rlm" class="form-control" placeholder="Identifiant" />
+					</div>
+					<br />
+					<div class="input-group">
+						<span class="input-group-addon glyphicon glyphicon-asterisk"></span>
+						<input type="password" id="password" name="password_rlm" class="form-control" placeholder="Mot de passe" />
+					</div>
+					<br />
+					<button type="submit" class="btn btn-success form-control">
+						 Valider
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-heading">Equipement actuel</div>
+			<div class="panel-body">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+							<img src="<item_img>" />
+							<span class="frame frame_<item_quality>"> </span>
+						</td>
+						<td align="left">
+							<span class="color-<item_quality>"><item_name></span><br />
+							<span style="color:#999999;">
+								<item_lvl><br />
+							</span>
+						</td>
+					</tr>
+				</table>
+				<item_bulle>
+				<br />
+				<item_stats>
+				<form action="index.php?page=wish_prov&action=change_valide&id='<id_to_change>" method="post">
+					<input type="hidden" value="<item_id>" name="item_id">
+					<center>
+						<button type="submit" class="btn btn-success form-control">
+							Conserver
+						</button>
+					</center>
+				</form>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">BIS s&eacute;lectionn&eacute;</div>
+			<div class="panel-body" id="wish_new">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+							<img src="<item_img_s>" />
+							<span class="frame frame_<item_quality_s>"> </span>
+						</td>
+						<td align="left">
+							<span class="color-<item_quality_s>"><item_name_s></span><br />
+							<span style="color:#999999;">
+								<item_lvl_s><br />
+							</span>
+						</td>
+					</tr>
+				</table>
+				<item_bulle_s>
+				<br />
+				<item_stats_s>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<items_list>
+	</div>
+</div>
