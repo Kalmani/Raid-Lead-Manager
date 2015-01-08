@@ -1,0 +1,20 @@
+{
+ "dev_mode" : true,
+ "default_tasks" : {
+    "concat" : true,
+    "jshint" : true,
+    "jscs"  : false
+  },
+  
+  "statics" : [
+  ],
+
+ "files": {
+  "RLM/dependencies/mootools/MooTools-Core-1.5.1.js":{"jshint" : false},
+  "RLM/dependencies/prototype.js" : {"jshint" : false},
+  "RLM/dependencies/mustache.js" : {"jshint" : false},
+  "RLM/dependencies/jquery/jQuery.1.11.2.min.js" : {"jshint" : false},
+  "RLM/application/init.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/raid_lead_manager.js" : {"jscs" : true, "jshint" : true}
+ }
+}
