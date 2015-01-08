@@ -1,0 +1,3 @@
+[submodule "RLM/dependencies/wowarmoryapi"]
+	path = RLM/dependencies/wowarmoryapi
+	url = git://git.code.sf.net/p/wowarmoryapi/code
