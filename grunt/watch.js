@@ -5,7 +5,8 @@ module.exports = function(grunt) {
   });
 
   grunt.config('watch.scripts', {
-     tasks: [
+      files: ['RLM/application/*.js'],
+      tasks: [
         'concat:scripts'
       ]
   });
