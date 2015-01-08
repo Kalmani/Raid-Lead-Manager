@@ -1,0 +1,1 @@
+// instanciate all pages
