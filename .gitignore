@@ -47,3 +47,7 @@ Temporary Items
 #api files
 node_modules/
 RLM/dependencies/wowarmoryapi/
+RLM/app.js
+RLM/app.jshint.js
+RLM/config.json
+RLM/templates.xml
