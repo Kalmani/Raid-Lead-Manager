@@ -1,13 +1,10 @@
+require('mootools');
 module.exports = function(grunt) {
 
   var manifest = grunt.config.get('manifest'),
-      files = new Array(),
-      task = 'jscsrc';
-
-  for(var index in manifest.files) { 
-      var infos =  manifest.files[index];
-      files[files.length] = index;
-  }
+      files = Object.keys( Object.filter(manifest.files, function(v, k) {
+         return v.jshint === undefined ? manifest.behavior.jshint : v.jshint;
+      }));
 
   grunt.config('concat.scripts', {
     options: {

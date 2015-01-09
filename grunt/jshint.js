@@ -1,16 +1,10 @@
+require('mootools');
 module.exports = function(grunt) {
 
-  
   var manifest = grunt.config.get('manifest'),
-      files = new Array(),
-      task = 'jshint';
-
-  for(var index in manifest.files) { 
-      var infos =  manifest.files[index];
-      if (infos[task] && infos[task] === true)
-        files[files.length] = index;
-  }
-
+      files = Object.keys( Object.filter(manifest.files, function(v, k) {
+         return v.jshint === undefined ? manifest.behavior.jshint : v.jshint;
+      }));
 
   var jshint_cache = '<%= deploy_dir %>/app.jshint.js';
   grunt.config('concat.jshint', {

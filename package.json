@@ -15,7 +15,8 @@
     "grunt-contrib-uglify": "~0.5.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-http-server": "0.0.5",
-    "grunt-jscs": "~0.8.1"
+    "grunt-jscs": "~0.8.1",
+    "mootools" : "1.5.1"
   },
   "repository": {
     "type": "git",
