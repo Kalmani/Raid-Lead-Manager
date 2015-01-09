@@ -1,3 +1,15 @@
 // instanciate all pages
+var raidLeadManager = new Class ({
+  // to extend class : use Implement : className,
+  // to bind some methods, use binds : ['method1, method2'],
+  // declare global vars here
 
-console.log('ok');
+  // declare methodes here :
+  init : function() {
+    console.log('it works');
+  },
+
+  other_method : function() {
+
+  }
+});
