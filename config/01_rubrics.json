@@ -1,0 +1,9 @@
+{
+  "rubrics" : {
+    "HOME" : {
+    
+      "accessKey" : "use your imagination for this",
+      "className" : "HomeScreen"
+    }
+  }
+}
