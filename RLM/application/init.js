@@ -1,4 +1,4 @@
-window.addEvent('domready', function(){
-  window.RLM = new raidLeadManager();
+window.addEvent('domready', function() {
+  window.RLM = new RaidLeadManager();
   RLM.init();
 });
