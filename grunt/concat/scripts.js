@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
   var manifest = grunt.config.get('manifest'),
       files = Object.keys( Object.filter(manifest.files, function(v, k) {
-         return v.jshint === undefined ? manifest.behavior.jshint : v.jshint;
+         return k;
       }));
 
   grunt.config('concat.scripts', {
