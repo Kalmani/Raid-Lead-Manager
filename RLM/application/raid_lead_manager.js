@@ -5,6 +5,10 @@ var raidLeadManager = new Class ({
   // declare global vars here
 
   // declare methodes here :
+  initialize : function() {
+    console.log('initializing api');
+  },
+
   init : function() {
     console.log('it works');
   },
