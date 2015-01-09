@@ -1,17 +1,30 @@
 // instanciate all pages
 var RaidLeadManager = new Class ({
-  // to extend class : use Extends : className,
+
+  Implements : Events,
+
   // to bind some methods, use binds : ['method1, method2'],
-  // declare global vars here
+
+  locales : {},
 
   // declare methodes here :
   initialize : function() {
     console.log('initializing api');
+    this.sess = new Session(this);
     this.ScreenSwitch = new ScreenSwitcher(this);
   },
 
   init : function() {
-    this.sess = new Session(this);
+    var load_ready = {};
+
+    this.addEvent('init', function(step) {
+      load_ready[step] = true;
+      console.info("Load ", step, " > Finish");
+
+      if(load_ready.templates && load_ready.locales)
+        this.show_content();
+    });
+
     this.load_config();
   },
 
@@ -36,7 +49,28 @@ var RaidLeadManager = new Class ({
   },
 
   load_locales : function() {
-    // load texts here
+    new Request({
+      url : 'locales.json',
+      onSuccess : function(txt) {
+        var tmp = {},
+            locales = JSON.decode(txt);
+
+        Object.each(locales, function(trad, lang) {
+          tmp[lang] = {};
+          Object.each(trad, function(v, k) {
+            tmp[lang]['&' + k + ';'] = v;
+          });
+        });
+
+        //ensure at least default en-us is used
+        Object.each(tmp, function(v, k) {
+          tmp[k] = Object.merge({}, tmp['fr-fr'], v);
+        });
+
+        this.locales = tmp;
+        this.fireEvent('init', 'locales');
+      }.bind(this)
+    }).get();
   },
 
   load_templates : function() {
