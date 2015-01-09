@@ -6,6 +6,7 @@ var RaidLeadManager = new Class ({
   // to bind some methods, use binds : ['method1, method2'],
 
   locales : {},
+  templates  : {},
 
   // declare methodes here :
   initialize : function() {
@@ -74,7 +75,25 @@ var RaidLeadManager = new Class ({
   },
 
   load_templates : function() {
-    // load templates here
+    var that = this;
+    new Request({
+      url : 'templates.xml',
+      onSuccess : function(txt, xml) {
+        var serializer = new XMLSerializer();
+        Array.each(xml.xpath("//script[@type='text/template']"), function(node) {
+          var str = "";
+          Array.each(node.childNodes, function(child) {
+            str += serializer.serializeToString(child);
+          });
+          that.templates[node.getAttribute('id')] = str;
+        });
+        that.fireEvent('init', 'templates');
+      }
+    }).get();
+  },
+
+  show_content : function() {
+    console.log('show content depending on the current login status');
   }
 
 });

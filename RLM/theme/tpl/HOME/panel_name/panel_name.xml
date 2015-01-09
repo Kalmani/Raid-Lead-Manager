@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mustache>
+  <script id="home_main_panel" type="text/template"><![CDATA[
+    <div>
+      this is a test for a panel
+    </div>
+  ]]></script>
+</mustache>
