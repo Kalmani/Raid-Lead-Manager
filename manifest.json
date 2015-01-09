@@ -11,6 +11,7 @@
 
  "files": {
   "RLM/dependencies/mootools/MooTools-Core-1.5.1.js":{"jshint" : false},
+  "RLM/dependencies/mootools/MooTools-More-1.5.1-compressed.js" : {"jshint" : false},
   "RLM/dependencies/prototype.js" : {"jshint" : false},
   "RLM/dependencies/mustache.js" : {"jshint" : false},
   "RLM/dependencies/jquery/jQuery.1.11.2.min.js" : {"jshint" : false},

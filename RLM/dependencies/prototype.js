@@ -14,3 +14,19 @@ String.implement({
     return (this + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
   }
 });
+
+XMLDocument.fromXML = function(xml) {
+  var parser = new DOMParser();
+  return parser.parseFromString(xml, "text/xml");
+};
+
+XMLDocument.prototype.xpath = function(query, ctx) {
+  var out = [],
+      result = this.evaluate(query, ctx || this, null, XPathResult.ANY_TYPE, null),
+      current = result.iterateNext();
+  while (current) {
+    out.push(current);
+    current = result.iterateNext();
+  }
+  return out;
+};
