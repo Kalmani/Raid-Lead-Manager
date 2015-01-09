@@ -1,6 +1,7 @@
 // Web Server for dev
 module.exports = function(grunt) {
   grunt.config('http-server', {
+      //Create an http-server for your computer
       'dev': {
         root: grunt.config.get('deploy_dir'),
         port: 8001,
@@ -15,6 +16,7 @@ module.exports = function(grunt) {
         runInBackground: false,
       },
 
+      //Create an http-server for all your network
       'public': {
         root: grunt.config.get('deploy_dir'),
         port: 8000,
