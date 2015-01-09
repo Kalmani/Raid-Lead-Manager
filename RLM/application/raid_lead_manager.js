@@ -10,7 +10,8 @@ var raidLeadManager = new Class ({
   },
 
   init : function() {
-    console.log('it works');
+    this.sess = new Session(this);
+    console.log(this.sess);
   },
 
   other_method : function() {
