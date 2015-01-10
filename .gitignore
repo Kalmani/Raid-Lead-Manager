@@ -51,3 +51,4 @@ RLM/app.js
 RLM/app.jshint.js
 RLM/config.json
 RLM/templates.xml
+RLM/theme/main.css
