@@ -7,7 +7,7 @@
 		      <img src="{{guild_emblem}}" width="100" style="display:block; border:none;" />
 		    </td>
 		    <td align="center" bgcolor="#D1B285">
-		      <font style="font-size:13px;" color="#3A2718" face="Tahoma,Helvetica,Arial,sans-serif"><strong>Raid Lead Manager - {{guild_namz}} - {{server}}</strong></font>
+		      <font style="font-size:13px;" color="#3A2718" face="Tahoma,Helvetica,Arial,sans-serif"><strong>Raid Lead Manager - {{guild_name}} - {{server}}</strong></font>
 		    </td>
 		  </tr>
 		  <tr valign="top">

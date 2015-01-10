@@ -1,2 +1,2 @@
-@import "css/file1.css";
-@import "css/file2.css";
+@import "../dependencies/bootstrap/css/bootstrap.min.css";
+@import "css/global.css";
