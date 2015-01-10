@@ -93,7 +93,13 @@ var RaidLeadManager = new Class ({
   },
 
   show_content : function() {
-    console.log('show content depending on the current login status');
+    var context = {
+          'guild_emblem' : 'http://www.larmes-nebuleuses.fr/Portail/emblem.png',
+          'guild_name' : 'Larmes Nébuleuses',
+          'server' : 'Dalaran'
+        },
+        dom = this.render('global_main', context).inject(document.body);
+    console.log(dom);
   },
 
   render : function(template_id, view) {
