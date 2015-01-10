@@ -94,6 +94,26 @@ var RaidLeadManager = new Class ({
 
   show_content : function() {
     console.log('show content depending on the current login status');
+  },
+
+  render : function(template_id, view) {
+    var res, output = Mustache.render(this.templates[template_id], view, this.templates);
+    output = this.translate_full(output);
+    return new Element('div', {html : output});
+  },
+
+  translate : function(i) {
+    if(i === "" || !i) return "";
+    return this.translate_full('&' + i + ';');
+  },
+
+  translate_full : function(i) {
+    var tmp = '', lang = this.current_language || 'fr-fr';
+    do {
+      tmp = i;
+      i = i.replaces(this.locales[lang]);
+    } while (tmp != i);
+    return tmp;
   }
 
 });
