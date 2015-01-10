@@ -99,7 +99,7 @@ var RaidLeadManager = new Class ({
           'server' : 'Dalaran'
         },
         dom = this.render('global_main', context).inject(document.body);
-     this.ScreenSwitch.screens_list.HOME.show_login_panel();
+    this.ScreenSwitch.screens_list.HOME.show_login_panel();
   },
 
   render : function(template_id, view) {

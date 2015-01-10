@@ -1,8 +1,8 @@
 var ScreenSwitcher = new Class ({
 
-  current : null, // Current Screen
   screens_list : {},
 
+  screen_name : null,
   screen_zone : null,
   panel_name : null,
   panel_zone : null,
@@ -19,9 +19,11 @@ var ScreenSwitcher = new Class ({
 
   switchPanel : function() {
     rendered = this.app.render(this.panel_name, this.context);
-    $(rendered).css('display', 'none');
-    rendered.inject(this.panel_zone);
-    $(rendered).fadeIn();
+    $(this.panel_zone).fadeOut(function() {
+      rendered.inject(this.panel_zone.empty());
+      $(this.panel_zone).fadeIn();
+    }.bind(this));
+    return rendered;
   }
 
 });

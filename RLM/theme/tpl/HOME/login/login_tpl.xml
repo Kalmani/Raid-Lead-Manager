@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mustache>
   <script id="login_tpl" type="text/template">
-		<div class="panel panel-default fade in">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				Identification
 			</div>
@@ -19,6 +19,16 @@
 				<button type="submit" class="btn btn-success form-control" id="login_try">
 					 Valider
 				</button>
+			</div>
+		</div>
+	</script>
+	<script id="login_tpl_test" type="text/template">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				PLIZ D0LAN
+			</div>
+			<div class="panel-body">
+				DO NO DO DIS !
 			</div>
 		</div>
 	</script>
