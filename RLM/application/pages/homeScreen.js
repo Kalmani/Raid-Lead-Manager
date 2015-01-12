@@ -2,23 +2,32 @@ var HomeScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
 
-  initialize : function(app, screen_id) {
+  active : false,
+
+  initialize : function(app, screen_id, screen_data) {
+    this.data = screen_data;
     this.ID = screen_id;
     this.parent(app);
-    console.log('initializing HomeScreen');
+    this.scs = this.app.SCS;
   },
 
 
   show_login_panel : function() {
-    this.app.ScreenSwitch.panel_zone = document.getElementById('login_container'),
-    this.app.ScreenSwitch.panel_name = 'login_tpl';
+    this.scs.pZone = document.getElementById('main_container');
+    this.scs.pName = 'login_tpl';
 
-    var zone = this.app.ScreenSwitch.switchPanel();
+    var zone = this.scs.switchPanel();
 
     zone.getElementById('login_try').addEvent('click', function() {
-      console.log('ok');
-      this.app.ScreenSwitch.panel_name = 'login_tpl_test';
-      this.app.ScreenSwitch.switchPanel();
+      this.scs.sName = 'home_main';
+      this.scs.sZone = document.getElementById('main_container');
+      this.scs.panels_list = {
+        'profile_panel' : 'profile_missing_panel',
+        'missing_panel' : 'profile_missing_panel',
+        'updates_panel' : 'profile_missing_panel',
+        'items_list_panel' : 'stuff_panel'
+      };
+      this.scs.switchScreen();
     }.bind(this));
   }
 

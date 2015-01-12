@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mustache>
-  <script id="home_main" type="text/template"><![CDATA[
-    <div>
-      this is a test for the main page, insert panels here
+  <script id="home_main" type="text/template">
+    <div class="row">
+      <div class="col-md-4" id="profile_missing_panel">
+
+      </div>
+      <div class="col-md-8">
+        <div id="stuff_panel">
+          
+        </div>
+      </div>
     </div>
-  ]]></script>
+  </script>
 </mustache>
