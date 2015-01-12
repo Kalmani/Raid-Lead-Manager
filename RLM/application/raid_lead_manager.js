@@ -12,7 +12,7 @@ var RaidLeadManager = new Class ({
   initialize : function() {
     console.log('initializing api');
     this.sess = new Session(this);
-    this.ScreenSwitch = new ScreenSwitcher(this);
+    this.SCS = new ScreenSwitcher(this);
   },
 
   init : function() {
@@ -45,7 +45,7 @@ var RaidLeadManager = new Class ({
   get_rubrics_list : function() {
     Object.each(this.config.rubrics, function(datas, screen) {
       RaidLeadManager[screen] = screen;
-      this.ScreenSwitch.register(new window[datas.className](this, RaidLeadManager[screen], screen.datas));
+      this.SCS.register(new window[datas.className](this, RaidLeadManager[screen], screen.datas));
     }.bind(this));
   },
 
@@ -99,7 +99,7 @@ var RaidLeadManager = new Class ({
           'server' : 'Dalaran'
         },
         dom = this.render('global_main', context).inject(document.body);
-    this.ScreenSwitch.screens_list.HOME.show_login_panel();
+    this.SCS.screens_list.HOME.show_login_panel();
   },
 
   render : function(template_id, view) {

@@ -1,8 +1,373 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mustache>
-  <script id="home_main" type="text/template"><![CDATA[
-    <div>
-      this is a test for the main page, insert panels here
+  <script id="home_main" type="text/template">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="padding:7px 15px;">
+            <div class="row" style="height:26px;">
+              <div class="col-md-4" style="line-height:26px;FFD200">Kalmani</div>
+              <div class="col-md-8" style="text-align:right;">
+                <div class="form-group">
+                  <form method="post" action="index.php?page=accueil" class="form-horizontal">
+                  <input type="hidden" name="action_form" value="search_player" />
+                  <div class="input-group" style="float:right;">
+                    <div class="col-md-8">
+                      <select name="player_search" class="form-control" style="padding:2px 12px; height:auto;">
+                        <option value="Deewan">Deewan</option><option value="Efcaïa">Efcaïa</option><option value="Faytas">Faytas</option><option value="Grimnak">Grimnak</option><option value="Harôkar">Harôkar</option><option value="Horath">Horath</option><option value="Ilmïrïs">Ilmïrïs</option><option value="Kalhan">Kalhan</option><option value="Kélarno">Kélarno</option><option value="Rotkäppchen">Rotkäppchen</option><option value="Shäè">Shäè</option><option value="Telvia">Telvia</option><option value="Telvia">Telvia</option><option value="Tylanor">Tylanor</option><option value="Valhallà">Valhallà</option><option value="Warana">Warana</option><option value="Zhalob">Zhalob</option>
+                      </select>
+                    </div>
+                    <button class="btn btn-success col-md-4" type="submit" style="padding:2px 12px;">Consulter</button>
+                  </div>
+                </form>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row nomargin" style="margin-bottom:10px;">
+              <div class="col-md-12 nopadding">
+                <div class="class_wow">
+                  <img class="img-circle" src="http://eu.media.blizzard.com/wow/icons/36/spell_nature_magicimmunity.jpg" />
+                  Chaman Restauration
+                </div>
+              </div>
+            </div>
+            <div class="row nomargin">
+              <div class="col-md-6 nopadding">
+                <img src="http://eu.battle.net/static-render/eu/marecage-de-zangar/142/90253710-inset.jpg" class="img-rounded" />
+              </div>
+              <div class="col-md-6 nopadding">
+                <table class="table table-striped table-condensed">
+                  <tr>
+                    <td>
+                      Niveau d'objet
+                    </td>
+                    <td>
+                      <span style="color:#FFD200; font-weight:bold;">662</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Niveau souhaité
+                    </td>
+                    <td>
+                      <span style="color:#FFD200; font-weight:bold;">566</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Accomplissement
+                    </td>
+                    <td>
+                      <span style="color:#FFD200; font-weight:bold;">0%</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      loots / raid
+                    </td>
+                    <td>
+                      <span style="color:#FFD200; font-weight:bold;">0.45</span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="row nomargin">
+              <div class="col-md-12 nopadding">
+                <table class="table table-striped table-condensed">
+                  <thead>
+                  <tr>
+                    <th colspan="2">
+                      Metiers
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><span style="color:#FFD200;">Alchimie</span></td><td style="font-weight:bold;">650/675</td></tr><tr><td><span style="color:#FFD200;">Calligraphie</span></td><td style="font-weight:bold;">636/675</td></tr>
+                  </tbody>
+                </table>
+                <table class="table table-striped table-condensed">
+                  <thead>
+                  <tr>
+                    <th colspan="2">
+                      Derniers loots obtenus
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Ceinture en anneaux chitineux (553)</td></tr><tr><td>Brassards du purificateur en parfait état (553)</td></tr><tr><td>Cristal de rage frénétique (553)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+            <div class="panel panel-default">
+              <div class="panel-heading">Un objet manquant ?</div>
+              <div class="panel-body">
+                <form method="post" action="index.php?page=" class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="control-label col-sm-4" for="objet_manquant">Nom de l'objet :</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="objet_manquant" id="objet_manquant" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-4"> </label>
+                    <div class="col-sm-8">
+                      <button type="submit" class="btn btn-success">Réclamer</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+        
+            <div class="panel panel-default">
+              <div class="panel-heading">Notes de Mises à Jour</div>
+              <div class="panel-body">
+                <ul style="padding:0px; margin:0px 0px 0px 10px; list-style:none;">
+                  <li>
+                    <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+                      <li style="list-style:none;"><strong>Kalmani</strong><i> (09/10/2013)</i></li>
+                      <li style="list-style:none;">Vous pouvez maintenant envoyer plein de Po à Kalmani pour ce qu'il fait pour la guilde ! (de toute façon, qui lira cette note franchement...)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+                      <li style="list-style:none;"><strong>Kalmani</strong><i> (09/10/2013)</i></li>
+                      <li style="list-style:none;">Possibilité de corriger une erreur d'attribution de loot</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+                      <li style="list-style:none;"><strong>Kalmani</strong><i> (09/10/2013)</i></li>
+                      <li style="list-style:none;">Possibilité de choisir des loots non BIS et sa spé 2</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+                      <li style="list-style:none;"><strong>Kalmani</strong><i> (16/09/2013)</i></li>
+                      <li style="list-style:none;">Vous pouvez maintenant rechercher une pièce en tapant le début de son nom sans majuscule</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+                      <li style="list-style:none;"><strong>Kalmani</strong><i> (12/09/2013)</i></li>
+                      <li style="list-style:none;">Nouvelle fonctionnalité dans paramètre : Vous pouvez rafraichir votre fiche sans supprimer votre wish list :)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+                      <li style="list-style:none;"><strong>Kalmani</strong><i> (12/09/2013)</i></li>
+                      <li style="list-style:none;">Objets 5.4 importés.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      </div>
+        <div class="col-md-8">
+        <div id="stuff">
+          <div class="panel panel-default">
+            <div class="panel-heading">Equipement</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-6"><table class="table-condensed" width="100%"><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Chapel d'harmonie céleste</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=99332&amp;domain=fr&amp;gems=95347:76694&amp;ench=" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_misc_necklace_mop5.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Collier de la lumière faiblissante</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=104477&amp;domain=fr&amp;gems=&amp;ench=" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01shoulder.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Drape-épaules d'harmonie céleste</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=99334&amp;domain=fr&amp;gems=76694:76694&amp;ench=4915" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_cape_pandaria_dragoncaster_d_02.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-5">Xing-Ho, Souffle de Yu'lon</span><br />
+                    <span style="color:#000;">608<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=102246&amp;domain=fr&amp;gems=76694&amp;ench=4423" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01chest.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Haubert d'harmonie céleste</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=99344&amp;domain=fr&amp;gems=76694:76694:76694&amp;ench=4419" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01bracer.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Garde-poignets de cavernier</span><br />
+                    <span style="color:#000;">572<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=105524&amp;domain=fr&amp;gems=&amp;ench=4414" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01glove.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Gants d'harmonie céleste</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=99345&amp;domain=fr&amp;gems=76694:76694&amp;ench=4431" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01belt.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Ceinture en anneaux chitineux</span><br />
+                    <span style="color:#000;">553<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=103941&amp;domain=fr&amp;gems=76694:76668:76694&amp;ench=" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr>
+                  </table></div><div class="col-md-6">
+                  <table class="table-condensed" width="100%"><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01pant.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Jambières d'harmonie céleste</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=99333&amp;domain=fr&amp;gems=76672:76672&amp;ench=4825" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01boot.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Solerets de profanation</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=104450&amp;domain=fr&amp;gems=76694&amp;ench=4426" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_misc_ring_mop17.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Chevalière de la coupe au laser</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=104524&amp;domain=fr&amp;gems=76668&amp;ench=" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"> <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td width="56" colspan="2">
+                                      <span class="glyphicon glyphicon-remove-circle" style="font-size:40px;"> </span>
+                                    </td>
+                                  </tr>
+                                </table></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"> <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td width="56" colspan="2">
+                                      <span class="glyphicon glyphicon-remove-circle" style="font-size:40px;"> </span>
+                                    </td>
+                                  </tr>
+                                </table></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_jewelry_orgrimmarraid_trinket_07.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Liens purifiés d'Immerseus</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=104426&amp;domain=fr&amp;gems=&amp;ench=" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_hammer_1h_pvphorde_a_01red_upres.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Masse de guerre de Hurlenfer</span><br />
+                    <span style="color:#000;">574<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=105688&amp;domain=fr&amp;gems=76694:76694&amp;ench=4442" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr><tr><td align="left"><div class="panel panel-warning" style="margin-bottom:10px;"><div class="panel-heading"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                    <img src="http://eu.media.blizzard.com/wow/icons/56/inv_shield_orgrimmarraid_d_02.jpg" />
+                  </td>
+                  <td align="left">
+                    <span class="color-4">Barrière énigmatique de Norushen</span><br />
+                    <span style="color:#000;">566<br />
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <a href="#" rel="item=104470&amp;domain=fr&amp;gems=76694&amp;ench=4434" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a></div></div></td></tr>
+                  </table></div><div class="col-md-6">
+                  <table class="table-condensed" width="100%"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  ]]></script>
+  </div>
+  </script>
 </mustache>

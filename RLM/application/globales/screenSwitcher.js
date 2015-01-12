@@ -2,10 +2,10 @@ var ScreenSwitcher = new Class ({
 
   screens_list : {},
 
-  screen_name : null,
-  screen_zone : null,
-  panel_name : null,
-  panel_zone : null,
+  sName : null,
+  sZone : null,
+  pName : null,
+  pZone : null,
   context : {},
 
   initialize : function(app) {
@@ -18,11 +18,18 @@ var ScreenSwitcher = new Class ({
   },
 
   switchPanel : function() {
-    rendered = this.app.render(this.panel_name, this.context);
-    $(this.panel_zone).fadeOut(function() {
-      rendered.inject(this.panel_zone.empty());
-      $(this.panel_zone).fadeIn();
+    rendered = this.app.render(this.pName, this.context);
+    $(this.pZone).fadeOut(function() {
+      rendered.inject(this.pZone.empty());
+      $(this.pZone).fadeIn();
     }.bind(this));
+    return rendered;
+  },
+
+  switchScreen : function() {
+    rendered = this.app.render(this.sName, this.context);
+    rendered.inject(this.sZone.empty());
+    console.log(rendered, this.sName, this.sZone);
     return rendered;
   }
 

@@ -10,12 +10,7 @@
 			</div>
 		</nav>
 		<div class="row nomargin" style="padding-top:85px;">
-			<div class="col-md-11 col-lg-11 col-centered">
-				<div class="row">
-					<div class="col-md-3 col-centered" id="login_container">
-						
-					</div>
-				</div>
+			<div class="col-md-11 col-lg-11 col-centered" id="main_container">
 			</div>
 		</div>
 	</script>
