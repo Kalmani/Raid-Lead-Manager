@@ -21,6 +21,12 @@ var HomeScreen = new Class ({
     zone.getElementById('login_try').addEvent('click', function() {
       this.scs.sName = 'home_main';
       this.scs.sZone = document.getElementById('main_container');
+      this.scs.panels_list = {
+        'profile_panel' : 'profile_missing_panel',
+        'missing_panel' : 'profile_missing_panel',
+        'updates_panel' : 'profile_missing_panel',
+        'items_list_panel' : 'stuff_panel'
+      };
       this.scs.switchScreen();
     }.bind(this));
   }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mustache>
+  <script id="updates_panel" type="text/template">
+    <div class="panel panel-default">
+      <div class="panel-heading">Notes de Mises à Jour</div>
+      <div class="panel-body">
+        <ul style="padding:0px; margin:0px 0px 0px 10px; list-style:none;">
+          <li>
+            <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+              <li style="list-style:none;"><strong>Kalmani</strong><i> (09/10/2013)</i></li>
+              <li style="list-style:none;">Vous pouvez maintenant envoyer plein de Po à Kalmani pour ce qu'il fait pour la guilde ! (de toute façon, qui lira cette note franchement...)</li>
+            </ul>
+          </li>
+          <li>
+            <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+              <li style="list-style:none;"><strong>Kalmani</strong><i> (09/10/2013)</i></li>
+              <li style="list-style:none;">Possibilité de corriger une erreur d'attribution de loot</li>
+            </ul>
+          </li>
+          <li>
+            <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+              <li style="list-style:none;"><strong>Kalmani</strong><i> (09/10/2013)</i></li>
+              <li style="list-style:none;">Possibilité de choisir des loots non BIS et sa spé 2</li>
+            </ul>
+          </li>
+          <li>
+            <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+              <li style="list-style:none;"><strong>Kalmani</strong><i> (16/09/2013)</i></li>
+              <li style="list-style:none;">Vous pouvez maintenant rechercher une pièce en tapant le début de son nom sans majuscule</li>
+            </ul>
+          </li>
+          <li>
+            <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+              <li style="list-style:none;"><strong>Kalmani</strong><i> (12/09/2013)</i></li>
+              <li style="list-style:none;">Nouvelle fonctionnalité dans paramètre : Vous pouvez rafraichir votre fiche sans supprimer votre wish list :)</li>
+            </ul>
+          </li>
+          <li>
+            <ul style="margin:0px 0px 5px 0px; padding:0px; color:#FFF;">
+              <li style="list-style:none;"><strong>Kalmani</strong><i> (12/09/2013)</i></li>
+              <li style="list-style:none;">Objets 5.4 importés.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </script>
+</mustache>
