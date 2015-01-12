@@ -4,11 +4,11 @@ var HomeScreen = new Class ({
 
   active : false,
 
-  initialize : function(app, screen_id) {
+  initialize : function(app, screen_id, screen_data) {
+    this.data = screen_data;
     this.ID = screen_id;
     this.parent(app);
     this.scs = this.app.SCS;
-    console.log('initializing HomeScreen');
   },
 
 

@@ -43,9 +43,9 @@ var RaidLeadManager = new Class ({
   },
 
   get_rubrics_list : function() {
-    Object.each(this.config.rubrics, function(datas, screen) {
+    Object.each(this.config.rubrics, function(data, screen) {
       RaidLeadManager[screen] = screen;
-      this.SCS.register(new window[datas.className](this, RaidLeadManager[screen], screen.datas));
+      this.SCS.register(new window[data.className](this, RaidLeadManager[screen], data));
     }.bind(this));
   },
 
