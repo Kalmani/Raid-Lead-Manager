@@ -1,8 +1,27 @@
 {
   "fr-fr" : {
+    "Menu.HOME.Title" : "Accueil",
+    "Menu.SETTINGS.Title" : "Parametres",
+    "Menu.WISH_LIST.Title" : "Wish list",
+    "Menu.COMPARE.Title" : "Comparateur",
+    "Menu.HISTORY.Title" : "Historique",
+    "Menu.ADMIN.Title" : "Administration",
+    "Menu.DISCONNECT.Title" : "Deconnexion",
+    "Menu.WISH_BIS.Title" : "Sélection des BIS",
+    "Menu.WISH_PROV.Title" : "Sélection provisoire",
+    "Menu.WISH_SPE2.Title" : "Sélection Spé 2",
+
     "Home.MainTitle" : "Fak U G00BY !"
   },
   "en-us" : {
+    "Menu.HOME.Title" : "Home",
+    "Menu.SETTINGS.Title" : "Settings",
+    "Menu.WISH_LIST.Title" : "Wish list",
+    "Menu.COMPARE.Title" : "Comparator",
+    "Menu.HISTORY.Title" : "History",
+    "Menu.ADMIN.Title" : "Back Office",
+    "Menu.DISCONNECT.Title" : "Disconnect",
+
     "Home.MainTitle" : "Pliz D0lan !"
   }
 }

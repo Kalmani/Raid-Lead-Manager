@@ -1,9 +1,46 @@
 {
   "rubrics" : {
     "HOME" : {
-    
       "accessKey" : "use your imagination for this",
       "className" : "HomeScreen"
+    },
+    "SETTINGS" : {
+      "accessKey" : "use your imagination for this",
+      "className" : "SettingsScreen"
+    },
+    "WISH_LIST" : {
+      "accessKey" : "use your imagination for this",
+      "className" : "WishlistScreen",
+      "subs" : {
+        "WISH_BIS" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "WishBisScreen"
+        },
+        "WISH_PROV" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "WishProvScreen"
+        },
+        "WISH_SPE2" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "WishSpeScreen"
+        }
+      }
+    },
+    "COMPARE" : {
+      "accessKey" : "use your imagination for this",
+      "className" : "CompareScreen"
+    },
+    "HISTORY" : {
+      "accessKey" : "use your imagination for this",
+      "className" : "HystoryScreen"
+    },
+    "ADMIN" : {
+      "accessKey" : "use your imagination for this",
+      "className" : "AdminScreen"
+    },
+    "DISCONNECT" : {
+      "accessKey" : "use your imagination for this",
+      "className" : "DisconnectScreen"
     }
   }
 }

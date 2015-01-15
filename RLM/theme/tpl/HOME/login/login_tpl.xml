@@ -3,7 +3,7 @@
   <script id="login_tpl" type="text/template">
 		<div class="row">
       <div class="col-md-3 col-centered" id="login_container">
-      	<div class="panel panel-default">
+      	<div class="panel panel-default animated fadeInUp">
 					<div class="panel-heading">
 						Identification
 					</div>
