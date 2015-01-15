@@ -5,11 +5,7 @@ var ScreenSwitcher = new Class ({
   screens_list : {},
   serial_implement : false,
 
-  sName : null,
-  sZone : null,
   panels_list : {},
-  pName : null,
-  pZone : null,
   context : {},
 
   initialize : function(app) {
@@ -17,33 +13,26 @@ var ScreenSwitcher = new Class ({
   },
 
   register : function(screen) {
-    if (screen.ID)
-      this.screens_list[screen.ID] = screen;
+    if (!screen.ID)
+      return false;
+    this.screens_list[screen.ID] = screen;
+    return screen.link;
   },
 
-  switchPanel : function() {
-    console.info('Inject panel ' + this.pName);
-    renderedPanel = this.app.render(this.pName, this.context);
-    if (this.serial_implement === false) {
-      $(this.pZone).fadeOut(function() {
-        renderedPanel.inject(this.pZone.empty());
-        $(this.pZone).fadeIn();
-      }.bind(this));
-    } else {
-      renderedPanel.inject(this.pZone);
-    }
+  switchPanel : function(tpl, dom) {
+    console.info('Inject panel ' + tpl);
+    renderedPanel = this.app.render(tpl, this.context);
+    renderedPanel.inject(dom);
     return renderedPanel;
   },
 
-  switchScreen : function() {
+  switchScreen : function(screen_tpl_id, screen_dom) {
     console.info('Inject screen ' + this.sName);
-    renderedScreen = this.app.render(this.sName, this.context);
-    renderedScreen.inject(this.sZone.empty());
+    renderedScreen = this.app.render(screen_tpl_id, this.context);
+    renderedScreen.inject(screen_dom.empty());
     Object.each(this.panels_list, function(container_id, tpl_id) {
       this.serial_implement = true;
-      this.pName = tpl_id;
-      this.pZone = renderedScreen.getElementById(container_id);
-      this.switchPanel();
+      this.switchPanel(tpl_id, renderedScreen.getElementById(container_id));
     }.bind(this));
     this.serial_implement = false;
 

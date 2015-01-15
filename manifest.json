@@ -15,13 +15,23 @@
   "RLM/dependencies/prototype.js" : {"jshint" : false},
   "RLM/dependencies/mustache.js" : {"jshint" : false},
   "RLM/dependencies/jquery/jQuery.1.11.2.min.js" : {"jshint" : false},
-  "RLM/dependencies/bootstrap/bootstrap.min.js" : {"jshint" : false},
+  "RLM/dependencies/bootstrap/js/bootstrap.min.js" : {"jshint" : false},
 
   "RLM/application/globales/screenSwitcher.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/globales/session.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/globales/screenGlobalsMethods.js" : {"jscs" : true, "jshint" : true},
 
-  "RLM/application/pages/homeScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/HomeScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/SettingsScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/WishlistScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/CompareScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/HystoryScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/AdminScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/DisconnectScreen.js" : {"jscs" : true, "jshint" : true},
+
+  "RLM/application/pages/subs/WishBisScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/subs/WishProvScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/pages/subs/WishSpeScreen.js" : {"jscs" : true, "jshint" : true},
 
   "RLM/application/raid_lead_manager.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/init.js" : {"jscs" : true, "jshint" : true}

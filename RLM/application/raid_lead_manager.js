@@ -7,12 +7,16 @@ var RaidLeadManager = new Class ({
 
   locales : {},
   templates  : {},
+  default_language : 'fr-fr',
 
   // declare methodes here :
   initialize : function() {
     console.log('initializing api');
     this.sess = new Session(this);
     this.SCS = new ScreenSwitcher(this);
+
+    //fix this : Cookie || default || fr-fr
+    this.current_language = this.default_language;
   },
 
   init : function() {
@@ -22,8 +26,9 @@ var RaidLeadManager = new Class ({
       load_ready[step] = true;
       console.info("Load ", step, " > Finish");
 
-      if(load_ready.templates && load_ready.locales)
+      if(load_ready.templates && load_ready.locales) {
         this.show_content();
+      }
     });
 
     this.load_config();
@@ -35,18 +40,27 @@ var RaidLeadManager = new Class ({
       onSuccess : function(txt) {
         this.config = JSON.decode(txt);
         // Build endpoints
-        this.navigation = this.get_rubrics_list();
         this.load_locales();
         this.load_templates();
       }.bind(this)
     }).get();
   },
 
-  get_rubrics_list : function() {
+  make_nav : function() {
+    var navigation = new Array(),
+        i = 0;
     Object.each(this.config.rubrics, function(data, screen) {
       RaidLeadManager[screen] = screen;
-      this.SCS.register(new window[data.className](this, RaidLeadManager[screen], data));
+      var link = this.SCS.register(new window[data.className](this, RaidLeadManager[screen], data));
+      if (link !== false) {
+        navigation[i] = link;
+        i++;
+      }
     }.bind(this));
+    this.navigation = navigation;
+    var dom = this.render('navbar', {'navigation' : this.navigation}),
+        navbar = document.getElementById('navbar').empty();
+    dom.inject(navbar);
   },
 
   load_locales : function() {
@@ -62,8 +76,6 @@ var RaidLeadManager = new Class ({
             tmp[lang]['&' + k + ';'] = v;
           });
         });
-
-        //ensure at least default en-us is used
         Object.each(tmp, function(v, k) {
           tmp[k] = Object.merge({}, tmp['fr-fr'], v);
         });
@@ -99,7 +111,15 @@ var RaidLeadManager = new Class ({
           'server' : 'Dalaran'
         },
         dom = this.render('global_main', context).inject(document.body);
-    this.SCS.screens_list.HOME.show_login_panel();
+    
+    // Login controller here
+    // charge character data
+    var character = true;
+    if (character) {
+      this.make_nav();
+    } else {
+      this.SCS.screens_list.HOME.show_login_panel();  
+    }    
   },
 
   render : function(template_id, view) {

@@ -1,11 +1,11 @@
 body {
-    background-color: #62210f;
-    background-image: url("../rsc/background-v2.gif");
-    background-repeat: repeat-x;
-    color: #333;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.42857;
+  background-color: #62210f;
+  background-image: url("../rsc/background-v2.gif");
+  background-repeat: repeat-x;
+  color: #333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
 }
 
 .col-centered {
@@ -14,35 +14,35 @@ body {
 }
 
 .nomargin {
-    margin: 0;
+  margin: 0;
 }
 
 .panel-default {
-    border-color: #3a1107;
+  border-color: #3a1107;
 }
 .panel {
-    background-color: #46160a;
+  background-color: #46160a;
 }
 
 .panel-default > .panel-heading {
   background-color: transparent;
-    background-image: linear-gradient(to bottom, #591c0b 0%, #8e341b 100%);
-    background-repeat: repeat-x;
-    border-color: #6f2715;
-    color: #fff;
-    font-weight: bold;
+  background-image: linear-gradient(to bottom, #591c0b 0%, #8e341b 100%);
+  background-repeat: repeat-x;
+  border-color: #6f2715;
+  color: #fff;
+  font-weight: bold;
 }
 
 .navbar-nav {
-    background-image: url("../rsc/background-navigation.gif");
-    border-bottom: 2px solid #62210f;
-    height: 52px;
-    width: 100%;
+  background-image: url("../rsc/background-navigation.gif");
+  border-bottom: 2px solid #62210f;
+  height: 52px;
+  width: 100%;
 }
 
 .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .navbar-inverse{
@@ -51,12 +51,54 @@ body {
 }
 
 .btn-success {
-    background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
-    background-repeat: repeat-x;
-    border-color: #3e8f3e;
+  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
+  background-repeat: repeat-x;
+  border-color: #3e8f3e;
 }
 
 .btn {
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #c53517;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #62210f;
+  color: #fff;
+}
+
+.form-control:focus {
+  border-color: #ffd200;
+}
+
+.dropdown-menu {
+    background-color: #080808;
+    border: 2px solid #62210f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none outside none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown-menu > li > a {
+    clear: both;
+    color: #c53517;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
 }
