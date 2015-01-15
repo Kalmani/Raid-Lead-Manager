@@ -10,7 +10,7 @@ var DisconnectScreen = new Class ({
   },
 
   show : function(args) {
-    console.log(this.ID);
+    this.parent(args);
   },
 
 });

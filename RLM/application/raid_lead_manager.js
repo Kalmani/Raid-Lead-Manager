@@ -123,6 +123,7 @@ var RaidLeadManager = new Class ({
     var character = true;
     if (character) {
       this.make_nav();
+      this.SCS.switchRubric('HOME');
     } else {
       this.SCS.screens_list.HOME.show_login_panel();  
     }    
@@ -131,7 +132,7 @@ var RaidLeadManager = new Class ({
   render : function(template_id, view) {
     var res, output = Mustache.render(this.templates[template_id], view, this.templates);
     output = this.translate_full(output);
-    return new Element('div', {html : output});
+    return new Element('div', {'html' : output});
   },
 
   translate : function(i) {

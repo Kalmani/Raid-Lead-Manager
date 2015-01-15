@@ -7,11 +7,11 @@ var WishBisScreen = new Class ({
     this.ID = screen_id;
     this.parent(app);
     this.SCS = this.app.SCS;
+    this.parentID = "WISH_LIST";
   },
 
   show : function(args) {
-    $('.dropdown').removeAttr('style');
-    console.log(this.ID);
+    this.parent(args);
   },
 
 });

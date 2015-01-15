@@ -10,7 +10,7 @@ var CompareScreen = new Class ({
   },
 
   show : function(args) {
-    console.log(this.ID);
+    this.parent(args);
   },
 
 });

@@ -39,4 +39,14 @@ var ScreenGlobalsMethods = new Class ({
     }
   },
 
+  show : function(args) {
+    this.app.current_screen = this.ID;
+    $('.nav_link, .nav_subs').removeClass('active');
+    if (this.parentID) {
+      $('#' + this.parentID).addClass('active');
+    } else {
+      $('#' + this.ID).addClass('active');
+    }
+  },
+
 });
