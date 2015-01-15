@@ -7,16 +7,12 @@ var RaidLeadManager = new Class ({
 
   locales : {},
   templates  : {},
-  default_language : 'fr-fr',
 
   // declare methodes here :
   initialize : function() {
     console.log('initializing api');
     this.sess = new Session(this);
     this.SCS = new ScreenSwitcher(this);
-
-    //fix this : Cookie || default || fr-fr
-    this.current_language = this.default_language;
   },
 
   init : function() {
@@ -39,6 +35,11 @@ var RaidLeadManager = new Class ({
       url : 'config.json?',
       onSuccess : function(txt) {
         this.config = JSON.decode(txt);
+        if (Cookie.read('current_language') === null) {
+          var language = new Cookie('current_language', false);
+          language.write(this.config.default_language || 'en-us');
+        }
+        this.current_language = Cookie.read('current_language') || this.config.default_language || 'en-us';
         // Build endpoints
         this.load_locales();
         this.load_templates();
