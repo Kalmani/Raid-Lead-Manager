@@ -7,16 +7,12 @@ var RaidLeadManager = new Class ({
 
   locales : {},
   templates  : {},
-  default_language : 'fr-fr',
 
   // declare methodes here :
   initialize : function() {
     console.log('initializing api');
     this.sess = new Session(this);
     this.SCS = new ScreenSwitcher(this);
-
-    //fix this : Cookie || default || fr-fr
-    this.current_language = this.default_language;
   },
 
   init : function() {
@@ -39,6 +35,11 @@ var RaidLeadManager = new Class ({
       url : 'config.json?',
       onSuccess : function(txt) {
         this.config = JSON.decode(txt);
+        if (Cookie.read('current_language') === null) {
+          var language = new Cookie('current_language', false);
+          language.write(this.config.default_language || 'en-us');
+        }
+        this.current_language = Cookie.read('current_language') || this.config.default_language || 'en-us';
         // Build endpoints
         this.load_locales();
         this.load_templates();
@@ -59,8 +60,13 @@ var RaidLeadManager = new Class ({
     }.bind(this));
     this.navigation = navigation;
     var dom = this.render('navbar', {'navigation' : this.navigation}),
-        navbar = document.getElementById('navbar').empty();
+        navbar = document.getElementById('navbar').empty(),
+        that = this;
     dom.inject(navbar);
+
+    $('.nav_link').click(function() {
+      that.SCS.switchRubric(RaidLeadManager[this.get('id')]);
+    });
   },
 
   load_locales : function() {
@@ -117,6 +123,7 @@ var RaidLeadManager = new Class ({
     var character = true;
     if (character) {
       this.make_nav();
+      this.SCS.switchRubric('HOME');
     } else {
       this.SCS.screens_list.HOME.show_login_panel();  
     }    
@@ -125,7 +132,7 @@ var RaidLeadManager = new Class ({
   render : function(template_id, view) {
     var res, output = Mustache.render(this.templates[template_id], view, this.templates);
     output = this.translate_full(output);
-    return new Element('div', {html : output});
+    return new Element('div', {'html' : output});
   },
 
   translate : function(i) {

@@ -838,7 +838,7 @@ if (typeof jQuery === 'undefined') {
 
       if (!$parent.hasClass('open')) return
 
-      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+      //$parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
 
       if (e.isDefaultPrevented()) return
 

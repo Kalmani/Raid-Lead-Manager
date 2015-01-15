@@ -15,14 +15,20 @@ var HomeScreen = new Class ({
         zone = this.SCS.switchPanel('login_tpl', dom);
 
     zone.getElementById('login_try').addEvent('click', function() {
-      this.SCS.panels_list = {
-        'profile_panel' : 'profile_missing_panel',
-        'missing_panel' : 'profile_missing_panel',
-        'updates_panel' : 'profile_missing_panel',
-        'items_list_panel' : 'stuff_panel'
-      };
-      this.SCS.switchScreen('home_main', dom);
+      // bind login try here
     }.bind(this));
-  }
+  },
+
+  show : function(args) {
+    this.parent(args);
+    var dom = document.getElementById('main_container');
+    this.SCS.panels_list = {
+      'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'},
+      'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'},
+      'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash'},
+      'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn'}
+    };
+    this.SCS.switchScreen('home_main', dom);
+  },
 
 });

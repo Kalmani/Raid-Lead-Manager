@@ -7,6 +7,11 @@ var WishBisScreen = new Class ({
     this.ID = screen_id;
     this.parent(app);
     this.SCS = this.app.SCS;
+    this.parentID = "WISH_LIST";
+  },
+
+  show : function(args) {
+    this.parent(args);
   },
 
 });

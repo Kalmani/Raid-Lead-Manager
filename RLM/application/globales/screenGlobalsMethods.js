@@ -20,7 +20,8 @@ var ScreenGlobalsMethods = new Class ({
     if (this.active === false)
       return false;
     this.link = {
-      'title' : this.app.translate("Menu." + this.ID + ".Title")
+      'title' : this.app.translate("Menu." + this.ID + ".Title"),
+      'id' : this.ID
     };
     // not recursive, it sucks hard for now
     if (this.data.subs) {
@@ -35,6 +36,16 @@ var ScreenGlobalsMethods = new Class ({
           i++;
         }
       }.bind(this)); 
+    }
+  },
+
+  show : function(args) {
+    this.app.current_screen = this.ID;
+    $('.nav_link, .nav_subs').removeClass('active');
+    if (this.parentID) {
+      $('#' + this.parentID).addClass('active');
+    } else {
+      $('#' + this.ID).addClass('active');
     }
   },
 

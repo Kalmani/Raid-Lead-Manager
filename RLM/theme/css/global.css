@@ -102,3 +102,8 @@ body {
     padding: 3px 20px;
     white-space: nowrap;
 }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: transparent;
+  color: #FFF;
+}
