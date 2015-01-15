@@ -9,4 +9,9 @@ var WishBisScreen = new Class ({
     this.SCS = this.app.SCS;
   },
 
+  show : function(args) {
+    $('.dropdown').removeAttr('style');
+    console.log(this.ID);
+  },
+
 });

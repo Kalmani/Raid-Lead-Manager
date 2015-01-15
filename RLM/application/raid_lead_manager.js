@@ -60,8 +60,13 @@ var RaidLeadManager = new Class ({
     }.bind(this));
     this.navigation = navigation;
     var dom = this.render('navbar', {'navigation' : this.navigation}),
-        navbar = document.getElementById('navbar').empty();
+        navbar = document.getElementById('navbar').empty(),
+        that = this;
     dom.inject(navbar);
+
+    $('.nav_link').click(function() {
+      that.SCS.switchRubric(RaidLeadManager[this.get('id')]);
+    });
   },
 
   load_locales : function() {

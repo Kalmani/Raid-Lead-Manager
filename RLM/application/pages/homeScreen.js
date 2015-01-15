@@ -23,6 +23,10 @@ var HomeScreen = new Class ({
       };
       this.SCS.switchScreen('home_main', dom);
     }.bind(this));
-  }
+  },
+
+  show : function(args) {
+    console.log(this.ID);
+  },
 
 });

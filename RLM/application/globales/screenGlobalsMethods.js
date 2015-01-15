@@ -20,7 +20,8 @@ var ScreenGlobalsMethods = new Class ({
     if (this.active === false)
       return false;
     this.link = {
-      'title' : this.app.translate("Menu." + this.ID + ".Title")
+      'title' : this.app.translate("Menu." + this.ID + ".Title"),
+      'id' : this.ID
     };
     // not recursive, it sucks hard for now
     if (this.data.subs) {

@@ -9,4 +9,9 @@ var WishSpeScreen = new Class ({
     this.SCS = this.app.SCS;
   },
 
+  show : function(args) {
+    $('.dropdown').removeAttr('display');
+    console.log(this.ID);
+  },
+
 });

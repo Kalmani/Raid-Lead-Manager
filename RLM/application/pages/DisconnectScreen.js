@@ -9,4 +9,8 @@ var DisconnectScreen = new Class ({
     this.SCS = this.app.SCS;
   },
 
+  show : function(args) {
+    console.log(this.ID);
+  },
+
 });
