@@ -9,4 +9,8 @@ var WishlistScreen = new Class ({
     this.SCS = this.app.SCS;
   },
 
+  show : function() {
+    console.log(this.ID);
+  },
+
 });
