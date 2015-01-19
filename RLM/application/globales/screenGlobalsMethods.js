@@ -35,7 +35,7 @@ var ScreenGlobalsMethods = new Class ({
           this.link.subs[i] = sub;
           i++;
         }
-      }.bind(this)); 
+      }.bind(this));
     }
   },
 

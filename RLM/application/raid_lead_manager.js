@@ -8,7 +8,6 @@ var RaidLeadManager = new Class ({
   locales : {},
   templates  : {},
 
-  // declare methodes here :
   initialize : function() {
     console.log('initializing api');
     this.sess = new Session(this);
@@ -116,17 +115,17 @@ var RaidLeadManager = new Class ({
           'guild_name' : 'Larmes Nébuleuses',
           'server' : 'Dalaran'
         },
-        dom = this.render('global_main', context).inject(document.body);
-    
+        dom = this.render('global_main', context).inject(document.body),
+        character = true;
     // Login controller here
     // charge character data
-    var character = true;
     if (character) {
       this.make_nav();
       this.SCS.switchRubric('HOME');
     } else {
-      this.SCS.screens_list.HOME.show_login_panel();  
-    }    
+      this.SCS.screens_list.HOME.show_login_panel();
+    }
+    this.ask_server();
   },
 
   render : function(template_id, view) {
@@ -147,6 +146,19 @@ var RaidLeadManager = new Class ({
       i = i.replaces(this.locales[lang]);
     } while (tmp != i);
     return tmp;
-  }
+  },
 
+  ask_server : function(namespace, action, params, options) {
+    //Server side actions here
+    var action_root = this.config.action_root,
+        myRequest = new Request({
+          method : 'post',
+          url : action_root,
+          data : 'namespace=' + namespace + '&action=' + action + '',
+          onSuccess : function(responseText, responseXML) {
+            if (options.success)
+              options.success();
+          }
+        }).send();
+  },
 });
