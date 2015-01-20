@@ -15,8 +15,25 @@ var HomeScreen = new Class ({
         zone = this.SCS.switchPanel('login_tpl', dom);
 
     zone.getElementById('login_try').addEvent('click', function() {
-      // bind login try here
+      var pseudo = document.id('identifiant').value,
+          pass = document.id('password').value;
+      this.try_login(pseudo, pass);
     }.bind(this));
+  },
+
+  try_login : function(pseudo, pass) {
+    var options = {
+          'success' : this.callback_login
+        },
+        params = {
+          'pseudo' : pseudo,
+          'pass' : pass
+        };
+    this.app.ask_server('account', 'login', params, options);
+  },
+
+  callback_login : function(test) {
+    console.log(test);
   },
 
   show : function(args) {

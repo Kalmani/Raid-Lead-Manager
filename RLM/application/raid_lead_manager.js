@@ -116,7 +116,7 @@ var RaidLeadManager = new Class ({
           'server' : 'Dalaran'
         },
         dom = this.render('global_main', context).inject(document.body),
-        character = true;
+        character = false;
     // Login controller here
     // charge character data
     if (character) {
@@ -126,7 +126,7 @@ var RaidLeadManager = new Class ({
       this.SCS.register(new HomeScreen(this, 'HOME', this.config.rubrics.HOME));
       this.SCS.screens_list.HOME.show_login_panel();
     }
-    this.ask_server();
+
   },
 
   render : function(template_id, view) {
@@ -151,14 +151,15 @@ var RaidLeadManager = new Class ({
 
   ask_server : function(namespace, action, params, options) {
     //Server side actions here
-    var action_root = this.config.action_root,
+    var datas = 'namespace=' + namespace + '&action=' + action + (params) ? '&' + params.join('&') : '',
+        action_root = this.config.action_root,
         myRequest = new Request({
           method : 'post',
           url : action_root,
-          data : 'namespace=' + namespace + '&action=' + action + '',
+          data : datas,
           onSuccess : function(responseText, responseXML) {
             if (options.success)
-              options.success();
+              options.success(responseText);
           }
         }).send();
   },
