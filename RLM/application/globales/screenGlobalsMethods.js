@@ -6,7 +6,6 @@ var ScreenGlobalsMethods = new Class ({
 
   initialize : function(app) {
     this.app = app;
-    console.log('initializing ' + this.data.className);
     this.is_active();
     this.get_nav_component();
   },

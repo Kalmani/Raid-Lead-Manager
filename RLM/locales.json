@@ -11,7 +11,23 @@
     "Menu.WISH_PROV.Title" : "Sélection provisoire",
     "Menu.WISH_SPE2.Title" : "Sélection Spé 2",
 
-    "Home.MainTitle" : "Fak U G00BY !"
+    "Home.Login.Title" : "Identification",
+    "Home.Login.Input_value" : "Identifiant",
+    "Home.Login.Validate" : "Valider",
+
+    "Home.Profile.Consult" : "Consulter",
+    "Home.Profile.Ilvl" : "Niveau d'objet",
+    "Home.Profile.Wish_ilvl" : "Niveau souhaité",
+    "Home.Profile.Accomplishment" : "Accomplissement",
+    "Home.Profile.Loots_by_raid" : "Loots / raid",
+    "Home.Profile.Profession" : "Metiers",
+    "Home.Profile.Last_loots" : "Derniers loots obtenus",
+
+    "Home.Missing.Title" : "Un objet manquant",
+    "Home.Missing.Object_name" : "Nom de l'objet",
+    "Home.Missing.Claim" : "Réclamer",
+
+    "Home.Updates.Updates_notes" : "Notes de Mises à Jour"
   },
   "en-us" : {
     "Menu.HOME.Title" : "Home",
@@ -20,8 +36,6 @@
     "Menu.COMPARE.Title" : "Comparator",
     "Menu.HISTORY.Title" : "History",
     "Menu.ADMIN.Title" : "Back Office",
-    "Menu.DISCONNECT.Title" : "Disconnect",
-
-    "Home.MainTitle" : "Pliz D0lan !"
+    "Menu.DISCONNECT.Title" : "Disconnect"
   }
 }

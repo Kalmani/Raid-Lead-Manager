@@ -32,6 +32,7 @@ var ScreenSwitcher = new Class ({
     renderedScreen.inject(screen_dom.empty());
     Object.each(this.panels_list, function(datas, tpl_id) {
       this.serial_implement = true;
+      this.context = datas.context;
       this.switchPanel(tpl_id, renderedScreen.getElementById(datas.id), (datas.animate || false));
     }.bind(this));
     this.serial_implement = false;
