@@ -78,7 +78,7 @@ var RaidLeadManager = new Class ({
         Object.each(locales, function(trad, lang) {
           tmp[lang] = {};
           Object.each(trad, function(v, k) {
-            tmp[lang]['&' + k + ';'] = v;
+            tmp[lang]['$' + k + ';'] = v;
           });
         });
         Object.each(tmp, function(v, k) {
@@ -123,6 +123,7 @@ var RaidLeadManager = new Class ({
       this.make_nav();
       this.SCS.switchRubric('HOME');
     } else {
+      this.SCS.register(new HomeScreen(this, 'HOME', this.config.rubrics.HOME));
       this.SCS.screens_list.HOME.show_login_panel();
     }
     this.ask_server();
@@ -136,7 +137,7 @@ var RaidLeadManager = new Class ({
 
   translate : function(i) {
     if(i === "" || !i) return "";
-    return this.translate_full('&' + i + ';');
+    return this.translate_full('$' + i + ';');
   },
 
   translate_full : function(i) {

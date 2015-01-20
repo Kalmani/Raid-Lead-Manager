@@ -15,6 +15,17 @@ String.implement({
   }
 });
 
+Object.prototype.join = function(hash) {
+  var join = '',
+      i = 0;
+  Object.each(this, function(value, key) {
+    join += (i > 0) ? hash : '';
+    join += key + '=' + value;
+    i++;
+  });
+  return join;
+}
+
 XMLDocument.fromXML = function(xml) {
   var parser = new DOMParser();
   return parser.parseFromString(xml, "text/xml");

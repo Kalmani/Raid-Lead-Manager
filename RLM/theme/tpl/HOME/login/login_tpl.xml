@@ -5,12 +5,12 @@
       <div class="col-md-3 col-centered" id="login_container">
       	<div class="panel panel-default animated fadeInUp">
 					<div class="panel-heading">
-						Identification
+						$Home.Login.Title;
 					</div>
 					<div class="panel-body">
 						<div class="input-group">
 							<span class="input-group-addon glyphicon glyphicon-user"> </span>
-							<input type="text" id="identifiant" name="identifiant_rlm" class="form-control" placeholder="Identifiant" />
+							<input type="text" id="identifiant" name="identifiant_rlm" class="form-control" placeholder="$Home.Login.Input_value;" />
 						</div>
 						<br />
 						<div class="input-group">
@@ -19,7 +19,7 @@
 						</div>
 						<br />
 						<button type="submit" class="btn btn-success form-control" id="login_try">
-							 Valider
+							 $Home.Login.Validate;
 						</button>
 					</div>
 				</div>
