@@ -24,7 +24,7 @@ var HomeScreen = new Class ({
     var dom = document.getElementById('main_container');
     this.SCS.panels_list = {
       'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'context' : this.profile_context()},
-      'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'context' : {}},
+      'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'},
       'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash', 'context' : this.updates_context()},
       'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn'}
     };
