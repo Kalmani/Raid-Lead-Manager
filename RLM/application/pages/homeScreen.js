@@ -26,7 +26,7 @@ var HomeScreen = new Class ({
       'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'context' : this.profile_context()},
       'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'},
       'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash', 'context' : this.updates_context()},
-      'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn'}
+      'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn', 'context' : this.items_list()}
     };
     this.SCS.switchScreen('home_main', dom);
   },
@@ -82,6 +82,24 @@ var HomeScreen = new Class ({
         {'author' : 'Kalmani', 'date' : '12/09/2013', 'note' : "Objets 5.4 importés."}
       ]
     };
+    return context;
+  },
+
+  items_list : function() {
+    var context = {'left' : new Array(), 'right' : new Array()},
+        item = 0;
+    Object.each(this.parent(), function(item_datas, key) {
+      item_datas.item_url = null;
+      if (item_datas.item_caracs)
+        item_datas.item_url = item_datas.item_caracs.join('&amp;');
+      var current = item_datas;
+      if (item < 8) {
+        context.left[context.left.length] = current;
+      } else {
+        context.right[context.right.length] = current;
+      }
+      item++;
+    });
     return context;
   },
 
