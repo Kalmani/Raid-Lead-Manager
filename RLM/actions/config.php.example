@@ -13,6 +13,6 @@ $GLOBALS['wowarmory']['db']['password'] = $pass; //Insert your database password
 $GLOBALS['wowarmory']['keys']['api'] = 'api_key';
 $GLOBALS['wowarmory']['keys']['share'] = 'api_share_key';
 //$GLOBALS['wowarmory']['debug']['global'] = true;
-include('includes/wowarmoryapi/BattlenetArmory.class.php');
+include('../dependencies/wowarmoryapi/BattlenetArmory.class.php');
 $armory = new BattlenetArmory('EU','ServerName'); 
 ?>
