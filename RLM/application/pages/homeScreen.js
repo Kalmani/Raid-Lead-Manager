@@ -2,6 +2,8 @@ var HomeScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
 
+  Binds : ['callback_login'],
+
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
@@ -32,8 +34,10 @@ var HomeScreen = new Class ({
     this.app.ask_server('account', 'login', params, options);
   },
 
-  callback_login : function(test) {
-    console.log(test);
+  callback_login : function(response) {
+    var response = JSON.parse(response);
+    if (response.error)
+      this.app.alertMessage('error', response.error, document.id('main_container'));
   },
 
   show : function(args) {
