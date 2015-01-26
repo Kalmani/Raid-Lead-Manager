@@ -31,7 +31,7 @@ var HomeScreen = new Class ({
           'pseudo' : pseudo,
           'pass' : pass
         };
-    this.app.ask_server('acccount', 'login', params, options);
+    this.app.ask_server('account', 'login', params, options);
   },
 
   callback_login : function(response) {
