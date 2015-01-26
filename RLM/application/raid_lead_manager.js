@@ -116,7 +116,7 @@ var RaidLeadManager = new Class ({
           'server' : 'Dalaran'
         },
         dom = this.render('global_main', context).inject(document.body),
-        character = false;
+        character = true;
     // Login controller here
     // charge character data
     if (character) {
