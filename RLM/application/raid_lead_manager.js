@@ -165,6 +165,9 @@ var RaidLeadManager = new Class ({
   },
 
   alertMessage : function(type, error, zone) {
+    Array.each(zone.getElementsByClassName('alert'), function(elem) {
+      elem.remove();
+    });
     var dom = this.render('alert_' + type, {'message' : error.message});
     dom.inject(zone, 'top');
   },
