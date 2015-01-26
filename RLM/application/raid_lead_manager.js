@@ -151,7 +151,7 @@ var RaidLeadManager = new Class ({
 
   ask_server : function(namespace, action, params, options) {
     //Server side actions here
-    var datas = 'namespace=' + namespace + '&action=' + action + (params) ? '&' + params.join('&') : '',
+    var datas = 'namespace=' + namespace + '&action=' + action + ((params) ? '&' + params.join('&') : ''),
         action_root = this.config.action_root,
         myRequest = new Request({
           method : 'post',
