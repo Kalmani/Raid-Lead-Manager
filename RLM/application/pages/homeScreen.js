@@ -36,8 +36,11 @@ var HomeScreen = new Class ({
 
   callback_login : function(response) {
     var response = JSON.parse(response);
-    if (response.error)
+    if (response.error) {
       this.app.alertMessage('error', response.error, document.id('main_container'));
+    } else if (response.warning){
+      this.app.alertMessage('warning', response.warning, document.id('main_container'));
+    }
   },
 
   show : function(args) {
