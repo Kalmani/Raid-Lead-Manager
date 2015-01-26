@@ -46,8 +46,10 @@ var HomeScreen = new Class ({
     var response = JSON.parse(response);
     if (response.error) {
       this.app.alertMessage('error', response.error, document.id('main_container'));
-    } else if (response.warning){
+    } else if (response.warning) {
       this.app.alertMessage('warning', response.warning, document.id('main_container'));
+    } else if (response.success) {
+      this.app.alertMessage('success', response.success, document.id('main_container'));
     }
   },
 

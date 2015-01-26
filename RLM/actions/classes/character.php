@@ -1,4 +1,18 @@
 <?php
+  class Character {
+    var $namespace;
+    var $action;
+    var $params;
+
+    function __construct() {
+
+    }
+
+
+
+
+
+  }
   $context['character'] = array(
     'pseudo' => 'Kalmani',
     'classe' => 'Chaman',
