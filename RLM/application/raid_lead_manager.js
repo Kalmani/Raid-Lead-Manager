@@ -164,6 +164,14 @@ var RaidLeadManager = new Class ({
         }).send();
   },
 
+  loading : function(zone) {
+    Array.each(zone.getElementsByClassName('alert'), function(elem) {
+      elem.remove();
+    });
+    var dom = this.render('alert_loading', {});
+    dom.inject(zone, 'top');
+  },
+
   alertMessage : function(type, error, zone) {
     Array.each(zone.getElementsByClassName('alert'), function(elem) {
       elem.remove();

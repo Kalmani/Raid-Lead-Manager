@@ -107,3 +107,8 @@ body {
   background-color: transparent;
   color: #FFF;
 }
+
+.loader{
+  display: block;
+  margin: auto;
+}

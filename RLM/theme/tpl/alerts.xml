@@ -24,4 +24,9 @@
         <strong>$Alert.Info;</strong> {{message}}
     </div>
 	</script>
+	<script id="alert_loading" type="text/template">
+    <div class="alert fade in">
+        <img class="loader" src="theme/rsc/loader.gif" />
+    </div>
+	</script>
 </mustache>
