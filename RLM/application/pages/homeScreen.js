@@ -2,7 +2,14 @@ var HomeScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
 
-  Binds : ['callback_login'],
+  Binds : ['show', 'callback_login', 'inject_home_panels'],
+
+  panels_list : [
+    {'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'namespace' : 'character', 'action' : 'show_profile'}},
+    {'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'}},
+    {'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash', 'namespace' : 'base', 'action' : 'show_last_notes'}},
+    {'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn'}}
+  ],
 
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
@@ -47,67 +54,54 @@ var HomeScreen = new Class ({
   show : function(args) {
     this.parent(args);
     var dom = document.getElementById('main_container');
-    this.SCS.panels_list = {
-      'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'context' : this.profile_context()},
-      'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'},
-      'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash', 'context' : this.updates_context()},
-      'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn', 'context' : this.items_list()}
-    };
     this.SCS.switchScreen('home_main', dom);
+    this.context_list = new Array();
+    var panels = this.panels_list.clone();
+    this.build_home_panel(panels);
+    this.app.addEvent('panels_ready', function() {
+      this.inject_home_panels();
+    }.bind(this));
   },
 
-  profile_context : function() {
-    //expected concept
-    var context = {
-      'character' : {
-        'pseudo' : 'Kalmani',
-        'classe' : 'Chaman',
-        'activ_spe' : 'Restauration',
-        'ilvl' : 667,
-        'wish_ilvl' : 670,
-        'accomplished_purcent' : 75,
-        'loots_by_raid' : 0.78,
-        'professions' : [
-          {'name' : 'Alchimie', 'level' : 650, 'max' : 700},
-          {'name' : 'Calligraphie', 'level' : 636, 'max' : 700}
-        ],
-        'last_loots' : [
-          {'name' : 'Ceinture en anneaux chitineux', 'level' : 553},
-          {'name' : 'Brassards du purificateur en parfait état', 'level' : 553},
-          {'name' : 'Cristal de rage frénétique', 'level' : 553}
-        ]
+  //j'aime pas
+  build_home_panel : function(panels_list) {
+    var panel = panels_list.shift(),
+        id = Object.keys(panel)[0],
+        datas = panel[id];
+    if (datas.namespace) {
+      var options = {
+        'success' : function(response) {
+          var context = JSON.parse(response);
+          this.context_list[this.context_list.length] = context;
+          if (panels_list.length > 0) {
+            this.build_home_panel(panels_list);
+          } else {
+            this.app.fireEvent('panels_ready');
+          }
+        }.bind(this)
       },
-      'guild_characters' : [
-        {'pseudo' : 'Deewan'},
-        {'pseudo' : 'Efcaïa'},
-        {'pseudo' : 'Faytas'},
-        {'pseudo' : 'Grimnak'},
-        {'pseudo' : 'Harôkar'},
-        {'pseudo' : 'Ilmïrïs'},
-        {'pseudo' : 'Kalhan'},
-        {'pseudo' : 'Kélarno'},
-        {'pseudo' : 'Rotkäppchen'},
-        {'pseudo' : 'Telvia'},
-        {'pseudo' : 'Valhallà'},
-        {'pseudo' : 'Warana'},
-        {'pseudo' : 'Zhalob'}
-      ]
+      params = {
+      };
+      this.app.ask_server(datas.namespace, datas.action, params, options);
+    } else {
+      this.context_list[this.context_list.length] = {};
+      if (panels_list.length > 0) {
+        this.build_home_panel(panels_list);
+      } else {
+        this.app.fireEvent('panels_ready');
+      }
     }
-    return context;
   },
 
-  updates_context : function() {
-    var context = {
-      'updates' : [
-        {'author' : 'Kalmani', 'date' : '09/10/2013', 'note' : "Vous pouvez maintenant envoyer plein de Po à Kalmani pour ce qu'il fait pour la guilde ! (de toute façon, qui lira cette note franchement...)"},
-        {'author' : 'Kalmani', 'date' : '09/10/2013', 'note' : "Possibilité de corriger une erreur d'attribution de loot"},
-        {'author' : 'Kalmani', 'date' : '09/10/2013', 'note' : "Possibilité de choisir des loots non BIS et sa spé 2"},
-        {'author' : 'Kalmani', 'date' : '16/09/2013', 'note' : "Vous pouvez maintenant rechercher une pièce en tapant le début de son nom sans majuscule"},
-        {'author' : 'Kalmani', 'date' : '12/09/2013', 'note' : "Nouvelle fonctionnalité dans paramètre : Vous pouvez rafraichir votre fiche sans supprimer votre wish list :)"},
-        {'author' : 'Kalmani', 'date' : '12/09/2013', 'note' : "Objets 5.4 importés."}
-      ]
-    };
-    return context;
+  inject_home_panels : function() {
+    for (var i = 0; i < this.panels_list.length; i++) {
+      var id = Object.keys(this.panels_list[i])[0],
+          datas = this.panels_list[i][id],
+          dom = document.id(datas.id);
+      console.log(this.context_list[i]);
+      this.SCS.context = this.context_list[i];
+      this.SCS.switchPanel(id, dom, datas.animate);
+    }
   },
 
   items_list : function() {
