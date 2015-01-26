@@ -7,7 +7,7 @@ if (file_exists($file_path) && is_readable($file_path)) {
 } else {
   echo json_encode(array(
     'error' => array(
-      'msg' => 'Bad namespace ' . $namespace . 'file ' . $namespace . ' does not exist'
+      'message' => 'Bad namespace ' . $namespace . 'file ' . $namespace . ' does not exist'
     )
   ));
 }

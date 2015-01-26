@@ -1,5 +1,10 @@
 {
   "fr-fr" : {
+    "Alert.Warning" : "Attention",
+    "Alert.Error" : "Erreur",
+    "Alert.Success" : "Succes",
+    "Alert.Info" : "Note",
+
     "Menu.HOME.Title" : "Accueil",
     "Menu.SETTINGS.Title" : "Parametres",
     "Menu.WISH_LIST.Title" : "Wish list",

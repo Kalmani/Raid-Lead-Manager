@@ -163,4 +163,9 @@ var RaidLeadManager = new Class ({
           }
         }).send();
   },
+
+  alertMessage : function(type, error, zone) {
+    var dom = this.render('alert_' + type, {'message' : error.message});
+    dom.inject(zone, 'top');
+  },
 });

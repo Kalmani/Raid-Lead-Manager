@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mustache>
+  <script id="alert_warning" type="text/template">
+    <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        <strong>$Alert.Warning;</strong> {{message}}
+    </div>
+	</script>
+	<script id="alert_error" type="text/template">
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        <strong>$Alert.Error;</strong> {{message}}
+    </div>
+	</script>
+	<script id="alert_success" type="text/template">
+    <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        <strong>$Alert.Success;</strong> {{message}}
+    </div>
+	</script>
+	<script id="alert_info" type="text/template">
+    <div class="alert alert-info fade in">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        <strong>$Alert.Info;</strong> {{message}}
+    </div>
+	</script>
+</mustache>
