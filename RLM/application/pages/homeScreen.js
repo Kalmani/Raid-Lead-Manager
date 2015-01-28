@@ -49,8 +49,13 @@ var HomeScreen = new Class ({
     } else if (response.warning) {
       this.app.alertMessage('warning', response.warning, document.id('login_panel'));
     } else if (response.success) {
-      console.log(response);
-      this.app.alertMessage('success', response.success, document.id('login_panel'));
+      if (this.app.sess.login(response.user_datas)) {
+        this.app.alertMessage('success', response.success, document.id('login_panel'));
+        this.app.make_nav();
+        this.SCS.switchRubric('HOME');
+      } else {
+        this.app.alertMessage('error', response.error_case, document.id('login_panel'));
+      }
     }
   },
 
@@ -101,7 +106,6 @@ var HomeScreen = new Class ({
       var id = Object.keys(this.panels_list[i])[0],
           datas = this.panels_list[i][id],
           dom = document.id(datas.id);
-      console.log(this.context_list[i]);
       this.SCS.context = this.context_list[i];
       this.SCS.switchPanel(id, dom, datas.animate);
     }
