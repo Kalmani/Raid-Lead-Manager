@@ -10,6 +10,10 @@ var HomeScreen = new Class ({
     {'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash', 'namespace' : 'base', 'action' : 'show_last_notes'}},
     {'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn'}}
   ],
+  initial_zones : [
+    'profile_missing_panel',
+    'stuff_panel'
+  ],
 
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
@@ -65,6 +69,10 @@ var HomeScreen = new Class ({
     this.SCS.switchScreen('home_main', dom);
     this.context_list = new Array();
     var panels = this.panels_list.clone();
+    //fix this later (use panel list)
+    Array.each(this.initial_zones, function(zone) {
+      document.id(zone).empty();
+    });
     this.build_home_panel(panels);
     this.app.addEvent('panels_ready', function() {
       this.inject_home_panels();

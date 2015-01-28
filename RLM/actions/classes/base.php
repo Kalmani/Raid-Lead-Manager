@@ -1,11 +1,29 @@
 <?php
-  $context['updates'] = Array(
-    0 => array('author' => 'Kalmani', 'date' => '09/10/2013', 'note' => "Vous pouvez maintenant envoyer plein de Po à Kalmani pour ce qu'il fait pour la guilde ! (de toute façon, qui lira cette note franchement...)"),
-    1 => array('author' => 'Kalmani', 'date' => '09/10/2013', 'note' => "Possibilité de corriger une erreur d'attribution de loot"),
-    2 => array('author' => 'Kalmani', 'date' => '09/10/2013', 'note' => "Possibilité de choisir des loots non BIS et sa spé 2"),
-    3 => array('author' => 'Kalmani', 'date' => '16/09/2013', 'note' => "Vous pouvez maintenant rechercher une pièce en tapant le début de son nom sans majuscule"),
-    4 => array('author' => 'Kalmani', 'date' => '12/09/2013', 'note' => "Nouvelle fonctionnalité dans paramètre : Vous pouvez rafraichir votre fiche sans supprimer votre wish list :)"),
-    5 => array('author' => 'Kalmani', 'date' => '12/09/2013', 'note' => "Objets 5.4 importés.")
+require 'config.php';
+
+$mysqli = new mysqli($host, $user, $pass, $db);
+if ($mysqli->connect_errno) {
+  echo json_encode(array(
+    'error' => array(
+      'message' => "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error
+    )
+  ));
+}
+
+$res = $mysqli->query("SELECT * FROM larmes_updates ORDER BY maj_id DESC LIMIT 0, 5");
+$return = array();
+while ($row = $res->fetch_assoc()) {
+  $result = array(
+    'id' => $row['maj_id'],
+    // fix this in DB install
+    'note' => utf8_encode($row['maj_content']),
+    // Join table to users
+    'author' => $row['user_id'],
+    'date' => $row['maj_date']
   );
-  echo json_encode($context);
+  $return[] = $result;
+}
+echo json_encode(array(
+  'updates' => $return
+));
 ?>
