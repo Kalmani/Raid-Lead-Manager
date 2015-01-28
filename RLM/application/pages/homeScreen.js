@@ -24,7 +24,7 @@ var HomeScreen = new Class ({
         zone = this.SCS.switchPanel('login_tpl', dom);
 
     zone.getElementById('login_try').addEvent('click', function() {
-      this.app.loading(document.id('main_container'));
+      this.app.loading(document.id('login_panel'));
       var pseudo = document.id('identifiant').value,
           pass = document.id('password').value;
       this.try_login(pseudo, pass);
@@ -45,11 +45,12 @@ var HomeScreen = new Class ({
   callback_login : function(response) {
     var response = JSON.parse(response);
     if (response.error) {
-      this.app.alertMessage('error', response.error, document.id('main_container'));
+      this.app.alertMessage('error', response.error, document.id('login_panel'));
     } else if (response.warning) {
-      this.app.alertMessage('warning', response.warning, document.id('main_container'));
+      this.app.alertMessage('warning', response.warning, document.id('login_panel'));
     } else if (response.success) {
-      this.app.alertMessage('success', response.success, document.id('main_container'));
+      console.log(response);
+      this.app.alertMessage('success', response.success, document.id('login_panel'));
     }
   },
 
