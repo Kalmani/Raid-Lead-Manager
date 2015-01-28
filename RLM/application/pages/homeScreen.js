@@ -74,9 +74,7 @@ var HomeScreen = new Class ({
       document.id(zone).empty();
     });
     this.build_home_panel(panels);
-    this.app.addEvent('panels_ready', function() {
-      this.inject_home_panels();
-    }.bind(this));
+    this.app.addEvent('panels_ready', this.inject_home_panels);
   },
 
   //j'aime pas
@@ -110,6 +108,7 @@ var HomeScreen = new Class ({
   },
 
   inject_home_panels : function() {
+    this.app.removeEvent('panels_ready', this.inject_home_panels);
     for (var i = 0; i < this.panels_list.length; i++) {
       var id = Object.keys(this.panels_list[i])[0],
           datas = this.panels_list[i][id],

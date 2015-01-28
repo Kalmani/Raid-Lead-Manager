@@ -4,25 +4,14 @@
     <div>
       <div class="panel panel-default">
         <div class="panel-heading" style="padding:7px 15px;">
-          <div class="row" style="height:26px;">
-            <div class="col-md-4" style="line-height:26px;FFD200">{{character.pseudo}}</div>
-            <div class="col-md-8" style="text-align:right;">
-              <div class="form-group">
-                <form method="post" action="index.php?page=accueil" class="form-horizontal">
-                  <input type="hidden" name="action_form" value="search_player" />
-                  <div class="input-group" style="float:right;">
-                    <div class="col-md-8">
-                      <select name="player_search" class="form-control" style="padding:2px 12px; height:auto;">
-                        {{#guild_characters}}
-                          <option value="{{pseudo}}">{{pseudo}}</option>
-                        {{/guild_characters}}
-                      </select>
-                    </div>
-                    <button class="btn btn-success col-md-4" type="submit" style="padding:2px 12px;">$Home.Profile.Consult;</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+          {{character.pseudo}}
+          <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voir un autre profil <b class="caret"> </b></a>
+            <ul class="dropdown-menu" role="menu">
+              {{#guild_characters}}
+                <li><a href="javascript:void(0);">{{pseudo}}</a></li>
+              {{/guild_characters}}
+            </ul>
           </div>
         </div>
         <div class="panel-body">
@@ -35,10 +24,10 @@
             </div>
           </div>
           <div class="row nomargin">
-            <div class="col-md-6 nopadding">
-              <img src="http://eu.battle.net/static-render/eu/marecage-de-zangar/142/90253710-inset.jpg" class="img-rounded" />
+            <div class="col-lg-6 col-md-12 nopadding">
+              <img src="http://eu.battle.net/static-render/eu/marecage-de-zangar/142/90253710-inset.jpg" class="img-rounded main_profil_img" width="90%" />
             </div>
-            <div class="col-md-6 nopadding">
+            <div class="col-lg-6 col-md-12 nopadding">
               <table class="table table-striped table-condensed">
                 <tr>
                   <td>
