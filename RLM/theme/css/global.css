@@ -152,3 +152,10 @@ body {
 .control-label {
     color: #fff;
 }
+
+.main_profil_img{
+  width:90%;
+  max-width: 230px;
+  display: block;
+  margin: 0px auto 10px;
+}
