@@ -20,6 +20,9 @@ while ($row = $res->fetch_assoc()) {
       'success' => array(
         'message' => 'Identification réussi'
       ),
+      'error_case' => array(
+        'message' => "Une erreur est survenue lors de l'identification, contacter un administrateur"
+      ),
       'user_datas' => $row
     ));
     $founded = true;

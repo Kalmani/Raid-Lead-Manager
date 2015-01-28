@@ -58,11 +58,9 @@ var RaidLeadManager = new Class ({
       }
     }.bind(this));
     this.navigation = navigation;
-    var dom = this.render('navbar', {'navigation' : this.navigation}),
-        navbar = document.getElementById('navbar').empty(),
+    var dom_nav = this.render('navbar', {'navigation' : this.navigation}),
         that = this;
-    dom.inject(navbar);
-
+    dom_nav.inject(document.getElementById('navbar').empty());
     $('.nav_link').click(function() {
       that.SCS.switchRubric(RaidLeadManager[this.get('id')]);
     });
@@ -115,11 +113,8 @@ var RaidLeadManager = new Class ({
           'guild_name' : 'Larmes Nébuleuses',
           'server' : 'Dalaran'
         },
-        dom = this.render('global_main', context).inject(document.body),
-        character = false;
-    // Login controller here
-    // charge character data
-    if (character) {
+        dom = this.render('global_main', context).inject(document.body);
+    if (this.sess.user) {
       this.make_nav();
       this.SCS.switchRubric('HOME');
     } else {

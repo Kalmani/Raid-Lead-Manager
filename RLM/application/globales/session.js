@@ -4,6 +4,16 @@ var Session = new Class ({
 
   initialize : function(app) {
     this.app = app;
+    this.user = JSON.parse(Cookie.read('RLM_user')) || false;
+  },
+
+  login : function(datas) {
+    if (!datas)
+      return false;
+    var cookme = new Cookie('RLM_user', false);
+    cookme.write(JSON.stringify(datas));
+    this.user = datas;
+    return true;
   }
 
 });

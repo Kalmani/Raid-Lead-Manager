@@ -7,7 +7,7 @@
 					<div class="panel-heading">
 						$Home.Login.Title;
 					</div>
-					<div class="panel-body">
+					<div class="panel-body" id="login_panel">
 						<div class="input-group">
 							<span class="input-group-addon glyphicon glyphicon-user"> </span>
 							<input type="text" id="identifiant" name="identifiant_rlm" class="form-control" placeholder="$Home.Login.Input_value;" />

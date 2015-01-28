@@ -24,7 +24,7 @@ var HomeScreen = new Class ({
         zone = this.SCS.switchPanel('login_tpl', dom);
 
     zone.getElementById('login_try').addEvent('click', function() {
-      this.app.loading(document.id('main_container'));
+      this.app.loading(document.id('login_panel'));
       var pseudo = document.id('identifiant').value,
           pass = document.id('password').value;
       this.try_login(pseudo, pass);
@@ -45,11 +45,17 @@ var HomeScreen = new Class ({
   callback_login : function(response) {
     var response = JSON.parse(response);
     if (response.error) {
-      this.app.alertMessage('error', response.error, document.id('main_container'));
+      this.app.alertMessage('error', response.error, document.id('login_panel'));
     } else if (response.warning) {
-      this.app.alertMessage('warning', response.warning, document.id('main_container'));
+      this.app.alertMessage('warning', response.warning, document.id('login_panel'));
     } else if (response.success) {
-      this.app.alertMessage('success', response.success, document.id('main_container'));
+      if (this.app.sess.login(response.user_datas)) {
+        this.app.alertMessage('success', response.success, document.id('login_panel'));
+        this.app.make_nav();
+        this.SCS.switchRubric('HOME');
+      } else {
+        this.app.alertMessage('error', response.error_case, document.id('login_panel'));
+      }
     }
   },
 
@@ -100,7 +106,6 @@ var HomeScreen = new Class ({
       var id = Object.keys(this.panels_list[i])[0],
           datas = this.panels_list[i][id],
           dom = document.id(datas.id);
-      console.log(this.context_list[i]);
       this.SCS.context = this.context_list[i];
       this.SCS.switchPanel(id, dom, datas.animate);
     }
