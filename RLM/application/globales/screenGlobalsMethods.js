@@ -8,6 +8,7 @@ var ScreenGlobalsMethods = new Class ({
     this.app = app;
     this.is_active();
     this.get_nav_component();
+    this.get_panels();
   },
 
   is_active : function() {
@@ -47,6 +48,16 @@ var ScreenGlobalsMethods = new Class ({
       $('#' + this.ID).addClass('active');
     }
   },
+
+  get_panels : function() {
+    // take panels from config
+    this.panels_list = this.app.config.panels_list[this.ID];
+  },
+
+
+
+
+
 
   items_list : function() {
     //expected output
