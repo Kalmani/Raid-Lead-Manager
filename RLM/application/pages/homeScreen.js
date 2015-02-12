@@ -4,17 +4,6 @@ var HomeScreen = new Class ({
 
   Binds : ['show', 'callback_login'],
 
-  panels_list : [
-    {'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'namespace' : 'character', 'action' : 'show_profile'}},
-    {'missing_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn'}},
-    {'updates_panel' : {'id' : 'profile_missing_panel', 'animate' : 'flash', 'namespace' : 'base', 'action' : 'show_last_notes'}},
-    {'items_list_panel' : {'id' : 'stuff_panel', 'animate' : 'fadeIn'}}
-  ],
-  initial_zones : [
-    'profile_missing_panel',
-    'stuff_panel'
-  ],
-
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
