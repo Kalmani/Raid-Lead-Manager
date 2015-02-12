@@ -1,14 +1,20 @@
 {
-   "panels_list" : {
-	"HOME" : {
-    	    "profile_missing_panel" : [
-        	{"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
-                {"id" : "missing_panel",  "animate" : "fadeIn"},
-                {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
-            ],
-            "items_list_panel" : [
-                {"id" : "stuff_panel", "animate" : "fadeIn"}
-            ]
-       }
-   }
+  "panels" : {
+    "HOME" : [
+      {
+        "settings" : {"cols" : 1},
+        "list" : [
+          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel",  "animate" : "fadeIn"},
+          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+        ]
+      },
+      {
+        "settings" : {"cols" : 2},
+        "list" : [
+          {"id" : "stuff_panel", "animate" : "fadeIn"}
+        ]
+      }
+    ]
+  }
 }

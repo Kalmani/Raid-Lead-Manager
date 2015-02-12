@@ -1,5 +1,7 @@
 var ScreenGlobalsMethods = new Class ({
 
+  Binds : ['build_panel'],
+
   active : false,
   link : false,
   subs : false,
@@ -8,11 +10,9 @@ var ScreenGlobalsMethods = new Class ({
     this.app = app;
     this.is_active();
     this.get_nav_component();
-    this.get_panels();
   },
 
   is_active : function() {
-    // tu as ce dont tu as besoin ici : this.ID / this.data
     this.active = true;
   },
 
@@ -40,6 +40,9 @@ var ScreenGlobalsMethods = new Class ({
   },
 
   show : function(args) {
+    this.container = document.id('main_container');
+
+    this.get_panels();
     this.app.current_screen = this.ID;
     $('.nav_link, .nav_subs').removeClass('active');
     if (this.parentID) {
@@ -51,13 +54,39 @@ var ScreenGlobalsMethods = new Class ({
 
   get_panels : function() {
     // take panels from config
-    this.panels_list = this.app.config.panels_list[this.ID];
+    this.panels_list = this.app.config.panels[this.ID];
+    Array.each(this.panels_list, function(datas, key_c) {
+      this.current_col = key_c;
+      this.build_column(datas.settings.cols, key_c);
+      Array.each(datas.list, this.build_panel);
+    }.bind(this));
   },
 
+  build_column : function(cols, id) {
+    var col_w = 4 * cols,
+        column = new Element('div', {'class' : 'col-md-' + col_w, 'id' : 'column_' + id});
+    column.inject(this.container);
+  },
 
+  build_panel : function(datas, key) {
+    var cell = new Element('div', {'id' : 'cell_' + datas.id});
+    cell.inject(document.id('column_' + this.current_col));
 
-
-
+    if (datas.namespace) {
+      var options = {
+        'success' : function(response) {
+          this.SCS.context = JSON.parse(response);
+          this.SCS.switchPanel(datas.id, cell, datas.animate);
+        }.bind(this)
+      },
+      params = {
+      };
+      this.app.ask_server(datas.namespace, datas.action, params, options);
+    } else {
+      this.SCS.context = {};
+      this.SCS.switchPanel(datas.id, cell, datas.animate);
+    }
+  },
 
   items_list : function() {
     //expected output

@@ -2,7 +2,7 @@ var HomeScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
 
-  Binds : ['show', 'callback_login', 'inject_home_panels'],
+  Binds : ['show', 'callback_login'],
 
   panels_list : [
     {'profile_panel' : {'id' : 'profile_missing_panel', 'animate' : 'fadeIn', 'namespace' : 'character', 'action' : 'show_profile'}},
@@ -65,57 +65,6 @@ var HomeScreen = new Class ({
 
   show : function(args) {
     this.parent(args);
-    var dom = document.getElementById('main_container');
-    this.SCS.switchScreen('home_main', dom);
-    this.context_list = new Array();
-    var panels = this.panels_list.clone();
-    //fix this later (use panel list)
-    Array.each(this.initial_zones, function(zone) {
-      document.id(zone).empty();
-    });
-    this.build_home_panel(panels);
-    this.app.addEvent('panels_ready', this.inject_home_panels);
-  },
-
-  //j'aime pas
-  build_home_panel : function(panels_list) {
-    var panel = panels_list.shift(),
-        id = Object.keys(panel)[0],
-        datas = panel[id];
-    if (datas.namespace) {
-      var options = {
-        'success' : function(response) {
-          var context = JSON.parse(response);
-          this.context_list[this.context_list.length] = context;
-          if (panels_list.length > 0) {
-            this.build_home_panel(panels_list);
-          } else {
-            this.app.fireEvent('panels_ready');
-          }
-        }.bind(this)
-      },
-      params = {
-      };
-      this.app.ask_server(datas.namespace, datas.action, params, options);
-    } else {
-      this.context_list[this.context_list.length] = {};
-      if (panels_list.length > 0) {
-        this.build_home_panel(panels_list);
-      } else {
-        this.app.fireEvent('panels_ready');
-      }
-    }
-  },
-
-  inject_home_panels : function() {
-    this.app.removeEvent('panels_ready', this.inject_home_panels);
-    for (var i = 0; i < this.panels_list.length; i++) {
-      var id = Object.keys(this.panels_list[i])[0],
-          datas = this.panels_list[i][id],
-          dom = document.id(datas.id);
-      this.SCS.context = this.context_list[i];
-      this.SCS.switchPanel(id, dom, datas.animate);
-    }
   },
 
   items_list : function() {
