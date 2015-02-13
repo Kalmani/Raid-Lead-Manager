@@ -31,6 +31,51 @@
           {"id" : "settings_panels", "animate" : "fadeIn"}
         ]
       }
+    ],
+    "WISH_BIS" : [
+      {
+        "settings" : {"cols" : 1},
+        "list" : [
+          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel",  "animate" : "fadeIn"},
+          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+        ]
+      },
+      {
+        "settings" : {"cols" : 2},
+        "list" : [
+        ]
+      }
+    ],
+    "WISH_PROV" : [
+      {
+        "settings" : {"cols" : 1},
+        "list" : [
+          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel",  "animate" : "fadeIn"},
+          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+        ]
+      },
+      {
+        "settings" : {"cols" : 2},
+        "list" : [
+        ]
+      }
+    ],
+    "WISH_SPE2" : [
+      {
+        "settings" : {"cols" : 1},
+        "list" : [
+          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel",  "animate" : "fadeIn"},
+          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+        ]
+      },
+      {
+        "settings" : {"cols" : 2},
+        "list" : [
+        ]
+      }
     ]
   }
 }
