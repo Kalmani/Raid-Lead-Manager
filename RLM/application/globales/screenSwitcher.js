@@ -41,16 +41,10 @@ var ScreenSwitcher = new Class ({
   },
 
   switchRubric : function(screen_id, args) {
-    this.reset();
     var screen = this.screens_list[screen_id];
     if(!screen)
       return;
     return screen.show(args);
   },
-
-  reset : function() {
-    var main_container = document.getElementById('main_container');
-    main_container.empty();
-  }
 
 });

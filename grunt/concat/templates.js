@@ -10,7 +10,7 @@ var toArray = function(nodelist) {
 module.exports = function(grunt) {
   grunt.config('concat.templates', {
     dest:'<%= deploy_dir %>/templates.xml',
-    src: ['RLM/theme/tpl/*.xml', 'RLM/theme/tpl/**/*.xml', 'RLM/theme/tpl/**/**/*.xml'],
+    src: ['RLM/theme/tpl/*.xml', 'RLM/theme/tpl/**/*.xml'],
     options: {
       separator: '',
       banner:"<?xml version='1.0' encoding='UTF-8'?>\n<mustache>",

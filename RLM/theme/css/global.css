@@ -159,3 +159,32 @@ body {
   display: block;
   margin: 0px auto 10px;
 }
+
+.panel-warning > .panel-heading {
+  background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);
+  background-repeat: repeat-x;
+}
+
+table tr td.equipement_icon img {
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+  height: 44px;
+  width: 44px;
+}
+
+span.color-1 {
+  color: #ffffff;
+}
+span.color-2 {
+  color: #1eff00;
+}
+span.color-3 {
+  color: #0081ff;
+}
+span.color-4 {
+  color: #c600ff;
+}
+span.color-5 {
+  color: #ff8000;
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mustache>
+  <script id="settings_panels" type="text/template">
+    <div class="col-md-8">
+      <div class="col-md-12 nopadding">
+        <div class="panel panel-default">
+          <div class="panel-heading">Identifiants</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <input type="hidden" name="action_form" value="change_log" />
+              <label class="control-label col-sm-3" for="identifiant">Identifiant:</label>
+              <div class="col-sm-9">
+                <input type="text" id="identifiant" name="identifiant" class="form-control" value="Kalmani" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="old_password" class="control-label col-sm-3">Ancien mot de passe :</label>
+              <div class="col-sm-9">
+                <input type="password" id="old_password" name="old_password" class="form-control" value="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="new_password" class="control-label col-sm-3">Nouveau mot de passe :</label>
+              <div class="col-sm-9">
+                <input type="password" id="new_password" name="new_password" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="new_password_conf" class="control-label col-sm-3">Confirmer :</label>
+              <div class="col-sm-9">
+                <input type="password" id="new_password_conf" name="new_password_conf" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-3"> </label>
+              <div class="col-sm-9">
+                <button type="submit" class="btn btn-default">Valider</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 nopadding">
+        <div class="panel panel-default">
+          <div class="panel-heading">Autres paramètres</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <input type="hidden" name="action_form" value="change_mail" />
+              <label for="email" class="control-label col-sm-3">Votre adresse Email :</label>
+              <div class="col-sm-9">
+                <input type="text" id="email" name="email" class="form-control" value="kolosowski.florent@gmail.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-3"> </label>
+              <div class="col-sm-9">
+                <button type="submit" class="btn btn-default">Valider</button>
+              </div>
+            </div>
+            <div class="jumbotron" style="text-align:center; background-color:transparent;">
+              <input type="hidden" name="action_form" value="refresh_perso" />
+              <input type="submit" class="btn btn-primary btn-large" value="Recharger votre personnage & votre wish list" />
+              <input type="hidden" name="action_form" value="refrech_perso_only" />
+              <input type="submit" class="btn btn-primary btn-large" value="Rafraichir votre personnage" />
+              <input type="hidden" name="action_form" value="delete_perso" />
+              <input type="submit" class="btn btn-primary btn-large" value="Supprimer votre personnage" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+</mustache>
