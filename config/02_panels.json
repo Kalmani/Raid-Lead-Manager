@@ -2,11 +2,11 @@
   "panels" : {
     "HOME" : [
       {
-        "settings" : {"cols" : 1},
+        "settings" : {"cols" : 1, "static" : true},
         "list" : [
-          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
-          {"id" : "missing_panel",  "animate" : "fadeIn"},
-          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+          {"id" : "profile_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel", "animate" : "fadeIn"},
+          {"id" : "updates_panel", "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
         ]
       },
       {
@@ -18,11 +18,11 @@
     ],
     "SETTINGS" : [
       {
-        "settings" : {"cols" : 1},
+        "settings" : {"cols" : 1, "static" : true},
         "list" : [
-          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
-          {"id" : "missing_panel",  "animate" : "fadeIn"},
-          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+          {"id" : "profile_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel", "animate" : "fadeIn"},
+          {"id" : "updates_panel", "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
         ]
       },
       {
@@ -34,11 +34,11 @@
     ],
     "WISH_BIS" : [
       {
-        "settings" : {"cols" : 1},
+        "settings" : {"cols" : 1, "static" : true},
         "list" : [
-          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
-          {"id" : "missing_panel",  "animate" : "fadeIn"},
-          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+          {"id" : "profile_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel", "animate" : "fadeIn"},
+          {"id" : "updates_panel", "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
         ]
       },
       {
@@ -49,11 +49,11 @@
     ],
     "WISH_PROV" : [
       {
-        "settings" : {"cols" : 1},
+        "settings" : {"cols" : 1, "static" : true},
         "list" : [
-          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
-          {"id" : "missing_panel",  "animate" : "fadeIn"},
-          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+          {"id" : "profile_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel", "animate" : "fadeIn"},
+          {"id" : "updates_panel", "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
         ]
       },
       {
@@ -64,11 +64,11 @@
     ],
     "WISH_SPE2" : [
       {
-        "settings" : {"cols" : 1},
+        "settings" : {"cols" : 1, "static" : true},
         "list" : [
-          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
-          {"id" : "missing_panel",  "animate" : "fadeIn"},
-          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+          {"id" : "profile_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel", "animate" : "fadeIn"},
+          {"id" : "updates_panel", "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
         ]
       },
       {

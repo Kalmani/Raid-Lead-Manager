@@ -41,7 +41,6 @@ var ScreenGlobalsMethods = new Class ({
 
   show : function(args) {
     this.container = document.id('main_container');
-
     this.get_panels();
     this.app.current_screen = this.ID;
     $('.nav_link, .nav_subs').removeClass('active');
@@ -57,18 +56,26 @@ var ScreenGlobalsMethods = new Class ({
     this.panels_list = this.app.config.panels[this.ID];
     Array.each(this.panels_list, function(datas, key_c) {
       this.current_col = key_c;
-      this.build_column(datas.settings.cols, key_c);
+      this.build_column(datas.settings, key_c);
       Array.each(datas.list, this.build_panel);
     }.bind(this));
   },
 
-  build_column : function(cols, id) {
-    var col_w = 4 * cols,
+  build_column : function(settings, id) {
+    if (settings.static && this.container.getElementById('column_' + id))
+      return;
+
+    if (document.id('column_' + id))
+      document.id('column_' + id).dispose();
+    var col_w = 4 * settings.cols,
         column = new Element('div', {'class' : 'col-md-' + col_w, 'id' : 'column_' + id});
     column.inject(this.container);
   },
 
   build_panel : function(datas, key) {
+    // means static
+    if (document.id('cell_' + datas.id))
+      return;
     var cell = new Element('div', {'id' : 'cell_' + datas.id});
     cell.inject(document.id('column_' + this.current_col));
 
