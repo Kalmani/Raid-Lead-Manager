@@ -14,6 +14,10 @@ var Session = new Class ({
     cookme.write(JSON.stringify(datas));
     this.user = datas;
     return true;
+  },
+
+  disconnect : function() {
+    Cookie.dispose('RLM_user');
   }
 
 });
