@@ -12,7 +12,7 @@
       {
         "settings" : {"cols" : 2},
         "list" : [
-          {"id" : "stuff_panel", "animate" : "fadeIn"}
+          {"id" : "items_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment"}
         ]
       }
     ]
