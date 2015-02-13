@@ -15,6 +15,22 @@
           {"id" : "items_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment"}
         ]
       }
+    ],
+    "SETTINGS" : [
+      {
+        "settings" : {"cols" : 1},
+        "list" : [
+          {"id" : "profile_panel",  "animate" : "fadeIn", "namespace" : "character", "action" : "show_profile"},
+          {"id" : "missing_panel",  "animate" : "fadeIn"},
+          {"id" : "updates_panel",  "animate" : "flash", "namespace" : "base", "action" : "show_last_notes"}
+        ]
+      },
+      {
+        "settings" : {"cols" : 2},
+        "list" : [
+          {"id" : "settings_panels", "animate" : "fadeIn"}
+        ]
+      }
     ]
   }
 }
