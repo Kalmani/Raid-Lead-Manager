@@ -10,12 +10,17 @@ var WishlistScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args, this.dom_ready);
+    console.log(this.ID);
+    this.parent(args);
+    this.app.addEvent('asyn_panel_ready', function(panel_id) {
+      if (panel_id == 'wish_list_panel') {
+        this.bind_btns();
+      }
+    }.bind(this));
   },
 
-  dom_ready : function() {
-    console.log(this.ID);
-    console.log(document.id('cell_wish_list_panel'));
+  bind_btns : function() {
+    console.log(document.getElements('.refresh_item'));
   },
 
 });
