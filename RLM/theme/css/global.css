@@ -188,3 +188,8 @@ span.color-4 {
 span.color-5 {
   color: #ff8000;
 }
+
+.jumbotron input {
+    margin-bottom: 10px;
+    width: 100%;
+}

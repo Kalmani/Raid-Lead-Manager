@@ -44,6 +44,7 @@ var HomeScreen = new Class ({
     } else if (response.success) {
       if (this.app.sess.login(response.user_datas)) {
         this.app.alertMessage('success', response.success, document.id('login_panel'));
+        document.id('main_container').empty();
         this.app.make_nav();
         this.SCS.switchRubric('HOME');
       } else {
