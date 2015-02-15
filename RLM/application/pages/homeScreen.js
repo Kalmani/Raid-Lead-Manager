@@ -54,7 +54,7 @@ var HomeScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    this.parent(args, this.dom_ready);
   },
 
   items_list : function() {
@@ -73,6 +73,10 @@ var HomeScreen = new Class ({
       item++;
     });
     return context;
+  },
+
+  dom_ready : function() {
+
   },
 
 });

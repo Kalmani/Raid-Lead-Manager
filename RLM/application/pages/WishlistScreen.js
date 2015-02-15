@@ -10,8 +10,12 @@ var WishlistScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    this.parent(args, this.dom_ready);
+  },
+
+  dom_ready : function() {
     console.log(this.ID);
+    console.log(document.id('cell_wish_list_panel'));
   },
 
 });

@@ -39,7 +39,7 @@ var ScreenGlobalsMethods = new Class ({
     }
   },
 
-  show : function(args) {
+  show : function(args, callback) {
     this.container = document.id('main_container');
     this.get_panels();
     this.app.current_screen = this.ID;
@@ -49,6 +49,7 @@ var ScreenGlobalsMethods = new Class ({
     } else {
       $('#' + this.ID).addClass('active');
     }
+    callback();
   },
 
   get_panels : function() {

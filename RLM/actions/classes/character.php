@@ -91,6 +91,7 @@ class Character_datas {
       $item_datas = array(
         'name' => $item['name'],
         'img_url' => "http://eu.media.blizzard.com/wow/icons/56/".$item['icon'].".jpg",
+        'slot' => $slot,
         'item_caracs' => array(
           'item' => $item['id'],
           'domain' => 'fr',

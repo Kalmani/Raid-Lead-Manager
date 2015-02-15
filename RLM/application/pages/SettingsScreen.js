@@ -10,7 +10,11 @@ var SettingsScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    this.parent(args, this.dom_ready);
+  },
+
+  dom_ready : function() {
+
   },
 
 });

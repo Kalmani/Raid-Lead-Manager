@@ -6,7 +6,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
-            <table class="table table-striped table-condensed">
+            <table class="table table-striped table-condensed" id="items_list">
               <thead>
                 <tr class="head_list">
                   <td>
@@ -106,7 +106,8 @@
                     <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
                   </td>
                   <td style="padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1182"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1182"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
+                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-plus add_item" id="add_{{slot}}" style="font-size:30px; line-height:57px;"></span></a>
+                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-refresh refresh_item" id="refresh_{{slot}}" style="font-size:30px; line-height:57px;"></span></a>
                   </td>
                 </tr>
                 {{/has_item}}
