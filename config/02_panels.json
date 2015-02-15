@@ -44,7 +44,7 @@
       {
         "settings" : {"cols" : 2},
         "list" : [
-	  {"id" : "wish_list_panel", "animate" : "fadeIn"}
+	  {"id" : "wish_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment_wish"}
         ]
       }
     ],

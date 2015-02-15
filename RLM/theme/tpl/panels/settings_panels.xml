@@ -34,7 +34,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-4"> </label>
                 <div class="col-sm-8">
-                  <button type="submit" class="btn btn-default">Valider</button>
+                  <span class="btn btn-success">Valider</span>
                 </div>
               </div>
             </div>
@@ -54,16 +54,13 @@
               <div class="form-group">
                 <label class="control-label col-sm-4"> </label>
                 <div class="col-sm-8">
-                  <button type="submit" class="btn btn-default">Valider</button>
+                  <span class="btn btn-success">Valider</span>
                 </div>
               </div>
               <div class="jumbotron" style="text-align:center; background-color:transparent;">
-                <input type="hidden" name="action_form" value="refresh_perso" />
-                <input type="submit" class="btn btn-primary btn-large" value="Recharger votre personnage & votre wish list" />
-                <input type="hidden" name="action_form" value="refrech_perso_only" />
-                <input type="submit" class="btn btn-primary btn-large" value="Rafraichir votre personnage" />
-                <input type="hidden" name="action_form" value="delete_perso" />
-                <input type="submit" class="btn btn-primary btn-large" value="Supprimer votre personnage" />
+                <span class="btn btn-primary btn-large">Recharger votre personnage & votre wish list</span>
+                <span class="btn btn-primary btn-large">Rafraichir votre personnage</span>
+                <span class="btn btn-primary btn-large">Supprimer votre personnage</span>
               </div>
             </div>
           </div>

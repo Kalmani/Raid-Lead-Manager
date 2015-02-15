@@ -77,8 +77,8 @@ var ScreenGlobalsMethods = new Class ({
     if (document.id('cell_' + datas.id))
       return;
     var cell = new Element('div', {'id' : 'cell_' + datas.id});
+    this.SCS.switchPanel('alert_loading', cell, datas.animate);
     cell.inject(document.id('column_' + this.current_col));
-
     if (datas.namespace) {
       var options = {
         'success' : function(response) {

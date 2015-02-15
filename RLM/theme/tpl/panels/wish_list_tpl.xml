@@ -15,34 +15,77 @@
                   <td>
                     Equipement souhaité
                   </td>
-                  <td>
+                  <td align="center">
                     Etat
                   </td>
-                  <td>
+                  <td align="center">
                     Actions
                   </td>
                 </tr>
               </thead>
               <tbody>
+              {{#equipment}}
+                {{#no_item}}
                 <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
+                  <td align="left" class="general" width="35%">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
                         <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+                          <img src="theme/rsc/Warning.png" />
                           <span class="frame frame_4"> </span>
                         </td>
                         <td align="left" width="245">
-                          <span class="color-4">Chapel d'harmonie céleste</span><br />
+                          <span class="color-4">Non définie</span><br />
+                        </td>
+                      </tr>
+                    </table>
+                    <a href="#" rel="item=99332&domain=fr&gems=95347:76694&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
+                  </td>
+                  <td align="left" class="general" width="35%">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                          <img src=" theme/rsc/Warning.png" />
+                          <span class="frame frame_1"> </span>
+                        </td>
+                        <td align="left" width="245">
+                          <span class="color-1">Non définie</span><br />
                           <span style="color:#FFF;">
-                            566<br />
+                            0<br />
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
+                  </td>
+                  <td align="center">
+                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
+                  </td>
+                  <td style="padding:0px 5px;" align="center">
+                    <a href="index.php?page=wish&action=change&id=1182"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1182"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
+                  </td>
+                </tr>
+                {{/no_item}}
+              {{#has_item}}
+                <tr>
+                  <td align="left" class="general" width="35%">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                          <img src="{{img_url}}" />
+                          <span class="frame frame_{{scarcity}}"> </span>
+                        </td>
+                        <td align="left" width="245">
+                          <span class="color-4">{{name}}</span><br />
+                          <span style="color:#FFF;">
+                            {{level}}<br />
                           </span>
                         </td>
                       </tr>
                     </table>
                     <a href="#" rel="item=99332&domain=fr&gems=95347:76694&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
                   </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
+                  <td align="left" class="general" width="35%">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
                         <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
@@ -59,643 +102,15 @@
                     </table>
                     <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
                   </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
+                  <td align="center">
                     <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
                   </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
+                  <td style="padding:0px 5px;" align="center">
                     <a href="index.php?page=wish&action=change&id=1182"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1182"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
                   </td>
                 </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_misc_necklace_mop5.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Collier de la lumière faiblissante</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=104477&domain=fr&gems=&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1183"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1183"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01shoulder.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Drape-épaules d'harmonie céleste</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99334&domain=fr&gems=76694:76694&ench=4915" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1184"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1184"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_cape_pandaria_dragoncaster_d_02.jpg" />
-                          <span class="frame frame_5"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-5">Xing-Ho, Souffle de Yu'lon</span><br />
-                          <span style="color:#FFF;">
-                            608<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=102246&domain=fr&gems=76694&ench=4423" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1185"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1185"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01chest.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Haubert d'harmonie céleste</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99344&domain=fr&gems=76694:76694:76694&ench=4419" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1186"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1186"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01bracer.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Garde-poignets de cavernier</span><br />
-                          <span style="color:#FFF;">
-                            572<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=105524&domain=fr&gems=&ench=4414" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1187"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1187"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01glove.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Gants d'harmonie céleste</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99345&domain=fr&gems=76694:76694&ench=4431" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1188"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1188"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01belt.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Ceinture en anneaux chitineux</span><br />
-                          <span style="color:#FFF;">
-                            553<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=103941&domain=fr&gems=76694:76668:76694&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1189"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1189"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01pant.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Jambières d'harmonie céleste</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99333&domain=fr&gems=76672:76672&ench=4825" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1190"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1190"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01boot.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Solerets de profanation</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=104450&domain=fr&gems=76694&ench=4426" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1191"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1191"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_misc_ring_mop17.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Chevalière de la coupe au laser</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=104524&domain=fr&gems=76668&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1192"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1192"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/.jpg" />
-                          <span class="frame frame_0"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-0"></span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=112852&domain=fr&gems=76694&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1193"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1193"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/.jpg" />
-                          <span class="frame frame_0"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-0"></span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=112768&domain=fr&gems=&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1194"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1194"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_jewelry_orgrimmarraid_trinket_07.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Liens purifiés d'Immerseus</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=104426&domain=fr&gems=&ench=" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1195"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1195"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_hammer_1h_pvphorde_a_01red_upres.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Masse de guerre de Hurlenfer</span><br />
-                          <span style="color:#FFF;">
-                            574<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=105688&domain=fr&gems=76694:76694&ench=4442" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1196"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1196"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_shield_orgrimmarraid_d_02.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-4">Barrière énigmatique de Norushen</span><br />
-                          <span style="color:#FFF;">
-                            566<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=104470&domain=fr&gems=76694&ench=4434" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="left" class="general" style="border:solid 1px #3A2718;" width="35%">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src=" theme/rsc/Warning.png" />
-                          <span class="frame frame_1"> </span>
-                        </td>
-                        <td align="left" width="245">
-                          <span class="color-1">Non définie</span><br />
-                          <span style="color:#FFF;">
-                            0<br />
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=0&domain=fr" style="position:absolute; width:35%; height:62px; margin-top:-50px; margin-left:-5px;"> </a>
-                  </td>
-                  <td align="center" style="border:solid 1px #3A2718;">
-                    <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
-                  </td>
-                  <td style="border:solid 1px #3A2718; padding:0px 5px;" align="center">
-                    <a href="index.php?page=wish&action=change&id=1197"><span class="glyphicon glyphicon-plus" style="font-size:30px; line-height:57px;"></span></a> <a href="index.php?page=wish&action=refresh&id=1197"><span class="glyphicon glyphicon-refresh" style="font-size:30px; line-height:57px;"></span></a>
-                  </td>
-                </tr>
+                {{/has_item}}
+              {{/equipment}}
               </tbody>
             </table>
           </div>

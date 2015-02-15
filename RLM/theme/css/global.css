@@ -189,7 +189,13 @@ span.color-5 {
   color: #ff8000;
 }
 
-.jumbotron input {
+.jumbotron span {
     margin-bottom: 10px;
     width: 100%;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

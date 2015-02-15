@@ -23,7 +23,7 @@ var ScreenSwitcher = new Class ({
     renderedPanel = this.app.render(tpl, this.context);
     if (animate)
       $(renderedPanel).children().addClass('animated ' + animate);
-    renderedPanel.inject(dom);
+    renderedPanel.inject(dom.empty());
     return renderedPanel;
   },
 
