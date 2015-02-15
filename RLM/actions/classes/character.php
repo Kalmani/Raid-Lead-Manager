@@ -7,9 +7,13 @@ class Character_datas {
   var $action;
   var $params;
 
-  public function __construct($action, $armory) {
+  public function __construct($action, $armory, $params) {
     $this->action = $action;
     $this->armory = $armory;
+    $this->params = $params;
+
+    if (isset($this->params['nocache']))
+      $this->armory->useCache(FALSE);
 
     $this->armory->UTF8(true);
     $this->armory->setLocale('fr_FR'); //conf
@@ -25,6 +29,9 @@ class Character_datas {
         break;
       case 'show_equipment_wish' :
         echo json_encode($this->show_equipment_wish());
+        break;
+      case 'update_item' :
+        echo json_encode($this->update_item());
         break;
     }
   }
@@ -113,7 +120,7 @@ class Character_datas {
     return $context;
   }
 
-  function show_equipment_wish() {
+  private function show_equipment_wish() {
     $context = $this->show_equipment();
     $real_context = array('equipment' => array());
     foreach ($context['left'] as $equipment) {
@@ -124,8 +131,19 @@ class Character_datas {
     }
     return $real_context;
   }
-}
 
-$character = new Character_datas($action, $armory);
+  private function update_item() {
+    // need a clear cache here
+    $updated_item = $this->character->getItemSlot($this->params['slot']);
+    $return = array(
+      'img' => $updated_item['icon'],
+      'scarcity' => $updated_item['quality'],
+      'name' => $updated_item['name'],
+      'level' => $updated_item['itemLevel']);
+    return $return;
+
+  }
+}
+$character = new Character_datas($action, $armory, $params);
 
 ?>
