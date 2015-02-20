@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   var path = require("path");
-  var deploy_dir = 'RLM';
+      dev_mode   = (grunt.cli.tasks[0] != 'deploy'),
+      deploy_dir = dev_mode ? 'RLM' : 'server';
 
   grunt.initConfig({
     pkg: require('./package.json'),
@@ -19,5 +20,12 @@ module.exports = function(grunt) {
     'cssmin',
     'concat',
     'forge-config',
+  ]);
+
+  grunt.registerTask('deploy', [
+    'statics',
+    'cssmin',
+    'concat',
+    'forge-config'
   ]);
 };

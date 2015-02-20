@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
   grunt.config('copy.statics', {
     expand: true, 
-    cwd: 'www',
+    cwd: 'RLM',
     src: manifest.statics,
     dest: dest,
   });
