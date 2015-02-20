@@ -7,7 +7,19 @@ module.exports = function(grunt) {
     pkg: require('./package.json'),
     manifest : require('./manifest.json'),
     deploy_dir : grunt.option('deploy_dir') || deploy_dir,
-    absolute_root : path.resolve(__dirname)
+    absolute_root : path.resolve(__dirname),
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'server_ip',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: 'server/',
+        dest: '/path_to_install/',
+        exclusions: []
+      }
+    }
   });
 
   grunt.dev_mode = (grunt.config.get('manifest').dev_mode) ? true : false;
@@ -26,6 +38,8 @@ module.exports = function(grunt) {
     'statics',
     'cssmin',
     'concat',
-    'forge-config'
+    'forge-config',
+    'ftp-deploy'
   ]);
+  grunt.loadNpmTasks('grunt-ftp-deploy');
 };
