@@ -19,9 +19,8 @@ var ScreenEvents = new Class ({
         var screen_id = RaidLeadManager[app.current_screen],
             rubric = app.SCS.screens_list[screen_id],
             rubric_id = elem_id.split('_')[0];
-        console.log(app.current_screen, screen_id, rubric, rubric_id);
         if (ScreenEvents.actions[rubric_id])
-          ScreenEvents.actions[rubric_id].dispatch_action(app, elem_id, rubric);
+          ScreenEvents.actions[rubric_id].dispatch_action(el, app, elem_id, rubric);
       }
     }.bind(this), false);
   }

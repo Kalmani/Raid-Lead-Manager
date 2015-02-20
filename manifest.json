@@ -23,6 +23,7 @@
   "RLM/application/globales/ScreenEvents.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/globales/rubrics/home.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/globales/rubrics/settings.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/globales/rubrics/wishlist.js" : {"jscs" : true, "jshint" : true},
 
   "RLM/application/globales/screenGlobalsMethods.js" : {"jscs" : true, "jshint" : true},
 

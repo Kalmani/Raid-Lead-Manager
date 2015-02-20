@@ -1,7 +1,7 @@
 ScreenEvents.actions.home = {
   rub_name : 'home',
 
-  dispatch_action : function(app, id, rubric) {
+  dispatch_action : function(elem, app, id, rubric) {
     this.id = id.replace(this.rub_name + '_', '');
     this.rubric = rubric;
     this.app = app;

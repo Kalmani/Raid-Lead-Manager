@@ -106,8 +106,8 @@
                     <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
                   </td>
                   <td style="padding:0px 5px;" align="center">
-                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-plus add_item" id="add_{{slot}}" style="font-size:30px; line-height:57px;"></span></a>
-                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-refresh refresh_item" id="refresh_{{slot}}" style="font-size:30px; line-height:57px;"></span></a>
+                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-plus add_item" rel="{{slot}}" id="wishlist_add" style="font-size:30px; line-height:57px;"></span></a>
+                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-refresh refresh_item" rel="{{slot}}" id="wishlist_refresh" style="font-size:30px; line-height:57px;"></span></a>
                   </td>
                 </tr>
                 {{/has_item}}
