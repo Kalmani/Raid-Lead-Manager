@@ -1,9 +1,9 @@
 // instanciate all pages
 var RaidLeadManager = new Class ({
 
-  Implements : Events,
+  Extends : ScreenEvents,
 
-  // to bind some methods, use binds : ['method1, method2'],
+  Implements : Events,
 
   locales : {},
   templates  : {},
@@ -12,6 +12,7 @@ var RaidLeadManager = new Class ({
     console.log('initializing api');
     this.sess = new Session(this);
     this.SCS = new ScreenSwitcher(this);
+    this.parent(this);
   },
 
   init : function() {
@@ -118,6 +119,8 @@ var RaidLeadManager = new Class ({
       this.make_nav();
       this.SCS.switchRubric('HOME');
     } else {
+      // default value for login page
+      RaidLeadManager['HOME'] = 'HOME';
       this.SCS.register(new HomeScreen(this, 'HOME', this.config.rubrics.HOME));
       this.SCS.screens_list.HOME.show_login_panel();
     }
@@ -174,4 +177,5 @@ var RaidLeadManager = new Class ({
     var dom = this.render('alert_' + type, {'message' : error.message});
     dom.inject(zone, 'top');
   },
+
 });

@@ -39,6 +39,10 @@ var ScreenGlobalsMethods = new Class ({
     }
   },
 
+  show_login_panel : function() {
+    this.app.current_screen = this.ID;
+  },
+
   show : function(args) {
     this.container = document.id('main_container');
     this.get_panels();
