@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   var path = require("path");
-      dev_mode   = (grunt.cli.tasks[0] != 'deploy'),
+      dev_mode   = (grunt.cli.tasks[0] != 'distribute'),
       deploy_dir = dev_mode ? 'RLM' : 'server';
 
   grunt.initConfig({
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     'forge-config',
   ]);
 
-  grunt.registerTask('deploy', [
+  grunt.registerTask('distribute', [
     'statics',
     'cssmin',
     'concat',
