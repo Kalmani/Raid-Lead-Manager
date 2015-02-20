@@ -10,6 +10,9 @@ ScreenEvents.actions.wishlist = {
       case 'refresh' : 
         this.refresh_item();
         break;
+      default :
+        console.info('No bind on button ' + this.id);
+        break;
     }
 
   },

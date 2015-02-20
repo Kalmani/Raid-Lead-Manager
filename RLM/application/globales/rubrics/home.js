@@ -11,6 +11,9 @@ ScreenEvents.actions.home = {
       case 'login_try' : 
         this.login_try();
         break;
+      default :
+        console.info('No bind on button ' + this.id);
+        break;
     }
 
   },
