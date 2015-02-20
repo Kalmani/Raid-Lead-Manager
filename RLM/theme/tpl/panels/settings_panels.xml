@@ -34,7 +34,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-4"> </label>
                 <div class="col-sm-8">
-                  <span class="btn btn-success">Valider</span>
+                  <span class="btn btn-success" id="settings_btn_test">Valider</span>
                 </div>
               </div>
             </div>

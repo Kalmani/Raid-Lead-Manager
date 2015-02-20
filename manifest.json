@@ -19,6 +19,11 @@
 
   "RLM/application/globales/screenSwitcher.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/globales/session.js" : {"jscs" : true, "jshint" : true},
+
+  "RLM/application/globales/ScreenEvents.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/globales/rubrics/home.js" : {"jscs" : true, "jshint" : true},
+  "RLM/application/globales/rubrics/settings.js" : {"jscs" : true, "jshint" : true},
+
   "RLM/application/globales/screenGlobalsMethods.js" : {"jscs" : true, "jshint" : true},
 
   "RLM/application/pages/HomeScreen.js" : {"jscs" : true, "jshint" : true},

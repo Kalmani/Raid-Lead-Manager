@@ -18,7 +18,7 @@
 							<input type="password" id="password" name="password_rlm" class="form-control" placeholder="Mot de passe" />
 						</div>
 						<br />
-						<button type="submit" class="btn btn-success form-control" id="login_try">
+						<button type="submit" class="btn btn-success form-control" id="home_login_try">
 							 $Home.Login.Validate;
 						</button>
 					</div>
