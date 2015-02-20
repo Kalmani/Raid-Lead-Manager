@@ -119,6 +119,8 @@ var RaidLeadManager = new Class ({
       this.make_nav();
       this.SCS.switchRubric('HOME');
     } else {
+      // default value for login page
+      RaidLeadManager['HOME'] = 'HOME';
       this.SCS.register(new HomeScreen(this, 'HOME', this.config.rubrics.HOME));
       this.SCS.screens_list.HOME.show_login_panel();
     }

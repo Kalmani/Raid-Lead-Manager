@@ -1,39 +1,29 @@
 var ScreenEvents = new Class ({
 
-  Binds : ['dispatch'],
-
-  elem_id : null,
-  args : null,
-
   initialize : function(app) {
-    this.app = app;
+    var elem_id = null;
     document.addEvent('click', function(evt) {
       var el = evt.target;
-      if (el.get('id')) {
-        this.elem_id = el.get('id');
+      if (el.get && el.get('id')) {
+        elem_id = el.get('id');
       } else {
         while (el.parentNode) {
             el = el.parentNode;
-            if(el.get('id')) {
-              this.elem_id = el.get('id');
+            if(el.get && el.get('id')) {
+              elem_id = el.get('id');
               break;
             }
         }
       }
-      if (this.args && this.elem_id)
-        this.dispatch_rubrics();
-
+      if (elem_id) {
+        var screen_id = RaidLeadManager[app.current_screen],
+            rubric = app.SCS.screens_list[screen_id],
+            rubric_id = elem_id.split('_')[0];
+        console.log(app.current_screen, screen_id, rubric, rubric_id);
+        if (ScreenEvents.actions[rubric_id])
+          ScreenEvents.actions[rubric_id].dispatch_action(app, elem_id, rubric);
+      }
     }.bind(this), false);
-  },
-
-  dispatch : function(args) {
-    this.args = args;
-  },
-
-  dispatch_rubrics : function() {
-    var rubric = this.elem_id.split('_')[0];
-    if (ScreenEvents.actions[rubric])
-      ScreenEvents.actions[rubric].dispatch_action(this.app, this.elem_id, this.args);
   }
 
 });

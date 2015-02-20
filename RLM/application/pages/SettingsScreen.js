@@ -11,7 +11,6 @@ var SettingsScreen = new Class ({
 
   show : function(args) {
     this.parent(args);
-    document.id('settings_btn_test').addEvent('click', this.app.dispatch.pass(this));
   },
 
 });
