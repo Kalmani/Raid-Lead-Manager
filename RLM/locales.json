@@ -1,4 +1,4 @@
-{
+﻿{
   "fr-fr" : {
     "Alert.Warning" : "Attention",
     "Alert.Error" : "Erreur",
@@ -19,7 +19,6 @@
     "Home.Login.Title" : "Identification",
     "Home.Login.Input_value" : "Identifiant",
     "Home.Login.Validate" : "Valider",
-
     "Home.Profile.Consult" : "Consulter",
     "Home.Profile.Ilvl" : "Niveau d'objet",
     "Home.Profile.Wish_ilvl" : "Niveau souhaité",
@@ -27,12 +26,22 @@
     "Home.Profile.Loots_by_raid" : "Loots / raid",
     "Home.Profile.Profession" : "Metiers",
     "Home.Profile.Last_loots" : "Derniers loots obtenus",
-
     "Home.Missing.Title" : "Un objet manquant",
     "Home.Missing.Object_name" : "Nom de l'objet",
     "Home.Missing.Claim" : "Réclamer",
+    "Home.Updates.Updates_notes" : "Notes de Mises à Jour",
 
-    "Home.Updates.Updates_notes" : "Notes de Mises à Jour"
+    "Settings.Titles.Identifiants" : "Identifiants",
+    "Settings.Titles.Identifiant" : "Identifiant",
+    "Settings.Titles.OldPass" : "Ancien mot de passe",
+    "Settings.Titles.NewPass" : "Nouveau mot de passe",
+    "Settings.Titles.ConfirmPass" : "Confirmer",
+    "Settings.Titles.Update" : "Mêtre à jour",
+    "Settings.Titles.OtherSettings" : "Autres paramètres",
+    "Settings.Titles.YourEmail" : "Votre adresse Email",
+    "Settings.Titles.RefreshCharacterAndWishList" : "Recharger votre personnage & votre wish list",
+    "Settings.Titles.RefreshCharacter" : "Rafraichir votre personnage",
+    "Settings.Titles.RefreshWishList" : "Supprimer votre wish list"
   },
   "en-us" : {
     "Menu.HOME.Title" : "Home",

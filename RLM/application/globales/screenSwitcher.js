@@ -7,6 +7,7 @@ var ScreenSwitcher = new Class ({
 
   panels_list : {},
   context : {},
+  static_context : {},
 
   initialize : function(app) {
     this.app = app;
