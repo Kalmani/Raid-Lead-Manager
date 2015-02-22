@@ -95,7 +95,7 @@ var ScreenGlobalsMethods = new Class ({
       };
       this.app.ask_server(datas.namespace, datas.action, params, options);
     } else {
-      this.SCS.context = {};
+      this.SCS.context = this.SCS.static_context[datas.id] || {};
       this.SCS.switchPanel(datas.id, cell, datas.animate);
     }
   }

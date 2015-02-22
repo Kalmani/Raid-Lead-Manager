@@ -10,6 +10,7 @@ var SettingsScreen = new Class ({
   },
 
   show : function(args) {
+    this.app.SCS.static_context['settings_panels'] = this.app.sess.user;
     this.parent(args);
   },
 
