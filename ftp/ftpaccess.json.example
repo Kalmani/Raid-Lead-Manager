@@ -1,5 +1,7 @@
 {
   host: 'server_ip',
   port: 21,
-  authKey: 'key1'
+  authKey: 'key1',
+  "src": "server/",
+  "dest" : "/path_to_server/"
 }

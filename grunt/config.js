@@ -43,8 +43,8 @@ module.exports = function(grunt) {
             port: ftp_datas.port,
             authKey: ftp_datas.authKey
           },
-          src: 'server/',
-          dest: '/RLM_FLO/',
+          src: ftp_datas.src,
+          dest: ftp_datas.dest,
           exclusions: []
         }
       });
