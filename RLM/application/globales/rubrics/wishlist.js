@@ -10,6 +10,9 @@ ScreenEvents.actions.wishlist = {
       case 'refresh' : 
         this.refresh_item();
         break;
+      case 'add' :
+        this.add_page();
+        break;
       default :
         console.info('No bind on button ' + this.id);
         break;
@@ -37,5 +40,11 @@ ScreenEvents.actions.wishlist = {
       'nocache' : true,
     };
     this.app.ask_server('character', 'update_item', params, options);
+  },
+
+  add_page : function() {
+    var slot = this.elem.get('rel');
+    console.info('Add wish item : ' + slot);
+    this.rubric.show_add_item_page(slot);
   },
 };

@@ -80,6 +80,19 @@
           {"id" : "wish_list_panel", "animate" : "fadeIn"}
 	]
       }
+    ],
+    "ADMIN" : [
+      {
+        "settings" : {"cols" : 3},
+        "list" : [
+          {"id" : "admin_test", "animate" : "fadeIn"}
+	]
+      },
+      {
+        "settings" : {"cols" : 3},
+        "list" : [
+	]
+      }
     ]
   }
 }
