@@ -53,3 +53,7 @@ RLM/config.json
 RLM/templates.xml
 RLM/theme/main.css
 RLM/actions/config.php
+RLM/actions/config.prod.php
+server/
+.ftppass
+ftp/ftpaccess.json

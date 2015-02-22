@@ -7,6 +7,13 @@
   },
   
   "statics" : [
+    "index.html",
+    "locales.json",
+    "dependencies/wowarmoryapi/**",
+    "dependencies/bootstrap/fonts/**",
+    "actions/*.php",
+    "actions/classes/**",
+    "theme/rsc/**"
   ],
 
  "files": {

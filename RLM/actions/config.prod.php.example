@@ -1,0 +1,16 @@
+<?php
+$guilde_name = 'Guild Name';
+$host = 'server_host';
+$user = 'username';
+$pass = 'password';
+$db = 'dbname';
+
+$GLOBALS['wowarmory']['db']['driver'] = 'mysql'; // Dont change. Only mysql supported so far.
+$GLOBALS['wowarmory']['db']['hostname'] = $host; // Hostname of server. 
+$GLOBALS['wowarmory']['db']['dbname'] = $db; //Name of your database
+$GLOBALS['wowarmory']['db']['username'] = $user; //Insert your database username
+$GLOBALS['wowarmory']['db']['password'] = $pass; //Insert your database password
+$GLOBALS['wowarmory']['keys']['api'] = 'api_key';
+$GLOBALS['wowarmory']['keys']['share'] = 'share_key';
+//$GLOBALS['wowarmory']['debug']['global'] = true;
+?>

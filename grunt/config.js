@@ -6,7 +6,6 @@ var exec     = require('child_process').exec;
 module.exports = function(grunt) {
 
   grunt.registerTask('forge-config', '', function(){
-    console.log(grunt.dev_mode);
     var done = grunt.task.current.async();
 
     var dest = grunt.config('deploy_dir');
@@ -14,8 +13,6 @@ module.exports = function(grunt) {
     files.sort();
     if(grunt.dev_mode === false)
       files.pop();
-
-    console.log(files);
 
     var json = {};
 
@@ -35,6 +32,21 @@ module.exports = function(grunt) {
     } else {
       exec("git rev-parse HEAD", function(err, stdout){
         writeversion(stdout.substr(0,6));
+      });
+    }
+    if (!grunt.dev_mode) {
+      var ftp_datas = JSON.parse(fs.readFileSync('ftp/ftpaccess.json'));
+      grunt.config('ftp-deploy', {
+        build: {
+          auth: {
+            host: ftp_datas.host,
+            port: ftp_datas.port,
+            authKey: ftp_datas.authKey
+          },
+          src: ftp_datas.src,
+          dest: ftp_datas.dest,
+          exclusions: []
+        }
       });
     }
 

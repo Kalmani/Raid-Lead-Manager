@@ -10,6 +10,9 @@ ScreenEvents.actions.settings = {
       case 'btn_test' : 
         this.test_func();
         break;
+      default :
+        console.info('No bind on button ' + this.id);
+        break;
     }
   },
 
