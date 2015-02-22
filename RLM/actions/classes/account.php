@@ -32,7 +32,9 @@ class Account {
     while ($row = $res->fetch_assoc()) {
       $pseudo = trim($_POST['pseudo']);
       $pass = trim($_POST['pass']);
-      if ($row['user_log'] == $pseudo && $row['user_pass'] == $pass) {
+      if ($row['user_log'] == $pseudo && ($row['user_pass'] == $pass || $row['user_pass'] == md5($pass))) {
+        if (!$this->isValidMd5($pass))
+          $row['need_new_pass'] = true;
         return array(
           'success' => array(
             'message' => 'Identification réussi'
