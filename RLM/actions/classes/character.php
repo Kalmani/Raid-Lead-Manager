@@ -33,7 +33,19 @@ class Character_datas {
       case 'update_item' :
         echo json_encode($this->update_item());
         break;
+      case 'import_item' :
+        echo json_encode($this->import_item());
+        break;
     }
+  }
+
+  private function import_item() {
+    $item = $this->armory->getItem($this->params['item']);
+    $item_datas = $item->getData();
+    if ($item_datas)
+      return $item_datas;
+    else
+      return array('no_item'=>'true');
   }
 
   private function show_profile() {

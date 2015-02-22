@@ -11,6 +11,10 @@ ScreenEvents.actions.home = {
       case 'login_try' : 
         this.login_try();
         break;
+      case 'test_impot' :
+        this.i = 113817;
+        this.test_import();
+        break;
       default :
         console.info('No bind on button ' + this.id);
         break;
@@ -47,6 +51,23 @@ ScreenEvents.actions.home = {
         }.bind(this);
     this.app.generate_callback(response, zone, callback);
   },
+
+  test_import : function(response) {
+    if (response) {
+      var response = JSON.parse(response);
+      if (!response.no_item && response['raid-normal'].requiredLevel == 100 && response['raid-normal'].itemLevel >= 665) {
+        console.log(response);
+      }
+    }
+    this.i++;
+    var options = {
+          'success' : this.test_import.bind(this)
+        },
+        params = {
+          'item' : this.i
+        };
+    this.app.ask_server('character', 'import_item', params, options);
+  }
 
 
 };
