@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mustache>
   <script id="select_wish_item" type="text/template">
-    <div id="current_item" class="col-md-6">
+    <div class="col-md-4">
+      <div id="current_item">
+      </div>
+      <div id="selected_bis">
+      </div>
     </div>
-    <div id="selected_bis" class="col-md-6">
-    </div>
-    <div id="change_item" class="col-md-12">
+    <div id="change_item" class="col-md-8">
     </div>
   </script>
   <script id="current_item" type="text/template">

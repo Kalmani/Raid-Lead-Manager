@@ -14,7 +14,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4"> </label>
             <div class="col-sm-8">
-              <button type="submit" class="btn btn-success">$Home.Missing.Claim;</button>
+              <span class="btn btn-success" id="home_missing_item">$Home.Missing.Claim;</span>
             </div>
           </div>
         </form>
