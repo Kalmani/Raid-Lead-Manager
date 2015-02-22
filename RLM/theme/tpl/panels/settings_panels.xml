@@ -4,29 +4,29 @@
       <form class="form-horizontal" role="form">
         <div class="col-md-12 nopadding">
           <div class="panel panel-default">
-            <div class="panel-heading">Identifiants</div>
+            <div class="panel-heading">$Settings.Titles.Identifiants;</div>
             <div class="panel-body">
               <div class="form-group">
                 <input type="hidden" name="action_form" value="change_log" />
-                <label class="control-label col-sm-4" for="identifiant">Identifiant:</label>
+                <label class="control-label col-sm-4" for="identifiant">$Settings.Titles.Identifiant; :</label>
                 <div class="col-sm-8">
                   <input type="text" id="identifiant" name="identifiant" class="form-control" value="" />
                 </div>
               </div>
               <div class="form-group">
-                <label for="old_password" class="control-label col-sm-4">Ancien mot de passe :</label>
+                <label for="old_password" class="control-label col-sm-4">$Settings.Titles.OldPass; :</label>
                 <div class="col-sm-8">
                   <input type="password" id="old_password" name="old_password" class="form-control" value="" />
                 </div>
               </div>
               <div class="form-group">
-                <label for="new_password" class="control-label col-sm-4">Nouveau mot de passe :</label>
+                <label for="new_password" class="control-label col-sm-4">$Settings.Titles.NewPass; :</label>
                 <div class="col-sm-8">
                   <input type="password" id="new_password" name="new_password" class="form-control" />
                 </div>
               </div>
               <div class="form-group">
-                <label for="new_password_conf" class="control-label col-sm-4">Confirmer :</label>
+                <label for="new_password_conf" class="control-label col-sm-4">$Settings.Titles.ConfirmPass; :</label>
                 <div class="col-sm-8">
                   <input type="password" id="new_password_conf" name="new_password_conf" class="form-control" />
                 </div>
@@ -34,7 +34,7 @@
               <div class="form-group">
                 <label class="control-label col-sm-4"> </label>
                 <div class="col-sm-8">
-                  <span class="btn btn-success" id="settings_btn_test">Valider</span>
+                  <span class="btn btn-success" id="settings_change_login_pass">$Settings.Titles.Update;</span>
                 </div>
               </div>
             </div>
@@ -42,11 +42,11 @@
         </div>
         <div class="col-md-12 nopadding">
           <div class="panel panel-default">
-            <div class="panel-heading">Autres paramètres</div>
+            <div class="panel-heading">$Settings.Titles.OtherSettings;</div>
             <div class="panel-body">
               <div class="form-group">
                 <input type="hidden" name="action_form" value="change_mail" />
-                <label for="email" class="control-label col-sm-4">Votre adresse Email :</label>
+                <label for="email" class="control-label col-sm-4">$Settings.Titles.YourEmail; :</label>
                 <div class="col-sm-8">
                   <input type="text" id="email" name="email" class="form-control" value="" />
                 </div>
@@ -54,13 +54,13 @@
               <div class="form-group">
                 <label class="control-label col-sm-4"> </label>
                 <div class="col-sm-8">
-                  <span class="btn btn-success">Valider</span>
+                  <span class="btn btn-success">$Settings.Titles.Update;</span>
                 </div>
               </div>
               <div class="jumbotron" style="text-align:center; background-color:transparent;">
-                <span class="btn btn-primary btn-large">Recharger votre personnage & votre wish list</span>
-                <span class="btn btn-primary btn-large">Rafraichir votre personnage</span>
-                <span class="btn btn-primary btn-large">Supprimer votre personnage</span>
+                <span class="btn btn-primary btn-large">$Settings.Titles.RefreshCharacterAndWishList;</span>
+                <span class="btn btn-primary btn-large">$Settings.Titles.RefreshCharacter;</span>
+                <span class="btn btn-primary btn-large">$Settings.Titles.RefreshWishList;</span>
               </div>
             </div>
           </div>
