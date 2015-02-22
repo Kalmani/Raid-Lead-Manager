@@ -28,7 +28,8 @@
       {
         "settings" : {"cols" : 2},
         "list" : [
-          {"id" : "settings_panels", "animate" : "fadeIn"}
+          {"id" : "identifiants_panels", "animate" : "fadeIn"},
+          {"id" : "other_settings_panels", "animate" : "fadeIn"}
         ]
       }
     ],

@@ -42,14 +42,14 @@ ScreenEvents.actions.settings = {
   callback_change_login : function(response) {
     var response = JSON.parse(response);
     if (response.error) {
-      this.app.alertMessage('error', response.error, document.id('cell_settings_panels'));
+      this.app.alertMessage('error', response.error, document.id('cell_identifiants_panels'));
     } else if (response.warning) {
-      this.app.alertMessage('warning', response.warning, document.id('cell_settings_panels'));
+      this.app.alertMessage('warning', response.warning, document.id('cell_identifiants_panels'));
     } else if (response.success) {
       this.app.sess.update_value('user_log', response.datas.user_log);
       if (response.datas.user_pass)
         this.app.sess.update_value('user_pass', response.datas.user_pass);
-      this.app.alertMessage('success', response.success, document.id('cell_settings_panels'));
+      this.app.alertMessage('success', response.success, document.id('cell_identifiants_panels'));
       setTimeout(function () {
         this.app.SCS.switchRubric('HOME');
       }.bind(this), 1500);
@@ -69,14 +69,14 @@ ScreenEvents.actions.settings = {
     var response = JSON.parse(response);
     console.log(response);
     if (response.error) {
-      this.app.alertMessage('error', response.error, document.id('cell_settings_panels'));
+      this.app.alertMessage('error', response.error, document.id('cell_other_settings_panels'));
     } else if (response.warning) {
-      this.app.alertMessage('warning', response.warning, document.id('cell_settings_panels'));
+      this.app.alertMessage('warning', response.warning, document.id('cell_other_settings_panels'));
     } else if (response.success) {
       this.app.sess.update_value('user_mail', response.datas.user_mail);
       if (response.datas.user_pass)
         this.app.sess.update_value('user_pass', response.datas.user_pass);
-      this.app.alertMessage('success', response.success, document.id('cell_settings_panels'));
+      this.app.alertMessage('success', response.success, document.id('cell_other_settings_panels'));
       setTimeout(function () {
         this.app.SCS.switchRubric('HOME');
       }.bind(this), 1500);
