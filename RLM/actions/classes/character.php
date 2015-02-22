@@ -49,6 +49,7 @@ class Character_datas {
     $context['character'] = array(
       'pseudo' => $this->user_datas['user_perso'],
       'classe' => $class,
+      'classe_icon' => $spe['spec']['icon'],
       'activ_spe' => $spe['spec']['name'],
       'profil_img' => $img,
       'ilvl' => $ilvl,

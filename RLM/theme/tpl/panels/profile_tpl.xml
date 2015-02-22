@@ -18,7 +18,7 @@
           <div class="row nomargin" style="margin-bottom:10px;">
             <div class="col-md-12 nopadding">
               <div class="class_wow">
-                <img class="img-circle" src="http://eu.media.blizzard.com/wow/icons/36/spell_nature_magicimmunity.jpg" />
+                <img class="img-circle" src="http://eu.media.blizzard.com/wow/icons/36/{{character.classe_icon}}.jpg" />
                 {{character.classe}} {{character.activ_spe}}
               </div>
             </div>

@@ -24,5 +24,22 @@ var WishlistScreen = new Class ({
         }.bind(this));
       }
     }.bind(this));
-  }
+  },
+
+  show_add_item_page : function(slot) {
+    this.app.remove_all = true;
+    var dom = document.id('main_container');
+    dom.empty();
+
+    this.app.SCS.panels_list = {
+      'current_item' : {'id' : 'current_item'},
+      'selected_bis' : {'id' : 'selected_bis'},
+      'change_item' : {'id' : 'change_item'}
+    };
+    this.app.SCS.switchScreen('select_wish_item', dom);
+
+    /*this.app.SCS.switchPanel('', dom, 'fadeIn');
+    this.app.SCS.switchPanel('', dom, 'fadeIn');
+    this.app.SCS.switchPanel('', dom, 'fadeIn');*/
+  },
 });

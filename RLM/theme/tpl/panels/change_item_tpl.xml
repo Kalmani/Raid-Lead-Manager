@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mustache>
+  <script id="select_wish_item" type="text/template">
+    <div id="current_item" class="col-md-6">
+    </div>
+    <div id="selected_bis" class="col-md-6">
+    </div>
+    <div id="change_item" class="col-md-12">
+    </div>
+  </script>
+  <script id="current_item" type="text/template">
+    <div class="panel panel-default">
+      <div class="panel-heading">Equipement actuel</div>
+      <div class="panel-body">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+              <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+              <span class="frame frame_4"> </span>
+            </td>
+            <td align="left">
+              <span class="color-4">Chapel d'harmonie céleste</span><br />
+              <span style="color:#999999;">
+                566<br />
+              </span>
+            </td>
+          </tr>
+        </table>
+        <a href="#" rel="item=99332&amp;domain=fr" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a>
+        <br />
+        <table class="table table-striped table-condensed">
+          <tr>
+            <td align="left" width="140">
+              Maîtrise : 
+            </td>
+            <td align="center" width="90">
+              62
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="140">
+              Intelligence : 
+            </td>
+            <td align="center" width="90">
+              80
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="140">
+              Hâte : 
+            </td>
+            <td align="center" width="90">
+              45
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="140">
+              Endurance : 
+            </td>
+            <td align="center" width="90">
+              138
+            </td>
+          </tr>
+          <tr>
+            <td align="left">Armure : </td>
+            <td align="center">88</td>
+          </tr>
+        </table>
+        <form>
+          <input type="hidden" value="99332" name="item_id" />
+          <center>
+            <button type="submit" class="btn btn-success form-control">
+              Conserver
+            </button>
+          </center>
+        </form>
+      </div>
+    </div>
+  </script>
+  <script id="selected_bis" type="text/template">
+    <div class="panel panel-default">
+      <div class="panel-heading">BIS sélectionné</div>
+      <div id="wish_new" class="panel-body">
+        <table cellspacing="1" cellpadding="0" border="0" bgcolor="#D1B285" width="100%" align="left">
+          <tbody>
+            <tr>
+              <td class="general" align="left">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="equipement_icon" width="56" style="width:56px; padding-left:5px;">
+                        <img src="http://eu.media.blizzard.com/wow/icons/56/inv_helm_mail_reputation_c_01.jpg" />
+                        <span class="frame frame_4"> </span>
+                      </td>
+                      <td align="left">
+                        <span class="color-4">Regard terrifiant</span>
+                        <br />
+                        <span style="color:#999999;">
+                          489
+                          <br />
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              <a style="position:absolute; width:250px; height:57px; margin-top:-50px;" rel="item=89820&domain=fr" href="#"> </a>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <br />
+              <table class="table table-striped table-condensed">
+                <tbody>
+                  <tr>
+                    <td width="140" align="left"> Agilité : </td>
+                    <td width="90" align="center">
+                      906 (
+                      <span style="color:#1EFF00">+906</span>
+                      )
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="140" align="left"> Touché : </td>
+                    <td width="90" align="center">
+                      720 (
+                      <span style="color:#1EFF00">+720</span>
+                      )
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="140" align="left"> Hâte : </td>
+                    <td width="90" align="center">
+                      530 (
+                      <span style="color:#1EFF00">+530</span>
+                      )
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="140" align="left"> Endurance : </td>
+                    <td width="90" align="center">
+                      1719 (
+                      <span style="color:#1EFF00">+1719</span>
+                      )
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <form>
+        <input type="hidden" value="89820" name="item_id" />
+        <center>
+          <button class="btn btn-success form-control" type="submit">Choisir cet objet</button>
+        </center>
+      </form>
+      </div>
+    </div>
+  </script>
+  <script id="change_item" type="text/template">
+    <div class="panel panel-default">
+      <div class="panel-heading">Choix de votre wish list : </div>
+      <div class="panel-body">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="left" class="arian">Armure > Maille > Tête   </td>
+            <td align="right">
+              Trier par :
+              <select class="filter">
+                <option value="ilvl1">Niveau croissant</option>
+                <option value="ilvl2" selected="selected">Niveau d?croissant</option>
+                <option value="name1">Nom d'objet A-Z</option>
+                <option value="name2">Nom d'objet Z-A</option>
+              </select>
+              <select class="filter">
+                <option value="n">Raid Normal</option>
+                <option value="hm">Raid Hard Mode</option>
+                <option value="all" selected="selected">Tous types de raid</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td align="left">
+            </td>
+            <td align="right" valign="top">
+              Contenant la statistique : 
+              <select class="filter">
+                <option value="0">- - -</option>
+                <option value="3">Agilité</option>
+                <option value="4">Force</option>
+                <option value="5">Intelligence</option>
+                <option value="6">Esprit</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td align="left">
+            </td>
+            <td align="right" valign="top">
+              Contenant au moins : 
+              <select class="filter">
+                <option value="0">- - -</option>
+                <option value="BLUE">une châsse bleue</option>
+                <option value="RED">une châsse rouge</option>
+                <option value="YELLOW">une châsse jaune</option>
+                <option value="META">une méta châsse</option>
+                <option value="HYDRAULIC">une châsse touchée par le Sha</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <div class="row" style="margin-bottom:10px;">
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-search"></span>
+              <input type="text" id="search_loot" class="form-control col-md-3" placeholder="Rechercher une pièce" />
+            </div>
+          </div>
+        </div>
+        <fieldset>
+          <legend style="color:#fff;">Objets disponibles</legend>
+          <table class="table-condensed" width="100%">
+            <tr>
+              <td>
+                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;" onclick="get_wich_view('99332', '0', '1182');">
+                  <div class="panel-heading">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+                          <span class="frame frame_4"> </span>
+                        </td>
+                        <td valign="top">
+                          <span style="color:#000;">566
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" colspan="2">
+                          <span class="color-4">Chapel d'harmonie céleste       </span>
+                        </td>
+                      </tr>
+                    </table>
+                    <a href="#" rel="item=99332&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
+                  </div>
+                </div>
+              </td>
+              <td width="25%" class="item_to_chose_cont" id="casque_d_harmonie_céleste">
+                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
+                  <div class="panel-heading">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+                          <span class="frame frame_4"> </span>
+                        </td>
+                        <td valign="top">
+                          <span style="color:#000;">566
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" colspan="2">
+                          <span class="color-4">Casque d'harmonie céleste       </span>
+                        </td>
+                      </tr>
+                    </table>
+                    <a href="#" rel="item=99341&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
+                  </div>
+                </div>
+              </td>
+              <td width="25%" class="item_to_chose_cont" id="ventaille_d_harmonie_céleste">
+                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
+                  <div class="panel-heading">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+                          <span class="frame frame_4"> </span>
+                        </td>
+                        <td valign="top">
+                          <span style="color:#000;">566
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" colspan="2">
+                          <span class="color-4">Ventaille d'harmonie céleste        </span>
+                        </td>
+                      </tr>
+                    </table>
+                    <a href="#" rel="item=99353&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
+                  </div>
+                </div>
+              </td>
+              <td width="25%" class="item_to_chose_cont" id="ventaille_d_harmonie_céleste">
+                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
+                  <div class="panel-heading">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
+                          <span class="frame frame_4"> </span>
+                        </td>
+                        <td valign="top">
+                          <span style="color:#000;">566
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" colspan="2">
+                          <span class="color-4">Ventaille d'harmonie céleste        </span>
+                        </td>
+                      </tr>
+                    </table>
+                    <a href="#" rel="item=99353&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </div>
+    </div>
+  </script>
+</mustache>

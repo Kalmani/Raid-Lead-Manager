@@ -66,6 +66,9 @@ var ScreenGlobalsMethods = new Class ({
   },
 
   build_column : function(settings, id) {
+    if (this.app.remove_all)
+      document.id('main_container').empty();
+    this.app.remove_all = false;
     if (settings.static && this.container.getElementById('column_' + id))
       return;
 
