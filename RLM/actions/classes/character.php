@@ -7,10 +7,11 @@ class Character_datas {
   var $action;
   var $params;
 
-  public function __construct($action, $armory, $params) {
+  public function __construct($action, $armory, /*$mysqli, */$params) {
     $this->action = $action;
     $this->armory = $armory;
     $this->params = $params;
+    //$this->mysqli = $mysqli;
 
     if (isset($this->params['nocache']))
       $this->armory->useCache(FALSE);
@@ -33,20 +34,53 @@ class Character_datas {
       case 'update_item' :
         echo json_encode($this->update_item());
         break;
-      case 'import_item' :
+      /*case 'import_item' :
         echo json_encode($this->import_item());
-        break;
+        break;*/
     }
   }
 
-  private function import_item() {
+  /*private function import_item() {
     $item = $this->armory->getItem($this->params['item']);
     $item_datas = $item->getData();
-    if ($item_datas)
-      return $item_datas;
-    else
+    $return = array();
+    if ($item_datas && $item_datas['raid-heroic']) {
+      foreach ($item_datas as $mode=>$datas) {
+        $return[$mode] = array(
+          'id'           => $datas['id'],
+          'name'         => $datas['name'],
+          'icon'         => $datas['icon'],
+          'itemClass'    => $datas['itemClass'],
+          'itemSubClass' => $datas['itemSubClass'],
+          'itemLevel'    => $datas['itemLevel'],
+          'quality'      => $datas['quality'],
+          'armor'        => $datas['armor'],
+          'itemSource'   => $datas['itemSource']['sourceId'],
+          'stats'        => $datas['bonusStats']
+        );
+      }
+
+
+      foreach ($return as $mode=>$datas) {
+        $mode_name = explode('-', $mode)[1];
+        $data_sql = $datas;
+        unset($data_sql['stats']);
+        $r = "INSERT INTO larmes_items_".$mode_name." VALUES ('";
+          $datas_str = implode("', '", $data_sql);
+        $r .= $datas_str;
+        $r .= "')";
+        $r = utf8_decode($r);
+        $res = $this->mysqli->query($r);
+        foreach ($datas['stats'] as $stat) {
+          $r = "INSERT INTO larmes_items_stats VALUES('', '".$data_sql['id']."', '".$stat['stat']."', '".$stat['amount']."', '".$mode_name."')";
+          $res = $this->mysqli->query($r);
+        }
+      }
+      //print_r($item_datas);
+      return $return;
+    } else
       return array('no_item'=>'true');
-  }
+  }*/
 
   private function show_profile() {
 
@@ -157,6 +191,8 @@ class Character_datas {
 
   }
 }
-$character = new Character_datas($action, $armory, $params);
+
+//$mysqli = new mysqli($host, $user, $pass, $db);
+$character = new Character_datas($action, $armory, /*$mysqli, */$params);
 
 ?>

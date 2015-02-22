@@ -11,10 +11,10 @@ ScreenEvents.actions.home = {
       case 'login_try' : 
         this.login_try();
         break;
-      case 'test_impot' :
-        this.i = 113817;
+      /*case 'test_impot' :
+        this.i = 113998;
         this.test_import();
-        break;
+        break;*/
       default :
         console.info('No bind on button ' + this.id);
         break;
@@ -52,11 +52,15 @@ ScreenEvents.actions.home = {
     this.app.generate_callback(response, zone, callback);
   },
 
-  test_import : function(response) {
+  /*test_import : function(response) {
     if (response) {
       var response = JSON.parse(response);
-      if (!response.no_item && response['raid-normal'].requiredLevel == 100 && response['raid-normal'].itemLevel >= 665) {
-        console.log(response);
+      if (!response.no_item && response['raid-normal'].itemLevel >= 665) {
+        var line = new Element('div', {'class' : 'col-md-2', 'style' : 'color:#FFF;', 'text' : response['raid-normal'].id}).inject(document.id('listing'));
+        var div2 = new Element('div', {'class' : 'col-md-2', 'style' : 'color:#FFF;', 'html' : '<img src="http://media.blizzard.com/wow/icons/56/'+response['raid-normal'].icon+'.jpg" />'}).inject(document.id('listing'));
+        var div3 = new Element('div', {'class' : 'col-md-6', 'style' : 'color:#FFF;', 'text' : response['raid-normal'].name}).inject(document.id('listing'));
+        var div4 = new Element('div', {'class' : 'col-md-2', 'style' : 'color:#FFF;', 'text' : response['raid-normal'].itemLevel}).inject(document.id('listing'));
+        var div5 = new Element('div', {'style' : 'clear:both;'}).inject(document.id('listing'));
       }
     }
     this.i++;
@@ -67,7 +71,7 @@ ScreenEvents.actions.home = {
           'item' : this.i
         };
     this.app.ask_server('character', 'import_item', params, options);
-  }
+  }*/
 
 
 };
