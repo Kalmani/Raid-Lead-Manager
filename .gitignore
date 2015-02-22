@@ -56,3 +56,4 @@ RLM/actions/config.php
 RLM/actions/config.prod.php
 server/
 .ftppass
+ftp/ftpaccess.json

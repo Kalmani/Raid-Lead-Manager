@@ -1,0 +1,5 @@
+{
+  host: 'server_ip',
+  port: 21,
+  authKey: 'key1'
+}
