@@ -27,11 +27,9 @@ ScreenEvents.actions.settings = {
           'new_password_conf'
         ],
         values = {};
-
     Array.each(ids, function(id) {
       values[id] = document.id(id).get('value').trim();
     });
-
     var options = {
           'success' : this.callback_change_login.bind(this)
         },
@@ -40,20 +38,17 @@ ScreenEvents.actions.settings = {
   },
 
   callback_change_login : function(response) {
-    var response = JSON.parse(response);
-    if (response.error) {
-      this.app.alertMessage('error', response.error, document.id('cell_identifiants_panels'));
-    } else if (response.warning) {
-      this.app.alertMessage('warning', response.warning, document.id('cell_identifiants_panels'));
-    } else if (response.success) {
-      this.app.sess.update_value('user_log', response.datas.user_log);
-      if (response.datas.user_pass)
-        this.app.sess.update_value('user_pass', response.datas.user_pass);
-      this.app.alertMessage('success', response.success, document.id('cell_identifiants_panels'));
-      setTimeout(function () {
-        this.app.SCS.switchRubric('HOME');
-      }.bind(this), 1500);
-    }
+    var response = JSON.parse(response),
+        zone = document.id('cell_identifiants_panels'),
+        callback = function() {
+          this.app.sess.update_value('user_log', response.datas.user_log);
+          if (response.datas.user_pass)
+            this.app.sess.update_value('user_pass', response.datas.user_pass);
+          setTimeout(function () {
+            this.app.SCS.switchRubric('HOME');
+          }.bind(this), 1500);
+        }.bind(this);
+    this.app.generate_callback(response, zone, callback);
   },
 
   change_email : function() {
@@ -66,21 +61,15 @@ ScreenEvents.actions.settings = {
   },
 
   callback_change_email : function(response) {
-    var response = JSON.parse(response);
-    console.log(response);
-    if (response.error) {
-      this.app.alertMessage('error', response.error, document.id('cell_other_settings_panels'));
-    } else if (response.warning) {
-      this.app.alertMessage('warning', response.warning, document.id('cell_other_settings_panels'));
-    } else if (response.success) {
-      this.app.sess.update_value('user_mail', response.datas.user_mail);
-      if (response.datas.user_pass)
-        this.app.sess.update_value('user_pass', response.datas.user_pass);
-      this.app.alertMessage('success', response.success, document.id('cell_other_settings_panels'));
-      setTimeout(function () {
-        this.app.SCS.switchRubric('HOME');
-      }.bind(this), 1500);
-    }
+    var response = JSON.parse(response),
+        zone = document.id('cell_other_settings_panels'),
+        callback = function() {
+          this.app.sess.update_value('user_mail', response.datas.user_mail);
+          setTimeout(function () {
+            this.app.SCS.switchRubric('HOME');
+          }.bind(this), 1500);
+        }.bind(this);
+    this.app.generate_callback(response, zone, callback);
   }
 
 };

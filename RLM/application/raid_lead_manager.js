@@ -5,6 +5,8 @@ var RaidLeadManager = new Class ({
 
   Implements : Events,
 
+  Binds : ['generate_callback'],
+
   locales : {},
   templates  : {},
 
@@ -177,5 +179,16 @@ var RaidLeadManager = new Class ({
     var dom = this.render('alert_' + type, {'message' : error.message});
     dom.inject(zone, 'top');
   },
+
+  generate_callback : function(response, zone, callback) {
+    if (response.error) {
+      this.alertMessage('error', response.error, zone);
+    } else if (response.warning) {
+      this.alertMessage('warning', response.warning, zone);
+    } else if (response.success) {
+      this.alertMessage('success', response.success, zone);
+      callback();
+    }
+  }
 
 });

@@ -45,9 +45,6 @@ class Account {
           'success' => array(
             'message' => 'Identification réussi'
           ),
-          'error_case' => array(
-            'message' => "Une erreur est survenue lors de l'identification, contacter un administrateur"
-          ),
           'user_datas' => $row
         );
       }
@@ -91,9 +88,6 @@ class Account {
         'success' => array(
           'message' => 'Identifiant modifié avec succès'
         ),
-        'error_case' => array(
-          'message' => "Une erreur est survenue, contacter un administrateur"
-        ),
         'datas' => array(
           'user_log' => $user_log
         )
@@ -116,9 +110,6 @@ class Account {
       return array(
         'success' => array(
           'message' => 'Identifiant et mot de passe modifiés avec succès'
-        ),
-        'error_case' => array(
-          'message' => "Une erreur est survenue, contacter un administrateur"
         ),
         'datas' => array(
           'user_log' => $user_log,
@@ -150,9 +141,6 @@ class Account {
       return array(
         'success' => array(
           'message' => 'Adresse email modifiée avec succès'
-        ),
-        'error_case' => array(
-          'message' => "Une erreur est survenue, contacter un administrateur"
         ),
         'datas' => array(
           'user_mail' => $user_mail
