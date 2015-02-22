@@ -28,7 +28,8 @@ var RaidLeadManager = new Class ({
         this.show_content();
       }
     });
-
+    var audio = new Audio('theme/rsc/mp3/welcome.mp3');
+    audio.play();
     this.load_config();
   },
 
