@@ -69,13 +69,17 @@ var ScreenGlobalsMethods = new Class ({
     if (this.app.remove_all)
       document.id('main_container').empty();
     this.app.remove_all = false;
-    if (settings.static && this.container.getElementById('column_' + id))
-      return;
+    var col_w = 4 * settings.cols;
+
+    if (settings.static && this.container.getElementById('column_' + id)) {
+      var current_cols = this.container.getElementById('column_' + id).get('class').split('-')[2];
+      if (col_w == parseInt(current_cols))
+        return;
+    }
 
     if (document.id('column_' + id))
       document.id('column_' + id).dispose();
-    var col_w = 4 * settings.cols,
-        column = new Element('div', {'class' : 'col-md-' + col_w, 'id' : 'column_' + id});
+    var column = new Element('div', {'class' : 'col-md-' + col_w, 'id' : 'column_' + id});
     column.inject(this.container);
   },
 
