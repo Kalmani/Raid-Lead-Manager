@@ -1,39 +1,63 @@
 <?php
 require 'config.php';
 
-$mysqli = new mysqli($host, $user, $pass, $db);
-if ($mysqli->connect_errno) {
-  echo json_encode(array(
-    'error' => array(
-      'message' => "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error
-    )
-  ));
-}
+class Account {
+  var $namespace;
+  var $action;
+  var $params;
 
-$res = $mysqli->query("SELECT * FROM larmes_identifiants");
-$founded = false;
-while ($row = $res->fetch_assoc()) {
-  $pseudo = trim($_POST['pseudo']);
-  $pass = trim($_POST['pass']);
-  if ($row['user_log'] == $pseudo && $row['user_pass'] == $pass) {
-    echo json_encode(array(
-      'success' => array(
-        'message' => 'Identification réussi'
-      ),
-      'error_case' => array(
-        'message' => "Une erreur est survenue lors de l'identification, contacter un administrateur"
-      ),
-      'user_datas' => $row
-    ));
-    $founded = true;
+  public function __construct($action, $mysqli, $params) {
+    $this->action = $action;
+    $this->params = $params; 
+    $this->mysqli = $mysqli;
+
+    switch ($this->action) {
+      case 'login' :
+        echo json_encode($this->login());
+        break;
+    }
+  }
+
+  private function login() {
+    if ($this->mysqli->connect_errno) {
+      return array(
+        'error' => array(
+          'message' => "Echec lors de la connexion à MySQL : (" . $this->mysqli->connect_errno . ") " . $this->mysqli->connect_error
+        )
+      );
+    }
+
+    $res = $this->mysqli->query("SELECT * FROM larmes_identifiants");
+    $founded = false;
+    while ($row = $res->fetch_assoc()) {
+      $pseudo = trim($_POST['pseudo']);
+      $pass = trim($_POST['pass']);
+      if ($row['user_log'] == $pseudo && $row['user_pass'] == $pass) {
+        return array(
+          'success' => array(
+            'message' => 'Identification réussi'
+          ),
+          'error_case' => array(
+            'message' => "Une erreur est survenue lors de l'identification, contacter un administrateur"
+          ),
+          'user_datas' => $row
+        );
+      }
+    }
+    return array(
+      'warning' => array(
+        'message' => 'Identifiants incorrects'
+      )
+    );
+  }
+
+  private function isValidMd5($md5 ='') {
+    return preg_match('/^[a-f0-9]{32}$/', $md5);
   }
 }
 
-if ($founded === false) {
-  echo json_encode(array(
-    'warning' => array(
-      'message' => 'Identifiants incorrects'
-    )
-  ));
-}
+//echo isValidMd5('5d41402abc4b2a76b9719d911017c592');
+
+$mysqli = new mysqli($host, $user, $pass, $db);
+$account = new Account($action, $mysqli, $params);
 ?>
