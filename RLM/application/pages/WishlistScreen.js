@@ -32,14 +32,24 @@ var WishlistScreen = new Class ({
     dom.empty();
 
     this.app.SCS.panels_list = {
-      'current_item' : {'id' : 'current_item'},
-      'selected_bis' : {'id' : 'selected_bis'},
-      'change_item' : {'id' : 'change_item'}
+      'current_item' : {'id' : 'current_item', 'animate' : 'fadeIn'},
+      'selected_bis' : {'id' : 'selected_bis', 'animate' : 'fadeIn'},
+      'change_item' : {'id' : 'change_item', 'animate' : 'fadeIn'}
     };
     this.app.SCS.switchScreen('select_wish_item', dom);
 
-    /*this.app.SCS.switchPanel('', dom, 'fadeIn');
-    this.app.SCS.switchPanel('', dom, 'fadeIn');
-    this.app.SCS.switchPanel('', dom, 'fadeIn');*/
+
+    // load async items list
+    var options = {
+          'success' : function(response) {
+            console.log(response);
+          }.bind(this)
+        },
+        params = {
+          'slot' : slot
+        },
+        namespace = 'items',
+        action = 'list_items';
+    this.app.ask_server(namespace, action, params, options);
   },
 });
