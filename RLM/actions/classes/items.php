@@ -15,7 +15,10 @@ class Items_datas {
 
     switch ($this->action) {
       case 'list_items' :
-        echo json_encode($this->list_items());
+        $test =  $this->list_items();
+        print_r($test);
+        $test2 = json_encode($test, true);
+        echo $test2.'ok';
         break;
       /*case 'get_all_ids_item' :
         echo json_encode($this->get_all_ids_item());
@@ -63,15 +66,16 @@ class Items_datas {
     $this->character = $this->armory->getCharacter($this->user_datas['user_perso']);
     $character_datas = $this->character->getData();
     $class = $character_datas['class'];
-    $armor_type = $character_datas['audit']['appropriateArmorType'];
+    //$itemType = $character_datas['audit']['appropriateArmorType'];
     $itemSubClass = Global_datas::item_class_by_character_class($class);
     $itemType = Global_datas::type_id_by_name($this->params['slot']);
     $r = "SELECT * FROM larmes_items_normal WHERE inventoryType = '".$itemType."' AND itemSubClass = '".$itemSubClass."'";
     $res = $this->mysqli->query($r);
+    $items_list = array();
     while ($item = $res->fetch_assoc()) {
-      //print_r($item);
+      $items_list[] = $item;
     }
-    return array('test'=>true);
+    return array('items'=>$items_list);
   }
 }
 
