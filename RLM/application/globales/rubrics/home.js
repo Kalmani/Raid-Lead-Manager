@@ -11,10 +11,6 @@ ScreenEvents.actions.home = {
       case 'login_try' : 
         this.login_try();
         break;
-      /*case 'test_impot' :
-        this.i = 113998;
-        this.test_import();
-        break;*/
       default :
         console.info('No bind on button ' + this.id);
         break;
@@ -52,7 +48,36 @@ ScreenEvents.actions.home = {
     this.app.generate_callback(response, zone, callback);
   },
 
-  /*test_import : function(response) {
+
+  /*test_import_update : function(response) {
+    if (response === undefined) {
+      var options = {
+          'success' : this.test_import_update.bind(this)
+        },
+        params = {
+        };
+      this.app.ask_server('items', 'get_all_ids_item', params, options);
+    } else {
+      var response = JSON.parse(response),
+          i = response.i || 0;
+          ids = response.ids || response;
+      if (i < ids.length) {
+        console.log(i, ids);
+        var options = {
+            'success' : this.test_import_update.bind(this)
+          },
+          params = {
+            'i' : i,
+            'ids' : ids
+          };
+        this.app.ask_server('items', 'update_type', params, options);
+      } else {
+        console.info('FINISH');
+      }
+    }
+  }
+
+  test_import : function(response) {
     if (response) {
       var response = JSON.parse(response);
       if (!response.no_item && response['raid-normal'].itemLevel >= 665) {
