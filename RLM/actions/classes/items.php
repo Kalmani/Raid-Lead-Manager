@@ -15,10 +15,7 @@ class Items_datas {
 
     switch ($this->action) {
       case 'list_items' :
-        $test =  $this->list_items();
-        print_r($test);
-        $test2 = json_encode($test, true);
-        echo $test2.'ok';
+        echo json_encode($this->list_items(), JSON_UNESCAPED_UNICODE);
         break;
       /*case 'get_all_ids_item' :
         echo json_encode($this->get_all_ids_item());
@@ -73,9 +70,10 @@ class Items_datas {
     $res = $this->mysqli->query($r);
     $items_list = array();
     while ($item = $res->fetch_assoc()) {
+      $item['name'] = utf8_encode($item['name']);
       $items_list[] = $item;
     }
-    return array('items'=>$items_list);
+    return $items_list;
   }
 }
 
