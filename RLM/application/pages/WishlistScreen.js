@@ -42,7 +42,8 @@ var WishlistScreen = new Class ({
     // load async items list
     var options = {
           'success' : function(response) {
-            console.log(response);
+            var items = JSON.parse(response);
+            this.add_items(items);
           }.bind(this)
         },
         params = {
@@ -52,4 +53,11 @@ var WishlistScreen = new Class ({
         action = 'list_items';
     this.app.ask_server(namespace, action, params, options);
   },
+
+  add_items : function(items) {
+    Array.each(items, function(item, key) {
+      var div = new Element('div', {'class' : 'col-md-3 col-sm-3 col-xs-3', 'text' : item.name}).inject(document.id('items_list_wish'));
+    });
+  },
+
 });

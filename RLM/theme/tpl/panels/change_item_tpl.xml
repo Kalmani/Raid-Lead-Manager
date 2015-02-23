@@ -226,7 +226,8 @@
         </div>
         <fieldset>
           <legend style="color:#fff;">Objets disponibles</legend>
-          <table class="table-condensed" width="100%">
+          <div id="items_list_wish"></div>
+          <!--<table class="table-condensed" width="100%">
             <tr>
               <td>
                 <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;" onclick="get_wich_view('99332', '0', '1182');">
@@ -325,7 +326,7 @@
                 </div>
               </td>
             </tr>
-          </table>
+          </table>-->
         </fieldset>
       </div>
     </div>
