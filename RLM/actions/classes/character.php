@@ -34,9 +34,6 @@ class Character_datas {
       case 'update_item' :
         echo json_encode($this->update_item());
         break;
-      /*case 'import_item' :
-        echo json_encode($this->import_item());
-        break;*/
     }
   }
 
