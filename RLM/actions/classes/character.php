@@ -20,7 +20,6 @@ class Character_datas {
     $this->armory->setLocale('fr_FR'); //conf
     $this->user_datas = (array) json_decode($_COOKIE['RLM_user']);
     $this->character = $this->armory->getCharacter($this->user_datas['user_perso']);
-
     switch ($this->action) {
       case 'show_profile' :
         echo json_encode($this->show_profile());
@@ -81,14 +80,14 @@ class Character_datas {
 
   private function show_profile() {
 
-    $class = utf8_decode($this->character->getClassName());
+    $class = $this->character->getClassName();
     $spe = $this->character->getActiveTalents();
     $datas = $this->character->getData();
     $img = $this->character->getProfileInsetURL();
     $professions = $this->character->getPrimaryProfessions();
     $ilvl = $datas['items']['averageItemLevelEquipped'];
     //$ilvlwish = $this->session['wish_ilvl'];
-
+    $context = array();
     $context['character'] = array(
       'pseudo' => $this->user_datas['user_perso'],
       'classe' => $class,
@@ -103,11 +102,7 @@ class Character_datas {
         0 => array('name' => $professions[0]['name'], 'level' => $professions[0]['rank'], 'max' => 700),
         1 => array('name' => $professions[1]['name'], 'level' => $professions[1]['rank'], 'max' => 700)
       ),
-      'last_loots' => array( // needed
-        /*0 => array('name' => 'Ceinture en anneaux chitineux', 'level' => 553),
-        1 => array('name' => 'Brassards du purificateur en parfait état', 'level' => 553),
-        2 => array('name' => 'Cristal de rage frénétique', 'level' => 553)*/
-      )
+      'last_loots' => array()
     );
     $context['guild_characters'] = array(
         0 => array('pseudo' => 'Deewan'),
@@ -139,9 +134,12 @@ class Character_datas {
     );
     $i = 0;
     foreach ($items as $slot => $item) {
+      $item_url = 'item='.$item['id'];
+      //&gems=95347:76694&ench=......
       $item_datas = array(
         'name' => $item['name'],
         'img_url' => "http://eu.media.blizzard.com/wow/icons/56/".$item['icon'].".jpg",
+        'item_url' => $item_url,
         'slot' => $slot,
         'item_caracs' => array(
           'item' => $item['id'],
