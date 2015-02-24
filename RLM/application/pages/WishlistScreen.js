@@ -55,9 +55,16 @@ var WishlistScreen = new Class ({
   },
 
   add_items : function(items) {
+    var container = document.id('items_list_wish');
     Array.each(items, function(item, key) {
-      var div = new Element('div', {'class' : 'col-md-3 col-sm-3 col-xs-3', 'text' : item.name}).inject(document.id('items_list_wish'));
-    });
+      var context = {
+            'item' : item
+          },
+          element = this.app.render('item_bloc', context);
+          bloc_container = new Element('div', {'class' : "col-md-4 col-sm-6 col-xs-12"});
+      element.inject(bloc_container);
+      bloc_container.inject(container);
+    }.bind(this));
   },
 
 });
