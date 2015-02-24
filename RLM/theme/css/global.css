@@ -166,11 +166,10 @@ body {
 }
 
 table tr td.equipement_icon img {
-  border: 1px solid #000;
-  border-radius: 5px;
   display: block;
   height: 44px;
   width: 44px;
+  margin: 3px 0px 0px 3px;
 }
 
 span.color-1 {
@@ -205,4 +204,32 @@ span.color-5 {
   background-image: url('../rsc/loader.gif');
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.item{
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #1A0500;
+  cursor: pointer;
+}
+
+span.frame{
+  background-image:url('../rsc/inventory-slots.png');
+  height:49px;
+  width:49px;
+  position:absolute;
+  margin-top:-47px;
+}
+span.frame_0{
+  background-position: 0px 0;
+  margin-top:-25px;
+}
+span.frame_1{
+}
+span.frame_2{
+}
+span.frame_3{
+}
+span.frame_4{
+  background-position: -245px 0;
 }

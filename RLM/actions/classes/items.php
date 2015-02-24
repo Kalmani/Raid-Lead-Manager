@@ -74,7 +74,7 @@ class Items_datas {
     $res = $this->mysqli->query($r);
     $items_list = array();
     while ($item = $res->fetch_assoc()) {
-      $item['name'] = utf8_encode($item['name']);
+      $item['name'] = str_replace('?', "'", utf8_encode($item['name']));
       $items_list[] = $item;
     }
 

@@ -16,7 +16,7 @@
       <div class="panel-body">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
           <tr>
-            <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
+            <td width="56" class="equipement_icon" style="width:56px;">
               <img src="http://eu.media.blizzard.com/wow/icons/56/{{current_item.icon}}.jpg" />
               <span class="frame frame_{{current_item.quality}}"> </span>
             </td>
@@ -138,21 +138,21 @@
     <div class="item" style="margin-bottom:10px;">
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-          <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;" rowspan="2">
+          <td width="56" class="equipement_icon" style="width:56px; height:49px;" rowspan="2" valign="top">
             <img src="http://eu.media.blizzard.com/wow/icons/56/{{item.icon}}.jpg" />
             <span class="frame frame_{{item.quality}}"> </span>
           </td>
           <td valign="top">
-            <span style="color:#000;">{{item.itemLevel}}</span>
+            <span class="color-{{item.quality}}">{{item.name}}</span>
           </td>
         </tr>
         <tr>
           <td>
-            <span class="color-4">{{item.name}}</span>
+            <span style="color:#FFF;">{{item.itemLevel}}</span>
           </td>
         </tr>
       </table>
-      <a href="#" rel="item={{item.id}}&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
+      <a href="#" rel="item={{item.id}}&amp;domain=fr" style="display:block; position:absolute; width:calc(100% - 30px); height:49px; margin-top:-49px;"> </a>
     </div>
   </script>
   <script id="change_item" type="text/template">

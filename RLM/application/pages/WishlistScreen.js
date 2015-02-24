@@ -60,14 +60,20 @@ var WishlistScreen = new Class ({
     this.app.render('current_item', context).inject(container);
 
     var container = document.id('items_list_wish');
+    var i = 0;
     Array.each(items.items_list, function(item, key) {
       var context = {
             'item' : item
           },
           element = this.app.render('item_bloc', context);
-          bloc_container = new Element('div', {'class' : "col-md-4 col-sm-6 col-xs-12"});
+          bloc_container = new Element('div', {'class' : "col-md-6 col-sm-12 col-xs-12"});
       element.inject(bloc_container);
       bloc_container.inject(container);
+      i++;
+      if (i%2 === 0) {
+        var clearer = new Element('div', {'style' : 'clear:both;'});
+        clearer.inject(container);
+      }
     }.bind(this));
   },
 
