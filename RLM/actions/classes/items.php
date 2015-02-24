@@ -63,7 +63,6 @@ class Items_datas {
     $this->character = $this->armory->getCharacter($this->user_datas['user_perso']);
     $character_datas = $this->character->getData();
     $class = $character_datas['class'];
-    //$itemType = $character_datas['audit']['appropriateArmorType'];
     $itemSubClass = Global_datas::item_class_by_character_class($class);
     $itemType = Global_datas::type_id_by_name($this->params['slot']);
     switch ($itemType) {
@@ -78,7 +77,14 @@ class Items_datas {
       $item['name'] = utf8_encode($item['name']);
       $items_list[] = $item;
     }
-    return array('items_list' => $items_list, 'current_item' => $character_datas['items'][$this->params['slot']]);
+
+    $current_item = $character_datas['items'][$this->params['slot']];
+    $stats_names = Global_datas::get_stats();
+    foreach ($current_item['stats'] as $id=>$amount) {
+      $amount['name'] = $stats_names[$amount['stat']];
+      $current_item['stats'][$id] = $amount;
+    }
+    return array('items_list' => $items_list, 'current_item' => $current_item);
   }
 }
 

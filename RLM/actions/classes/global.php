@@ -95,7 +95,7 @@ class Global_datas {
       'head'=>1,
       'neck'=>2,
       'shoulder'=>3,
-      'chest'=>array(5, 20),
+      'chest'=>5,
       'waist'=>6,
       'legs'=>7,
       'feet'=>8,
@@ -125,9 +125,12 @@ class Global_datas {
       '35'=>'Résilience',
       '36'=>'Hâte',
       '37'=>'Expertise',
+      '40'=>'Versatilité',
       '45'=>'Puissance des sorts',
       '49'=>'Maîtrise',
-      '57'=>'Puissance JcJ'
+      '57'=>'Puissance JcJ',
+      '64'=>'???',
+      '73'=>'Agilité / Intelligence'
     );
     return $stats;
   }
