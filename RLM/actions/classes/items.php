@@ -15,7 +15,7 @@ class Items_datas {
 
     switch ($this->action) {
       case 'list_items' :
-        echo json_encode($this->list_items());
+        echo json_encode($this->list_items(), JSON_UNESCAPED_UNICODE);
         break;
       /*case 'get_all_ids_item' :
         echo json_encode($this->get_all_ids_item());
@@ -63,15 +63,22 @@ class Items_datas {
     $this->character = $this->armory->getCharacter($this->user_datas['user_perso']);
     $character_datas = $this->character->getData();
     $class = $character_datas['class'];
-    $armor_type = $character_datas['audit']['appropriateArmorType'];
+    //$itemType = $character_datas['audit']['appropriateArmorType'];
     $itemSubClass = Global_datas::item_class_by_character_class($class);
     $itemType = Global_datas::type_id_by_name($this->params['slot']);
-    $r = "SELECT * FROM larmes_items_normal WHERE inventoryType = '".$itemType."' AND itemSubClass = '".$itemSubClass."'";
-    $res = $this->mysqli->query($r);
-    while ($item = $res->fetch_assoc()) {
-      //print_r($item);
+    switch ($itemType) {
+      case 2  : case 11 : case 12 : $itemSubClass = 0; break;
+      case 16 :                     $itemSubClass = 1; break;
     }
-    return array('test'=>true);
+    $r = "SELECT * FROM larmes_items_normal WHERE inventoryType = ".$itemType." AND itemSubClass = ".$itemSubClass;
+    //echo $r;
+    $res = $this->mysqli->query($r);
+    $items_list = array();
+    while ($item = $res->fetch_assoc()) {
+      $item['name'] = utf8_encode($item['name']);
+      $items_list[] = $item;
+    }
+    return $items_list;
   }
 }
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 23 Février 2015 à 15:48
+-- Généré le :  Mar 24 Février 2015 à 11:54
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -36,7 +36,9 @@ CREATE TABLE IF NOT EXISTS `larmes_items_mythic` (
   `itemLevel` int(11) NOT NULL,
   `quality` smallint(6) NOT NULL,
   `armor` int(11) NOT NULL,
-  `itemSource` int(11) NOT NULL
+  `itemSource` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -44,52 +46,6 @@ CREATE TABLE IF NOT EXISTS `larmes_items_mythic` (
 --
 
 INSERT INTO `larmes_items_mythic` (`id`, `name`, `icon`, `inventoryType`, `itemClass`, `itemSubClass`, `itemLevel`, `quality`, `armor`, `itemSource`) VALUES
-(113863, 'Couronne en peau de gronn', 'inv_helm_mail_raidshamanmythic_o_01', 1, 4, 3, 695, 4, 197, 0),
-(113864, 'Escaladeurs de troglodyte', 'inv_boot_cloth_raidpriestmythic_o_01', 8, 4, 1, 695, 4, 96, 0),
-(113865, 'Collier de sombre lumière', 'inv_6_0raid_necklace_4d', 2, 4, 0, 695, 4, 0, 0),
-(113866, 'Sceau phosphorescent', 'inv_ringwod_d3_1', 11, 4, 0, 695, 4, 0, 0),
-(113867, 'Spallières de pierre réfléchie', 'inv_shoulder_mail_raidhuntermythic_o_01', 3, 4, 3, 695, 4, 182, 0),
-(113868, 'Chaperon aux yeux flamboyants', 'inv_helm_cloth_raidmagemythic_o_01', 1, 4, 1, 695, 4, 113, 0),
-(113869, 'Bâton de flammes infernales', 'inv_staff_2h_draenorraid_d_02', 17, 2, 10, 695, 4, 0, 0),
-(113870, 'Gilet de fureur énergique', 'inv_leather_raiddruid_o_01chest', 5, 4, 2, 695, 4, 187, 0),
-(113871, 'Brassards de perfection martiale', 'inv_bracer_plate_raidpaladinmythic_o_01', 9, 4, 4, 695, 4, 166, 0),
-(113872, 'Anneau labial de Gruul', 'inv_6_0raid_necklace_1d', 2, 4, 0, 695, 4, 0, 0),
-(113873, 'Grande cape cousue de gronn', 'inv_cape_draenorraid_d_01plate_dk', 16, 4, 1, 695, 4, 188, 0),
-(113874, 'Arrache-tripes marqué à l?acide de Mangeroc', 'inv_knife_1h_draenorraid_d_02', 13, 2, 15, 695, 4, 0, 0),
-(113875, 'Garde-jambes anti-corrosion', 'inv_pant_mail_raidhuntermythic_o_01', 7, 4, 3, 695, 4, 212, 0),
-(113876, 'Poignes de casse-dent', 'inv_glove_cloth_raidpriestmythic_o_01', 10, 4, 1, 695, 4, 87, 0),
-(113877, 'Eclat explosif intact', 'inv_ringwod_d2_4', 11, 4, 0, 695, 4, 0, 0),
-(113878, 'Cape esquive-barrages', 'inv_cape_draenorraid_d_01caster_purple', 16, 4, 1, 695, 4, 70, 0),
-(113879, 'Limon vivant en cage', 'inv_offhand_1h_draenorraid_d_01', 23, 4, 0, 695, 4, 0, 0),
-(113880, 'Mâchoires acides', 'inv_leather_raidroguemythic_o_01helm', 1, 4, 2, 695, 4, 152, 0),
-(113881, 'Cuirasse de fureur déferlante', 'inv_plate_raiddeathknightmythic_o_01chest', 5, 4, 4, 695, 4, 379, 0),
-(113882, 'Fichu de Glouton', 'inv_6_0raid_necklace_1b', 2, 4, 0, 695, 4, 120, 0),
-(113883, 'Grande cape vorace', 'inv_cape_draenorraid_d_01plate_warrior', 16, 4, 1, 695, 4, 173, 0),
-(113884, 'Plaques d?épaule de scorie instable', 'inv_plate_raidwarriormythic_o_01shoulders', 3, 4, 4, 695, 4, 284, 0),
-(113885, 'Bouche de la fureur', 'inv_bow_2h_crossbow_draenorraid_d_01', 26, 2, 18, 695, 4, 0, 0),
-(113886, 'Croissant de magma vivant', 'inv_axe_2h_draenorraid_d_01', 17, 2, 1, 695, 4, 0, 0),
-(113887, 'Brassards d?acier maculé', 'inv_bracer_cloth_raidpriestmythic_o_01', 9, 4, 1, 695, 4, 61, 0),
-(113888, 'Bottines d?écraseur de scories', 'inv_boot_mail_raidhuntermythic_o_01', 8, 4, 3, 695, 4, 167, 0),
-(113889, 'Talisman protecteur de l?élémentaliste', 'inv_misc_trinket6oih_ironskull2', 12, 4, 0, 695, 4, 0, 0),
-(113890, 'Sautoir de contrôle de Feldspath', 'inv_6_0raid_necklace_2b', 2, 4, 0, 695, 4, 0, 0),
-(113891, 'Capuche résistante aux explosions', 'inv_helm_mail_raidshamanmythic_o_01', 1, 4, 3, 695, 4, 197, 0),
-(113892, 'Gorgerin de conduction d?ingénieur', 'inv_6_0raid_necklace_1c', 2, 4, 0, 695, 4, 0, 0),
-(113893, 'Porte du haut fourneau', 'inv_misc_trinket6oih_ironskull1', 12, 4, 0, 695, 4, 291, 0),
-(113894, 'Grand heaume trempé dans la lave', 'inv_plate_raidwarriormythic_o_01helm', 1, 4, 4, 695, 4, 308, 0),
-(113895, 'Bottines de gardien de fourneau', 'inv_leather_raidmonk_o_01boot', 8, 4, 2, 695, 4, 129, 0),
-(113896, 'Brassards de fondeur de chair', 'inv_plate_raiddeathknightmythic_o_01bracer', 9, 4, 4, 695, 4, 166, 0),
-(113897, 'Marteau de forge de Hans?gar', 'inv_mace_1h_draenorraid_d_02', 13, 2, 4, 695, 4, 0, 0),
-(113898, 'Robe dorée tape-à-l??il', 'inv_robe_cloth_raidmagemythic_o_01', 20, 4, 1, 695, 4, 139, 0),
-(113899, 'Garde-épaules de casse-cou', 'inv_shoulder_mail_raidshamanmythic_o_01', 3, 4, 3, 695, 4, 182, 0),
-(113900, 'Protège-vertèbres', 'inv_6_0raid_necklace_2d', 2, 4, 0, 695, 4, 0, 0),
-(113901, 'Bague aux six yeux', 'inv_ringwod_d_2', 11, 4, 0, 695, 4, 0, 0),
-(113902, 'Corselet des rugissements interminables', 'inv_chest_mail_raidhuntermythic_o_01', 5, 4, 3, 695, 4, 242, 0),
-(113903, 'Siphons géants', 'inv_shoulder_cloth_raidpriestmythic_o_01', 3, 4, 1, 695, 4, 104, 0),
-(113904, 'Pilonne-tête de Franzok', 'inv_mace_1h_draenorraid_d_04red', 21, 2, 4, 695, 4, 0, 0),
-(113905, 'Tablette du tendeur tactique', 'inv_misc_trinket6oih_orb4', 12, 4, 0, 695, 4, 0, 0),
-(113906, 'Gantelets des coups spectaculaires', 'inv_plate_raiddeathknightmythic_o_01glove', 10, 4, 4, 695, 4, 237, 0),
-(113907, 'Ceinturon de gloire insoumise', 'inv_leather_raidmonk_o_01belt', 6, 4, 2, 695, 4, 105, 0),
-(113908, 'Anneau des lames tranchantes', 'inv_ringwod_d2_1', 11, 4, 0, 695, 4, 92, 0),
 (113863, 'Couronne en peau de gronn', 'inv_helm_mail_raidshamanmythic_o_01', 1, 4, 3, 695, 4, 197, 0),
 (113864, 'Escaladeurs de troglodyte', 'inv_boot_cloth_raidpriestmythic_o_01', 8, 4, 1, 695, 4, 96, 0),
 (113865, 'Collier de sombre lumière', 'inv_6_0raid_necklace_4d', 2, 4, 0, 695, 4, 0, 0),
