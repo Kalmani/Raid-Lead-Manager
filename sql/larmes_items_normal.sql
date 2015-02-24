@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 23 Février 2015 à 15:48
+-- Généré le :  Mar 24 Février 2015 à 11:54
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -36,7 +36,9 @@ CREATE TABLE IF NOT EXISTS `larmes_items_normal` (
   `itemLevel` int(11) NOT NULL,
   `quality` smallint(6) NOT NULL,
   `armor` int(11) NOT NULL,
-  `itemSource` int(11) NOT NULL
+  `itemSource` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
