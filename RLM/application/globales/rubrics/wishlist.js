@@ -6,6 +6,10 @@ ScreenEvents.actions.wishlist = {
     this.rubric = rubric;
     this.app = app;
     this.elem = elem;
+    if (this.id.split('_')[0] == 'refresh')
+      this.id = 'refresh';
+    if (this.id.split('_')[0] == 'add')
+      this.id = 'add';
     switch(this.id) {
       case 'refresh' : 
         this.refresh_item();

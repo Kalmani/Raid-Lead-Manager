@@ -16,12 +16,11 @@ var WishlistScreen = new Class ({
     this.parent(args);
     this.app.addEvent('asyn_panel_ready', function(panel_id) {
       if (panel_id == 'wish_list_panel') {
-        Object.each(document.getElements('.refresh_item'), function(elem) {
+        /*Object.each(document.getElements('.refresh_item'), function(elem) {
           if (typeof(elem) !== 'number') {
-            var slot = elem.get('id').split('_')[1];
             elem.removeEvents('click');
           }
-        }.bind(this));
+        }.bind(this));*/
       }
     }.bind(this));
   },

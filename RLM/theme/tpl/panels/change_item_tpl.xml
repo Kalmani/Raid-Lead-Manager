@@ -28,7 +28,7 @@
             </td>
           </tr>
         </table>
-        <a href="#" rel="item={{current_item.id}}&amp;domain=fr" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a>
+        <a href="#" rel="item={{current_item.id}}" class="wowheadlink"> </a>
         <br />
         <table class="table table-striped table-condensed">
           {{#current_item.stats}}
@@ -79,7 +79,7 @@
                     </tr>
                   </tbody>
                 </table>
-              <a style="position:absolute; width:250px; height:57px; margin-top:-50px;" rel="item=89820&domain=fr" href="#"> </a>
+              <a class="wowheadlink" rel="item=89820&domain=fr" href="#"> </a>
             </td>
           </tr>
           <tr>
@@ -152,74 +152,50 @@
           </td>
         </tr>
       </table>
-      <a href="#" rel="item={{item.id}}&amp;domain=fr" style="display:block; position:absolute; width:calc(100% - 30px); height:49px; margin-top:-49px;"> </a>
+      <a href="#" rel="item={{item.id}}" class="wowheadlink"> </a>
     </div>
   </script>
   <script id="change_item" type="text/template">
     <div class="panel panel-default">
       <div class="panel-heading">Choix de votre wish list : </div>
       <div class="panel-body">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td align="left" class="arian">Armure > Maille > Tête   </td>
-            <td align="right">
-              Trier par :
-              <select class="filter">
+        <form role="form">
+          <div class="form-group">
+            <div class="col-md-6">
+              <ol class="breadcrumb ariane">
+                <li class="active">Armure</li>
+                <li class="active">Maille</li>
+                <li class="active">Tête</li>
+              </ol>
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"> </span>
+                <input type="text" id="search_loot" class="form-control col-md-3" placeholder="Rechercher une pièce" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <select class="filter form-control">
                 <option value="ilvl1">Niveau croissant</option>
-                <option value="ilvl2" selected="selected">Niveau d?croissant</option>
+                <option value="ilvl2" selected="selected">Niveau décroissant</option>
                 <option value="name1">Nom d'objet A-Z</option>
                 <option value="name2">Nom d'objet Z-A</option>
               </select>
-              <select class="filter">
-                <option value="n">Raid Normal</option>
-                <option value="hm">Raid Hard Mode</option>
+              <select class="filter form-control">
+                <option value="normal">Normal</option>
+                <option value="heroic">Heroic</option>
+                <option value="mythic">Mythic</option>
                 <option value="all" selected="selected">Tous types de raid</option>
               </select>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" cellspacing="0" cellpadding="0" border="0">
-          <tr>
-            <td align="left">
-            </td>
-            <td align="right" valign="top">
-              Contenant la statistique : 
-              <select class="filter">
-                <option value="0">- - -</option>
+              <select class="filter form-control">
+                <option value="0">Caractéristique</option>
                 <option value="3">Agilité</option>
                 <option value="4">Force</option>
                 <option value="5">Intelligence</option>
                 <option value="6">Esprit</option>
               </select>
-            </td>
-          </tr>
-        </table>
-        <table width="100%" cellspacing="0" cellpadding="0" border="0">
-          <tr>
-            <td align="left">
-            </td>
-            <td align="right" valign="top">
-              Contenant au moins : 
-              <select class="filter">
-                <option value="0">- - -</option>
-                <option value="BLUE">une châsse bleue</option>
-                <option value="RED">une châsse rouge</option>
-                <option value="YELLOW">une châsse jaune</option>
-                <option value="META">une méta châsse</option>
-                <option value="HYDRAULIC">une châsse touchée par le Sha</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <div class="row" style="margin-bottom:10px;">
-          <div class="col-md-3">
-            <div class="input-group">
-              <span class="input-group-addon glyphicon glyphicon-search"></span>
-              <input type="text" id="search_loot" class="form-control col-md-3" placeholder="Rechercher une pièce" />
             </div>
           </div>
-        </div>
-        <fieldset>
+        </form>
+        <fieldset style="margin-top:20px;">
           <legend style="color:#fff;">Objets disponibles</legend>
           <div id="items_list_wish"></div>
         </fieldset>
