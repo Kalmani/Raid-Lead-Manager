@@ -78,7 +78,7 @@ class Items_datas {
       $item['name'] = utf8_encode($item['name']);
       $items_list[] = $item;
     }
-    return $items_list;
+    return array('items_list' => $items_list, 'current_item' => $character_datas['items'][$this->params['slot']]);
   }
 }
 
