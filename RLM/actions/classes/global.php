@@ -92,21 +92,21 @@ class Global_datas {
 
   public static function get_types() {
     $types = array(
-      'head'=>'1',
-      'neck'=>'2',
-      'shoulder'=>'3',
-      'chest'=>array('5', '20'),
-      'waist'=>'6',
-      'legs'=>'7',
-      'feet'=>'8',
-      'wrist'=>'9',
-      'hands'=>'10',
-      'finger1'=>'11',
-      'finger2'=>'11',
-      'trinket1'=>'12',
-      'trinket2'=>'12',
-      'back'=>'16',
-      'offHand'=>'23'
+      'head'=>1,
+      'neck'=>2,
+      'shoulder'=>3,
+      'chest'=>array(5, 20),
+      'waist'=>6,
+      'legs'=>7,
+      'feet'=>8,
+      'wrist'=>9,
+      'hands'=>10,
+      'finger1'=>11,
+      'finger2'=>11,
+      'trinket1'=>12,
+      'trinket2'=>12,
+      'back'=>16,
+      'offHand'=>23
     );
     return $types;
   }

@@ -66,7 +66,12 @@ class Items_datas {
     //$itemType = $character_datas['audit']['appropriateArmorType'];
     $itemSubClass = Global_datas::item_class_by_character_class($class);
     $itemType = Global_datas::type_id_by_name($this->params['slot']);
-    $r = "SELECT * FROM larmes_items_normal WHERE inventoryType = '".$itemType."' AND itemSubClass = '".$itemSubClass."'";
+    switch ($itemType) {
+      case 2  : case 11 : case 12 : $itemSubClass = 0; break;
+      case 16 :                     $itemSubClass = 1; break;
+    }
+    $r = "SELECT * FROM larmes_items_normal WHERE inventoryType = ".$itemType." AND itemSubClass = ".$itemSubClass;
+    //echo $r;
     $res = $this->mysqli->query($r);
     $items_list = array();
     while ($item = $res->fetch_assoc()) {
