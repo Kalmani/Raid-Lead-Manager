@@ -32,7 +32,6 @@ class Account {
         )
       );
     }
-
     $res = $this->mysqli->query("SELECT * FROM larmes_identifiants");
     $founded = false;
     while ($row = $res->fetch_assoc()) {
@@ -41,6 +40,7 @@ class Account {
       if ($row['user_log'] == $pseudo && ($row['user_pass'] == $pass || $row['user_pass'] == md5($pass))) {
         if (!$this->isValidMd5($pass))
           $row['need_new_pass'] = true;
+        $row['user_perso'] = utf8_encode($row['user_perso']);
         return array(
           'success' => array(
             'message' => 'Identification réussi'

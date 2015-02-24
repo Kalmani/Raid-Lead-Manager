@@ -197,7 +197,8 @@
             </div>
           </div>
         </form>
-        <fieldset>
+        <div  style="clear:both;"> </div>
+        <fieldset style="clear:both;">
           <legend style="color:#fff; margin-top:20px;">Objets disponibles</legend>
           <div id="items_list_wish"></div>
         </fieldset>

@@ -60,7 +60,7 @@ class Items_datas {
     $this->armory->UTF8(true);
     $this->armory->setLocale('fr_FR');
     $this->user_datas = (array) json_decode($_COOKIE['RLM_user']);
-    $this->character = $this->armory->getCharacter($this->user_datas['user_perso']);
+    $this->character = $this->armory->getCharacter(utf8_decode($this->user_datas['user_perso']));
     $character_datas = $this->character->getData();
     $class = $character_datas['class'];
     $itemSubClass = Global_datas::item_class_by_character_class($class);
@@ -70,7 +70,6 @@ class Items_datas {
       case 16 :                     $itemSubClass = 1; break;
     }
     $r = "SELECT * FROM larmes_items_normal WHERE inventoryType = ".$itemType." AND itemSubClass = ".$itemSubClass;
-    //echo $r;
     $res = $this->mysqli->query($r);
     $items_list = array();
     while ($item = $res->fetch_assoc()) {
@@ -81,7 +80,7 @@ class Items_datas {
     $current_item = $character_datas['items'][$this->params['slot']];
     $stats_names = Global_datas::get_stats();
     foreach ($current_item['stats'] as $id=>$amount) {
-      $amount['name'] = $stats_names[$amount['stat']];
+      $amount['name'] = ($stats_names[$amount['stat']]) ? $stats_names[$amount['stat']] : 'Si tu sais, dis le moi';
       $current_item['stats'][$id] = $amount;
     }
     return array('items_list' => $items_list, 'current_item' => $current_item);

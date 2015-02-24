@@ -19,7 +19,7 @@ class Character_datas {
     $this->armory->UTF8(true);
     $this->armory->setLocale('fr_FR'); //conf
     $this->user_datas = (array) json_decode($_COOKIE['RLM_user']);
-    $this->character = $this->armory->getCharacter($this->user_datas['user_perso']);
+    $this->character = $this->armory->getCharacter(utf8_decode($this->user_datas['user_perso']));
     switch ($this->action) {
       case 'show_profile' :
         echo json_encode($this->show_profile());

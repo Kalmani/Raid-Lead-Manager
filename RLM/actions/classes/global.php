@@ -130,7 +130,7 @@ class Global_datas {
       '49'=>'Maîtrise',
       '57'=>'Puissance JcJ',
       '59'=>'Frappe multiple',
-      '64'=>'???',
+      '64'=>'Si tu sais, dis le moi',
       '73'=>'Agilité / Intelligence'
     );
     return $stats;
