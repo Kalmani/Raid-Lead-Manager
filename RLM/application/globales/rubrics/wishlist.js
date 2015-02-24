@@ -21,10 +21,14 @@ ScreenEvents.actions.wishlist = {
         console.info('No bind on button ' + this.id);
         break;
     }
-
   },
 
   refresh_item : function() {
+    try {
+      this.elem.get('id')
+    } catch(e) {
+      return;
+    }
     var slot = this.elem.get('rel');
     console.info('refresh slot : ' + slot);
     var line = document.id('line_' + slot);
@@ -47,6 +51,11 @@ ScreenEvents.actions.wishlist = {
   },
 
   add_page : function() {
+    try {
+      this.elem.get('id')
+    } catch(e) {
+      return;
+    }
     var slot = this.elem.get('rel');
     console.info('Add wish item : ' + slot);
     this.rubric.show_add_item_page(slot);
