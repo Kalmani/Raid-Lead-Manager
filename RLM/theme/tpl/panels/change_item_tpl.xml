@@ -14,21 +14,23 @@
     <div class="panel panel-default">
       <div class="panel-heading">Equipement actuel</div>
       <div class="panel-body">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td width="56" class="equipement_icon" style="width:56px;">
-              <img src="http://eu.media.blizzard.com/wow/icons/56/{{current_item.icon}}.jpg" />
-              <span class="frame frame_{{current_item.quality}}"> </span>
-            </td>
-            <td align="left">
-              <span class="color-4">{{current_item.name}}</span><br />
-              <span style="color:#999999;">
-                {{current_item.itemLevel}}<br />
-              </span>
-            </td>
-          </tr>
-        </table>
-        <a href="#" rel="item={{current_item.id}}" class="wowheadlink"> </a>
+        <div class="item">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="56" class="equipement_icon" style="width:56px;">
+                <img src="http://eu.media.blizzard.com/wow/icons/56/{{current_item.icon}}.jpg" />
+                <span class="frame frame_{{current_item.quality}}"> </span>
+              </td>
+              <td align="left">
+                <span class="color-4">{{current_item.name}}</span><br />
+                <span style="color:#ffd200;">
+                  {{current_item.itemLevel}}<br />
+                </span>
+              </td>
+            </tr>
+          </table>
+          <a href="#" rel="item={{current_item.id}}" class="wowheadlink"> </a>
+        </div>
         <br />
         <table class="table table-striped table-condensed">
           {{#current_item.stats}}
@@ -148,7 +150,7 @@
         </tr>
         <tr>
           <td>
-            <span style="color:#FFF;">{{item.itemLevel}}</span>
+            <span style="color:#ffd200;">{{item.itemLevel}}</span>
           </td>
         </tr>
       </table>
@@ -173,13 +175,13 @@
               </div>
             </div>
             <div class="col-md-6">
-              <select class="filter form-control">
+              <select class="filter form-control" style="margin-bottom:10px;">
                 <option value="ilvl1">Niveau croissant</option>
                 <option value="ilvl2" selected="selected">Niveau décroissant</option>
                 <option value="name1">Nom d'objet A-Z</option>
                 <option value="name2">Nom d'objet Z-A</option>
               </select>
-              <select class="filter form-control">
+              <select class="filter form-control" style="margin-bottom:10px;">
                 <option value="normal">Normal</option>
                 <option value="heroic">Heroic</option>
                 <option value="mythic">Mythic</option>
@@ -195,8 +197,8 @@
             </div>
           </div>
         </form>
-        <fieldset style="margin-top:20px;">
-          <legend style="color:#fff;">Objets disponibles</legend>
+        <fieldset>
+          <legend style="color:#fff; margin-top:20px;">Objets disponibles</legend>
           <div id="items_list_wish"></div>
         </fieldset>
       </div>

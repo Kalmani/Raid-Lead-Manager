@@ -236,7 +236,12 @@ span.frame_4{
 }
 
 .ariane{
-  margin-bottom: 32px !important;
+  margin-bottom: 52px !important;
+  background-color: #1a0500 !important;
+}
+
+.ariane li {
+  color: #FFF !important;
 }
 
 .wowheadlink {
