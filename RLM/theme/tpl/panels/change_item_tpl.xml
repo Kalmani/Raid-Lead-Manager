@@ -16,57 +16,31 @@
       <div class="panel-body">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
           <tr>
-            <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-              <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
-              <span class="frame frame_4"> </span>
+            <td width="56" class="equipement_icon" style="width:56px;">
+              <img src="http://eu.media.blizzard.com/wow/icons/56/{{current_item.icon}}.jpg" />
+              <span class="frame frame_{{current_item.quality}}"> </span>
             </td>
             <td align="left">
-              <span class="color-4">Chapel d'harmonie céleste</span><br />
+              <span class="color-4">{{current_item.name}}</span><br />
               <span style="color:#999999;">
-                566<br />
+                {{current_item.itemLevel}}<br />
               </span>
             </td>
           </tr>
         </table>
-        <a href="#" rel="item=99332&amp;domain=fr" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a>
+        <a href="#" rel="item={{current_item.id}}&amp;domain=fr" style="position:absolute; width:250px; height:57px; margin-top:-50px;"> </a>
         <br />
         <table class="table table-striped table-condensed">
+          {{#current_item.stats}}
           <tr>
             <td align="left" width="140">
-              Maîtrise : 
+              {{name}}
             </td>
             <td align="center" width="90">
-              62
+              {{amount}}
             </td>
           </tr>
-          <tr>
-            <td align="left" width="140">
-              Intelligence : 
-            </td>
-            <td align="center" width="90">
-              80
-            </td>
-          </tr>
-          <tr>
-            <td align="left" width="140">
-              Hâte : 
-            </td>
-            <td align="center" width="90">
-              45
-            </td>
-          </tr>
-          <tr>
-            <td align="left" width="140">
-              Endurance : 
-            </td>
-            <td align="center" width="90">
-              138
-            </td>
-          </tr>
-          <tr>
-            <td align="left">Armure : </td>
-            <td align="center">88</td>
-          </tr>
+          {{/current_item.stats}}
         </table>
         <form>
           <input type="hidden" value="99332" name="item_id" />
@@ -161,26 +135,24 @@
     </div>
   </script>
   <script id="item_bloc" type="text/template">
-    <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
-      <div class="panel-heading">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;" rowspan="2">
-              <img src="http://eu.media.blizzard.com/wow/icons/56/{{item.icon}}.jpg" />
-              <span class="frame frame_{{item.quality}}"> </span>
-            </td>
-            <td valign="top">
-              <span style="color:#000;">{{item.itemLevel}}</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-4">{{item.name}}</span>
-            </td>
-          </tr>
-        </table>
-        <a href="#" rel="item={{item.id}}&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
-      </div>
+    <div class="item" style="margin-bottom:10px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td width="56" class="equipement_icon" style="width:56px; height:49px;" rowspan="2" valign="top">
+            <img src="http://eu.media.blizzard.com/wow/icons/56/{{item.icon}}.jpg" />
+            <span class="frame frame_{{item.quality}}"> </span>
+          </td>
+          <td valign="top">
+            <span class="color-{{item.quality}}">{{item.name}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span style="color:#FFF;">{{item.itemLevel}}</span>
+          </td>
+        </tr>
+      </table>
+      <a href="#" rel="item={{item.id}}&amp;domain=fr" style="display:block; position:absolute; width:calc(100% - 30px); height:49px; margin-top:-49px;"> </a>
     </div>
   </script>
   <script id="change_item" type="text/template">
@@ -250,106 +222,6 @@
         <fieldset>
           <legend style="color:#fff;">Objets disponibles</legend>
           <div id="items_list_wish"></div>
-          <!--<table class="table-condensed" width="100%">
-            <tr>
-              <td>
-                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;" onclick="get_wich_view('99332', '0', '1182');">
-                  <div class="panel-heading">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td valign="top">
-                          <span style="color:#000;">566
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" colspan="2">
-                          <span class="color-4">Chapel d'harmonie céleste       </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99332&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
-                  </div>
-                </div>
-              </td>
-              <td width="25%" class="item_to_chose_cont" id="casque_d_harmonie_céleste">
-                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
-                  <div class="panel-heading">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td valign="top">
-                          <span style="color:#000;">566
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" colspan="2">
-                          <span class="color-4">Casque d'harmonie céleste       </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99341&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
-                  </div>
-                </div>
-              </td>
-              <td width="25%" class="item_to_chose_cont" id="ventaille_d_harmonie_céleste">
-                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
-                  <div class="panel-heading">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td valign="top">
-                          <span style="color:#000;">566
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" colspan="2">
-                          <span class="color-4">Ventaille d'harmonie céleste        </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99353&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
-                  </div>
-                </div>
-              </td>
-              <td width="25%" class="item_to_chose_cont" id="ventaille_d_harmonie_céleste">
-                <div class="panel panel-warning item_to_chose" style="margin-bottom:10px;">
-                  <div class="panel-heading">
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                      <tr>
-                        <td width="56" class="equipement_icon" style="width:56px; padding-left:5px;">
-                          <img src="http://eu.media.blizzard.com/wow/icons/56/inv_mail_raidshaman_n_01helm.jpg" />
-                          <span class="frame frame_4"> </span>
-                        </td>
-                        <td valign="top">
-                          <span style="color:#000;">566
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" colspan="2">
-                          <span class="color-4">Ventaille d'harmonie céleste        </span>
-                        </td>
-                      </tr>
-                    </table>
-                    <a href="#" rel="item=99353&amp;domain=fr" style="display:block; position:absolute; width:150px; height:100px; margin-top:-85px;"> </a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </table>-->
         </fieldset>
       </div>
     </div>

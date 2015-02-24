@@ -32,8 +32,6 @@ var WishlistScreen = new Class ({
     dom.empty();
 
     this.app.SCS.panels_list = {
-      'current_item' : {'id' : 'current_item', 'animate' : 'fadeIn'},
-      'selected_bis' : {'id' : 'selected_bis', 'animate' : 'fadeIn'},
       'change_item' : {'id' : 'change_item', 'animate' : 'fadeIn'}
     };
     this.app.SCS.switchScreen('select_wish_item', dom);
@@ -55,15 +53,27 @@ var WishlistScreen = new Class ({
   },
 
   add_items : function(items) {
+    var container = document.id('current_item'),
+        context = {
+          'current_item' : items.current_item
+        }
+    this.app.render('current_item', context).inject(container);
+
     var container = document.id('items_list_wish');
-    Array.each(items, function(item, key) {
+    var i = 0;
+    Array.each(items.items_list, function(item, key) {
       var context = {
             'item' : item
           },
           element = this.app.render('item_bloc', context);
-          bloc_container = new Element('div', {'class' : "col-md-4 col-sm-6 col-xs-12"});
+          bloc_container = new Element('div', {'class' : "col-md-6 col-sm-12 col-xs-12"});
       element.inject(bloc_container);
       bloc_container.inject(container);
+      i++;
+      if (i%2 === 0) {
+        var clearer = new Element('div', {'style' : 'clear:both;'});
+        clearer.inject(container);
+      }
     }.bind(this));
   },
 
