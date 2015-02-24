@@ -129,6 +129,7 @@ class Global_datas {
       '45'=>'Puissance des sorts',
       '49'=>'Maîtrise',
       '57'=>'Puissance JcJ',
+      '59'=>'Frappe multiple',
       '64'=>'???',
       '73'=>'Agilité / Intelligence'
     );

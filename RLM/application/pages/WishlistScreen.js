@@ -14,15 +14,6 @@ var WishlistScreen = new Class ({
   show : function(args) {
     console.log(this.ID);
     this.parent(args);
-    this.app.addEvent('asyn_panel_ready', function(panel_id) {
-      if (panel_id == 'wish_list_panel') {
-        /*Object.each(document.getElements('.refresh_item'), function(elem) {
-          if (typeof(elem) !== 'number') {
-            elem.removeEvents('click');
-          }
-        }.bind(this));*/
-      }
-    }.bind(this));
   },
 
   show_add_item_page : function(slot) {
