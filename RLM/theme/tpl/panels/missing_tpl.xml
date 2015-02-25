@@ -4,18 +4,14 @@
     <div class="panel panel-default">
       <div class="panel-heading">$Home.Missing.Title; ?</div>
       <div class="panel-body">
-        <form class="form-horizontal" role="form">
-          <div class="form-group">
-            <label class="control-label col-sm-4" for="objet_manquant">$Home.Missing.Object_name; :</label>
-            <div class="col-sm-8">
-              <input type="text" name="objet_manquant" id="objet_manquant" class="form-control" />
-            </div>
+        <form class="form" role="form">
+          <label class="control-label col-lg-5 col-md-12 col-sm-12" for="objet_manquant">$Home.Missing.Object_name; :</label>
+          <div class="col-lg-7 col-md-12 col-sm-12">
+            <input type="text" name="objet_manquant" id="objet_manquant" class="form-control" />
           </div>
-          <div class="form-group">
-            <label class="control-label col-sm-4"> </label>
-            <div class="col-sm-8">
-              <span class="btn btn-success" id="home_missing_item">$Home.Missing.Claim;</span>
-            </div>
+          <div style="clear:both; height:10px;"> </div>
+          <div class="col-lg-offset-5 col-lg-7">
+            <span class="btn btn-success" id="home_missing_item">$Home.Missing.Claim;</span>
           </div>
         </form>
       </div>

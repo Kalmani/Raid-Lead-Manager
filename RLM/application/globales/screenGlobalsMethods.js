@@ -79,7 +79,7 @@ var ScreenGlobalsMethods = new Class ({
 
     if (document.id('column_' + id))
       document.id('column_' + id).dispose();
-    var column = new Element('div', {'class' : 'col-md-' + col_w, 'id' : 'column_' + id});
+    var column = new Element('div', {'class' : 'col-md-' + col_w + ' col-sm-' + col_w, 'id' : 'column_' + id});
     column.inject(this.container);
   },
 

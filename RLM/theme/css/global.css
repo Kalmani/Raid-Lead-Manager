@@ -8,6 +8,12 @@ body {
   line-height: 1.42857;
 }
 
+@media (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
+}
+
 .col-centered {
   float: none;
   margin: 0 auto;
@@ -39,9 +45,63 @@ body {
 
 .navbar-nav {
   background-image: url("../rsc/background-navigation.gif");
-  border-bottom: 2px solid #62210f;
-  height: 52px;
-  width: 100%;
+  background-repeat: repeat-x;
+  /*height: 50px;
+  width: 100%;*/
+  margin: 0px;
+}
+
+.navbar-inverse{
+  background-color: transparent;
+  border: none !important;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #c53517;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #62210f;
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li:hover > a {
+  background-color: #62210f;
+  color: #fff;
+}
+
+.collapse {
+  background-color: #1A0500;
+  border-bottom: 2px solid;
+  border-color: #62210f !important;
+}
+
+.navbar-collapse {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #7B2B15;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #7B2B15 !important;
+}
+
+.collapse.in, .navbar-collapse.in {
+  overflow-y: inherit !important;
+}
+
+.collapse.in .navbar-nav {
+  background-image: none !important;
+}
+
+.navbar-brand {
+  margin-left: 0px !important;
+  color: #fff !important;
 }
 
 .container-fluid {
@@ -49,9 +109,24 @@ body {
   padding-right: 0;
 }
 
-.navbar-inverse{
-  background-color: transparent;
-  border-bottom: none;
+.navbar-header {
+  background-color: #1A0500 !important;
+}
+
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  color: #FFF !important;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li:hover > a {
+  background-color: #62210f !important;
 }
 
 .btn-success {
@@ -63,16 +138,6 @@ body {
 .btn {
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color: #c53517;
-  font-weight: bold;
-}
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-  background-color: #62210f;
-  color: #fff;
 }
 
 .form-control:focus {

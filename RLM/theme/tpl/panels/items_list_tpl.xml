@@ -5,101 +5,99 @@
       <div class="panel-heading">Equipement</div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-6">
-              <table class="table-condensed" width="100%">
-                {{#left}}
-                  {{#no_item}}
-                    <tr>
-                      <td align="left">
-                        <div class="item">
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                              <td width="56" colspan="2">
-                                <span class="glyphicon glyphicon-remove-circle" style="font-size:40px;"> </span>
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                      </td>
-                    </tr>
-                  {{/no_item}}
-                  {{#has_item}}
-                    <tr>
-                      <td align="left">
-                        <div class="item">
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                              <td width="60" class="equipement_icon">
-                                <img src="{{img_url}}" />
-                                <span class="frame frame_{{scarcity}} item_color"> </span>
-                              </td>
-                              <td align="left">
-                                <span class="color-{{scarcity}}">
-                                  {{name}}
-                                </span>
-                                <br />
-                                <span style="color:#ffd200;">
-                                  {{level}} ({{status}})
-                                </span>
-                              </td>
-                            </tr>
-                          </table>
-                          <a href="#" rel="{{item_url}}" class="wowheadlink"> </a>
-                        </div>
-                      </td>
-                    </tr>
-                  {{/has_item}}
-                {{/left}}
-              </table>
-            </div>
-            <div class="col-md-6">
-              <table class="table-condensed" width="100%">
-                {{#right}}
-                  {{#no_item}}
-                    <tr>
-                      <td align="left">
-                        <div class="item">
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                              <td width="56" colspan="2">
-                                <span class="glyphicon glyphicon-remove-circle" style="font-size:40px;"> </span>
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                      </td>
-                    </tr>
-                  {{/no_item}}
-                  {{#has_item}}
-                    <tr>
-                      <td align="left">
-                        <div class="item">
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                              <td width="60" class="equipement_icon">
-                                <img src="{{img_url}}" />
-                                <span class="frame frame_{{scarcity}} item_color"> </span>
-                              </td>
-                              <td align="left">
-                                <span class="color-{{scarcity}}">
-                                  {{name}}
-                                </span>
-                                <br />
-                                <span style="color:#ffd200;">
-                                  {{level}} ({{status}})
-                                </span>
-                              </td>
-                            </tr>
-                          </table>
-                          <a href="#" rel="{{item_url}}" class="wowheadlink"> </a>
-                        </div>
-                      </td>
-                    </tr>
-                  {{/has_item}}
-                {{/right}}
-              </table>
-            </div>
+          <div class="col-lg-6 col-md-12">
+            <table class="table-condensed" width="100%">
+              {{#left}}
+                {{#no_item}}
+                  <tr>
+                    <td>
+                      <div class="item">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td width="56" colspan="2">
+                              <span class="glyphicon glyphicon-remove-circle" style="font-size:40px;"> </span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                {{/no_item}}
+                {{#has_item}}
+                  <tr>
+                    <td>
+                      <div class="item">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td width="60" class="equipement_icon">
+                              <img src="{{img_url}}" />
+                              <span class="frame frame_{{scarcity}} item_color"> </span>
+                            </td>
+                            <td align="left">
+                              <span class="color-{{scarcity}}">
+                                {{name}}
+                              </span>
+                              <br />
+                              <span style="color:#ffd200;">
+                                {{level}} ({{status}})
+                              </span>
+                            </td>
+                          </tr>
+                        </table>
+                        <a href="#" rel="{{item_url}}" class="wowheadlink"> </a>
+                      </div>
+                    </td>
+                  </tr>
+                {{/has_item}}
+              {{/left}}
+            </table>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <table class="table-condensed" width="100%">
+              {{#right}}
+                {{#no_item}}
+                  <tr>
+                    <td>
+                      <div class="item">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td width="56" colspan="2">
+                              <span class="glyphicon glyphicon-remove-circle" style="font-size:40px;"> </span>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                {{/no_item}}
+                {{#has_item}}
+                  <tr>
+                    <td>
+                      <div class="item">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td width="60" class="equipement_icon">
+                              <img src="{{img_url}}" />
+                              <span class="frame frame_{{scarcity}} item_color"> </span>
+                            </td>
+                            <td align="left">
+                              <span class="color-{{scarcity}}">
+                                {{name}}
+                              </span>
+                              <br />
+                              <span style="color:#ffd200;">
+                                {{level}} ({{status}})
+                              </span>
+                            </td>
+                          </tr>
+                        </table>
+                        <a href="#" rel="{{item_url}}" class="wowheadlink"> </a>
+                      </div>
+                    </td>
+                  </tr>
+                {{/has_item}}
+              {{/right}}
+            </table>
           </div>
         </div>
       </div>
