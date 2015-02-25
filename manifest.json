@@ -39,12 +39,23 @@
   "RLM/application/pages/WishlistScreen.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/pages/CompareScreen.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/pages/HystoryScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/AdminScreen.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/pages/DisconnectScreen.js" : {"jscs" : true, "jshint" : true},
 
   "RLM/application/pages/subs/WishBisScreen.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/pages/subs/WishProvScreen.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/pages/subs/WishSpeScreen.js" : {"jscs" : true, "jshint" : true},
+
+  "RLM/application/pages/AdminScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/AccountScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/AttributionScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/CalendarScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/CraftScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/DownScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/FixAttribScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/ImportScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/MissingScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/StatScreen.js" : {"jscs" : true, "jshint" : true},
+  "RLM/admin/pages/UpdateScreen.js" : {"jscs" : true, "jshint" : true},
 
   "RLM/application/raid_lead_manager.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/init.js" : {"jscs" : true, "jshint" : true}

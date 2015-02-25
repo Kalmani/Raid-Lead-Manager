@@ -36,7 +36,49 @@
     },
     "ADMIN" : {
       "accessKey" : "use your imagination for this",
-      "className" : "AdminScreen"
+      "className" : "AdminScreen",
+      "subs" : {
+        "DOWN_BOSSES" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "DownScreen"
+        },
+        "ATTRIBUTION" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "AttributionScreen"
+        },
+        "FIX_ATTRIB" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "FixAttribScreen"
+        },
+        "ACCOUNTS" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "AccountScreen"
+        },
+        "STATS" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "StatScreen"
+        },
+        "UPDATES" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "UpdateScreen"
+        },
+        "IMPORT" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "ImportScreen"
+        },
+        "MISSING" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "MissingScreen"
+        },
+        "CALENDAR" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "CalendarScreen"
+        },
+        "CRAFTS" : {
+          "accessKey" : "use your imagination for this",
+          "className" : "CraftScreen"
+        }
+      }
     },
     "DISCONNECT" : {
       "accessKey" : "use your imagination for this",
