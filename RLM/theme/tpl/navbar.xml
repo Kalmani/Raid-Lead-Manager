@@ -37,56 +37,5 @@
 				</div>
 			</div>
 		</nav>
-			<!--
-			<li>
-				<a href="index.php?page=compare">Comparateur</a>
-			</li>
-			<li>
-				<a href="index.php?page=hist">Historique</a>
-			</li>
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Administration <span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li>
-						<a href="index.php?page=downs">Downs de boss</a>
-					</li>
-					<li>
-						<a href="index.php?page=attrib">Attributions</a>
-					</li>
-					<li>
-						<a href="index.php?page=echange">Correct. Attrib</a>
-					</li>
-					<li>
-						<a href="index.php?page=accounts">Comptes</a>
-					</li>
-					<li>
-						<a href="index.php?page=stats">Stats</a>
-					</li>
-					<li>
-						<a href="index.php?page=stats_lfr">Stats LFR</a>
-					</li>
-					<li>
-						<a href="index.php?page=majs">Notes MaJ</a>
-					</li>
-					<li>
-						<a href="index.php?page=import">Importation</a>
-					</li>
-					<li>
-						<a href="index.php?page=manquants" style="color:red;">Ajout objs. (2)</a>
-					</li>
-					<li>
-						<a href="index.php?page=emails">Envoie mails</a>
-					</li>
-					<li>
-						<a href="index.php?page=calendar" >Calendrier (0)</a>
-					</li>
-					<li>
-						<a href="index.php?page=crafts" style="color:red;">Crafts (2)</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="index.php?page=deco">Deconnexion</a>
-			</li>-->
 	</script>
 </mustache>

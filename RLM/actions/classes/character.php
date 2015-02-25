@@ -165,10 +165,18 @@ class Character_datas {
   private function show_equipment_wish() {
     $context = $this->show_equipment();
     $real_context = array('equipment' => array());
+    $i = 0;
+    $status = array ('warning', 'error', 'done');
     foreach ($context['left'] as $equipment) {
+      $equipment['status'] = $status[$i];
+      $i++;
+      if ($i > 2) $i = 0;
       $real_context['equipment'][] = $equipment;
     }
     foreach ($context['right'] as $equipment) {
+      $equipment['status'] = $status[$i];
+      $i++;
+      if ($i > 2) $i = 0;
       $real_context['equipment'][] = $equipment;
     }
     return $real_context;
