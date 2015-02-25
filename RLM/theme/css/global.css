@@ -8,12 +8,6 @@ body {
   line-height: 1.42857;
 }
 
-@media (max-width: 992px) {
-  body {
-    font-size: 12px;
-  }
-}
-
 .col-centered {
   float: none;
   margin: 0 auto;
@@ -274,6 +268,7 @@ span.color-5 {
   background-color: #1A0500;
   cursor: pointer;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 .item:hover{
@@ -323,4 +318,40 @@ span.frame_4{
 
 .add_item:hover, .refresh_item:hover{
   color:#5cb85c;
+}
+
+.wishlist_status {
+  color: #FFF;
+  text-align: center;
+}
+
+.warning, .error, .done {
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  margin-left: -20px;
+  background-size: 60px;
+}
+
+.warning {
+  background-image: url("../rsc/bg_warning.png");
+}
+
+.error {
+  background-image: url("../rsc/bg_error.png");
+}
+
+.done {
+  background-image: url("../rsc/bg_done.png");
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
 }
