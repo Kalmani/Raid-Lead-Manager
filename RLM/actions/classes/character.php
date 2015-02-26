@@ -2,19 +2,22 @@
 require 'config.php';
 include('../dependencies/wowarmoryapi/BattlenetArmory.class.php');
 $armory = new BattlenetArmory('EU','Dalaran');
+
 class Character_datas {
   var $namespace;
   var $action;
   var $params;
 
-  public function __construct($action, $armory, /*$mysqli, */$params) {
+  public function __construct($action, $armory, $mysqli, $params) {
     $this->action = $action;
     $this->armory = $armory;
     $this->params = $params;
-    //$this->mysqli = $mysqli;
+    $this->mysqli = $mysqli;
 
     if (isset($this->params['nocache']))
       $this->armory->useCache(FALSE);
+    else
+      $this->set_big_cache();
 
     $this->armory->UTF8(true);
     $this->armory->setLocale('fr_FR'); //conf
@@ -33,7 +36,20 @@ class Character_datas {
       case 'update_item' :
         echo json_encode($this->update_item());
         break;
+      case 'bind_bis' :
+        echo json_encode($this->bind_bis());
+        break;
     }
+  }
+
+  private function set_big_cache() {
+    // 1 year cache by default
+    $this->armory->setCharactersCacheTTL(31104000);
+    $this->armory->setGuildsCacheTTL(31104000);
+    $this->armory->setAuctionHouseCacheTTL(31104000);
+    $this->armory->setItemsCacheTTL(31104000);
+    $this->armory->setAchievementsCacheTTL(31104000);
+    $this->armory->setArenaTeamsCacheTTL(31104000);
   }
 
   /*private function import_item() {
@@ -191,11 +207,14 @@ class Character_datas {
       'name' => $updated_item['name'],
       'level' => $updated_item['itemLevel']);
     return $return;
+  }
 
+  private function bind_bis() {
+    return $this->params;
   }
 }
 
-//$mysqli = new mysqli($host, $user, $pass, $db);
-$character = new Character_datas($action, $armory, /*$mysqli, */$params);
+$mysqli = new mysqli($host, $user, $pass, $db);
+$character = new Character_datas($action, $armory, $mysqli, $params);
 
 ?>

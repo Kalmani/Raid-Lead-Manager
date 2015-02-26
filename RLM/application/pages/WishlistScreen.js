@@ -67,4 +67,20 @@ var WishlistScreen = new Class ({
     }.bind(this));
   },
 
+  show_chose_item : function(id) {
+    var options = {
+          'success' : function(response) {
+            var item = JSON.parse(response);
+            this.app.SCS.context = item;
+            this.app.SCS.switchPanel('selected_bis', document.id('selected_bis'), 'fadeIn');
+          }.bind(this)
+        },
+        params = {
+          'id' : id
+        },
+        namespace = 'items',
+        action = 'show_item';
+    this.app.ask_server(namespace, action, params, options);
+  }
+
 });

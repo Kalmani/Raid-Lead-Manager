@@ -10,12 +10,21 @@ ScreenEvents.actions.wishlist = {
       this.id = 'refresh';
     if (this.id.split('_')[0] == 'add')
       this.id = 'add';
+    if (this.id.indexOf('chose_item_') !== -1)
+      this.id = 'chose_item';
     switch(this.id) {
       case 'refresh' : 
         this.refresh_item();
         break;
       case 'add' :
         this.add_page();
+        break;
+      case 'chose_item' :
+        this.chose_item();
+        break;
+      case 'keep_item' :
+      case 'bind_item' :
+        this.bind_item();
         break;
       default :
         console.info('No bind on button ' + this.id);
@@ -60,4 +69,24 @@ ScreenEvents.actions.wishlist = {
     console.info('Add wish item : ' + slot);
     this.rubric.show_add_item_page(slot);
   },
+
+  chose_item : function() {
+    var new_id = this.elem.get('rel');
+    this.rubric.show_chose_item(new_id);
+  },
+
+  bind_item : function() {
+    var new_id = this.elem.get('rel');
+    alert("new id will be " + new_id);
+    var options = {
+      'success' : function(response) {
+        var result = JSON.parse(response);
+        console.log(result);
+      }.bind(this)
+    },
+    params = {
+      'new_id' : new_id
+    };
+    this.app.ask_server('character', 'bind_bis', params, options);
+  }
 };

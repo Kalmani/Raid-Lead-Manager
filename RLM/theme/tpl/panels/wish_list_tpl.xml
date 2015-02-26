@@ -2,7 +2,7 @@
 <mustache>
   <script id="wish_list_panel" type="text/template">
     <div class="panel panel-default">
-      <div class="panel-heading">Wish List principale</div>
+      <div class="panel-heading">$Wishlist.Main.Title;</div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12 nopadding">
@@ -37,7 +37,7 @@
                               <span class="frame frame_0 item_color"> </span>
                             </td>
                             <td align="left">
-                              <span class="color-1 item_name">Non définie</span><br />
+                              <span class="color-1 item_name">$Wishlist.undefined;</span><br />
                               <span style="color:#ffd200;">
                                 <span class="item_level">0</span>
                               </span>
@@ -56,7 +56,7 @@
                               <span class="frame frame_0"> </span>
                             </td>
                             <td align="left" width="245" >
-                              <span class="color-1">Non définie</span><br />
+                              <span class="color-1">$Wishlist.undefined;</span><br />
                               <span style="color:#ffd200;">
                                 0<br />
                               </span>
@@ -68,7 +68,7 @@
                   </div>
                   <div  class="col-lg-4 col-md-4 col-sm-3 col-xs-3 nopadding">
                     <div class="col-lg-6 col-md-6 col-sm-12" class="wishlist_status">
-                      <img src=" theme/rsc/Warning.png" width="32" /><br />Wish list non définie
+                      <img src=" theme/rsc/Warning.png" width="32" /><br />$Wishlist.undefinedWishlist;
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12" style="text-align:center;">
                       <span class="glyphicon glyphicon-plus add_item" rel="{{slot}}" id="wishlist_add_{{slot}}" style="font-size:30px; line-height:57px;"> </span>

@@ -2,7 +2,7 @@
 <mustache>
   <script id="items_list_panel" type="text/template">
     <div class="panel panel-default">
-      <div class="panel-heading">Equipement</div>
+      <div class="panel-heading">$Items.Equipment;</div>
       <div class="panel-body">
         <div class="row">
           <div class="col-lg-6 col-md-12">
