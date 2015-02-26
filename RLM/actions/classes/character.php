@@ -36,6 +36,9 @@ class Character_datas {
       case 'update_item' :
         echo json_encode($this->update_item());
         break;
+      case 'bind_bis' :
+        echo json_encode($this->bind_bis());
+        break;
     }
   }
 
@@ -204,7 +207,10 @@ class Character_datas {
       'name' => $updated_item['name'],
       'level' => $updated_item['itemLevel']);
     return $return;
+  }
 
+  private function bind_bis() {
+    return $this->params;
   }
 }
 

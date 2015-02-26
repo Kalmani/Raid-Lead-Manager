@@ -47,7 +47,7 @@
         <form>
           <input type="hidden" value="99332" name="item_id" />
           <center>
-            <span type="submit" class="btn btn-success form-control">$Wishlist.Concerve;</span>
+            <span type="submit" class="btn btn-success form-control" id="wishlist_keep_item" rel="{{current_item.id}}">$Wishlist.Concerve;</span>
           </center>
         </form>
       </div>
@@ -88,9 +88,8 @@
           {{/new_item.stats}}
         </table>
         <form>
-          <input type="hidden" value="89820" name="item_id" />
           <center>
-            <span class="btn btn-success form-control" type="submit">$Wishlist.ChoseItem;</span>
+            <span class="btn btn-success form-control" id="wishlist_bind_item" rel="{{new_item.id}}" type="submit">$Wishlist.ChoseItem;</span>
           </center>
         </form>
       </div>

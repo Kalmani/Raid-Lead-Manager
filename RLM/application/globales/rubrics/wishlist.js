@@ -22,6 +22,10 @@ ScreenEvents.actions.wishlist = {
       case 'chose_item' :
         this.chose_item();
         break;
+      case 'keep_item' :
+      case 'bind_item' :
+        this.bind_item();
+        break;
       default :
         console.info('No bind on button ' + this.id);
         break;
@@ -69,5 +73,20 @@ ScreenEvents.actions.wishlist = {
   chose_item : function() {
     var new_id = this.elem.get('rel');
     this.rubric.show_chose_item(new_id);
+  },
+
+  bind_item : function() {
+    var new_id = this.elem.get('rel');
+    alert("new id will be " + new_id);
+    var options = {
+      'success' : function(response) {
+        var result = JSON.parse(response);
+        console.log(result);
+      }.bind(this)
+    },
+    params = {
+      'new_id' : new_id
+    };
+    this.app.ask_server('character', 'bind_bis', params, options);
   }
 };
