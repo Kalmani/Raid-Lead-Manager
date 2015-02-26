@@ -6,7 +6,7 @@
         <div class="panel-heading" style="padding:7px 15px;">
           {{character.pseudo}}
           <div class="dropdown pull-right">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Voir un autre profil <b class="caret"> </b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">$Home.Profile.OtherProfile; <b class="caret"> </b></a>
             <ul class="dropdown-menu" role="menu">
               {{#guild_characters}}
                 <li><a href="javascript:void(0);">{{pseudo}}</a></li>
