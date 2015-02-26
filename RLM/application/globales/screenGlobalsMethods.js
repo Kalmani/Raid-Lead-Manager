@@ -93,8 +93,15 @@ var ScreenGlobalsMethods = new Class ({
     if (datas.namespace) {
       var options = {
         'success' : function(response) {
-          this.SCS.context = JSON.parse(response);
-          this.SCS.switchPanel(datas.id, cell, datas.animate);
+          try {
+            this.SCS.context = JSON.parse(response);
+            this.SCS.switchPanel(datas.id, cell, datas.animate);
+          } catch (e) {
+            var error = {
+              'message' : e
+            }
+            this.app.alertMessage('error', error, cell);
+          }
           this.app.fireEvent('asyn_panel_ready', datas.id);
         }.bind(this)
       },
