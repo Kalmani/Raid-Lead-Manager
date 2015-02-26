@@ -29,7 +29,7 @@
               </td>
             </tr>
           </table>
-          <a href="#" rel="item={{current_item.id}}" class="wowheadlink"> </a>
+          <a href="javascript:void(0);" rel="item={{current_item.id}}" class="wowheadlink"> </a>
         </div>
         <br />
         <table class="table table-striped table-condensed">
@@ -47,9 +47,7 @@
         <form>
           <input type="hidden" value="99332" name="item_id" />
           <center>
-            <button type="submit" class="btn btn-success form-control">
-              Conserver
-            </button>
+            <span type="submit" class="btn btn-success form-control">$Wishlist.Concerve;</span>
           </center>
         </form>
       </div>
@@ -59,85 +57,47 @@
     <div class="panel panel-default">
       <div class="panel-heading">$Wishlist.SelectedBis;</div>
       <div id="wish_new" class="panel-body">
-        <table cellspacing="1" cellpadding="0" border="0" bgcolor="#D1B285" width="100%" align="left">
-          <tbody>
+        <div class="item">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-              <td class="general" align="left">
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                  <tbody>
-                    <tr>
-                      <td class="equipement_icon" width="56" style="width:56px; padding-left:5px;">
-                        <img src="http://eu.media.blizzard.com/wow/icons/56/inv_helm_mail_reputation_c_01.jpg" />
-                        <span class="frame frame_4"> </span>
-                      </td>
-                      <td align="left">
-                        <span class="color-4">Regard terrifiant</span>
-                        <br />
-                        <span style="color:#999999;">
-                          489
-                          <br />
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              <a class="wowheadlink" rel="item=89820&domain=fr" href="#"> </a>
-            </td>
-          </tr>
+              <td width="56" class="equipement_icon" style="width:56px;">
+                <img src="http://eu.media.blizzard.com/wow/icons/56/{{new_item.icon}}.jpg" />
+                <span class="frame frame_{{new_item.quality}}"> </span>
+              </td>
+              <td align="left">
+                <span class="color-4">{{new_item.name}}</span><br />
+                <span style="color:#ffd200;">
+                  {{new_item.itemLevel}}<br />
+                </span>
+              </td>
+            </tr>
+          </table>
+          <a href="javascript:void(0);" rel="item={{new_item.id}}" class="wowheadlink"> </a>
+        </div>
+        <br />
+        <table class="table table-striped table-condensed">
+          {{#new_item.stats}}
           <tr>
-            <td valign="top">
-              <br />
-              <table class="table table-striped table-condensed">
-                <tbody>
-                  <tr>
-                    <td width="140" align="left"> Agilité : </td>
-                    <td width="90" align="center">
-                      906 (
-                      <span style="color:#1EFF00">+906</span>
-                      )
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="140" align="left"> Touché : </td>
-                    <td width="90" align="center">
-                      720 (
-                      <span style="color:#1EFF00">+720</span>
-                      )
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="140" align="left"> Hâte : </td>
-                    <td width="90" align="center">
-                      530 (
-                      <span style="color:#1EFF00">+530</span>
-                      )
-                    </td>
-                  </tr>
-                  <tr>
-                    <td width="140" align="left"> Endurance : </td>
-                    <td width="90" align="center">
-                      1719 (
-                      <span style="color:#1EFF00">+1719</span>
-                      )
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <td align="left" width="140">
+              {{name}}
+            </td>
+            <td align="center" width="90">
+              {{amount}}
             </td>
           </tr>
-        </tbody>
-      </table>
-      <form>
-        <input type="hidden" value="89820" name="item_id" />
-        <center>
-          <button class="btn btn-success form-control" type="submit">$Wishlist.ChoseItem;</button>
-        </center>
-      </form>
+          {{/new_item.stats}}
+        </table>
+        <form>
+          <input type="hidden" value="89820" name="item_id" />
+          <center>
+            <span class="btn btn-success form-control" type="submit">$Wishlist.ChoseItem;</span>
+          </center>
+        </form>
       </div>
     </div>
   </script>
   <script id="item_bloc" type="text/template">
-    <div class="item" style="margin-bottom:10px;">
+    <div class="item" id="wishlist_chose_item_{{item.id}}" rel="{{item.id}}" style="margin-bottom:10px;">
       <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
           <td width="56" class="equipement_icon" style="width:56px; height:49px;" rowspan="2" valign="top">
@@ -154,7 +114,7 @@
           </td>
         </tr>
       </table>
-      <a href="#" rel="item={{item.id}}" class="wowheadlink"> </a>
+      <a href="javascript:void(0);" rel="item={{item.id}}" class="wowheadlink"> </a>
     </div>
   </script>
   <script id="change_item" type="text/template">

@@ -8,11 +8,11 @@ class Character_datas {
   var $action;
   var $params;
 
-  public function __construct($action, $armory, /*$mysqli, */$params) {
+  public function __construct($action, $armory, $mysqli, $params) {
     $this->action = $action;
     $this->armory = $armory;
     $this->params = $params;
-    //$this->mysqli = $mysqli;
+    $this->mysqli = $mysqli;
 
     if (isset($this->params['nocache']))
       $this->armory->useCache(FALSE);
@@ -208,7 +208,7 @@ class Character_datas {
   }
 }
 
-//$mysqli = new mysqli($host, $user, $pass, $db);
-$character = new Character_datas($action, $armory, /*$mysqli, */$params);
+$mysqli = new mysqli($host, $user, $pass, $db);
+$character = new Character_datas($action, $armory, $mysqli, $params);
 
 ?>

@@ -17,6 +17,9 @@ class Items_datas {
       case 'list_items' :
         echo json_encode($this->list_items(), JSON_UNESCAPED_UNICODE);
         break;
+      case 'show_item' :
+        echo json_encode($this->show_item(), JSON_UNESCAPED_UNICODE);
+        break;
       /*case 'get_all_ids_item' :
         echo json_encode($this->get_all_ids_item());
         break;
@@ -84,6 +87,28 @@ class Items_datas {
       $current_item['stats'][$id] = $amount;
     }
     return array('items_list' => $items_list, 'current_item' => $current_item);
+  }
+
+  private function show_item() {
+    // need this
+    $this->params['dificulty'] = 'heroic';
+
+    $stats_name = Global_datas::get_stats();
+
+    $r = "SELECT * FROM larmes_items_".$this->params['dificulty']." WHERE id = ".$this->params['id'];
+    $res = $this->mysqli->query($r);
+    $new_item = $res->fetch_assoc();
+    $r2 = "SELECT * FROM larmes_items_stats WHERE item_id = ".$this->params['id']." AND mode = '".$this->params['dificulty']."'";
+    $res2 = $this->mysqli->query($r2);
+    $new_item['stats'] = array();
+    $i = 0;
+    $new_item['name'] = utf8_encode($new_item['name']);
+    while ($stat = $res2->fetch_assoc()) {
+      $new_item['stats'][$i]['name'] = $stats_name[$stat['stat_id']];
+      $new_item['stats'][$i]['amount'] = $stat['stat_amount'];
+      $i++;
+    }
+    return array('new_item'=>$new_item);
   }
 }
 
