@@ -16,14 +16,14 @@ module.exports = function(grunt) {
  // default task is to init dev env
   grunt.registerTask('default', [
     'cssmin',
-    'concat',
+    'pack',
     'forge-config',
   ]);
 
   grunt.registerTask('distribute', [
     'statics',
     'cssmin',
-    'concat',
+    'pack',
     'forge-config',
     'ftp-deploy'
   ]);

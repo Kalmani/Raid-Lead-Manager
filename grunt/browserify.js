@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     pack : {
       files: {
-        'RLM/application/_bootstrap.js': ['RLM/application/init.js'],
+        'RLM/_bootstrap.js': ['RLM/application/init.js'],
       }
     }
   });
