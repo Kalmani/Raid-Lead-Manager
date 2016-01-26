@@ -58,6 +58,6 @@
   "RLM/admin/pages/UpdateScreen.js" : {"jscs" : true, "jshint" : true},
 
   "RLM/application/raid_lead_manager.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/init.js" : {"jscs" : true, "jshint" : true}
+  "RLM/_bootstrap.js" : {"jscs" : true, "jshint" : true}
  }
 }
