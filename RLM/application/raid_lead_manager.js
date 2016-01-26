@@ -1,3 +1,11 @@
+"use strict";
+
+var Class        = require('uclass'),
+    Events       = require('uclass/events'),
+
+    forIn        = require('mout/object/forIn'),
+    ScreenEvents = require('./globales/ScreenEvents');
+
 // instanciate all pages
 var RaidLeadManager = new Class ({
 
@@ -5,31 +13,59 @@ var RaidLeadManager = new Class ({
 
   Implements : Events,
 
-  Binds : ['generate_callback'],
+  Binds : ['init', 'generate_callback'],
 
   locales : {},
   templates  : {},
   remove_all : false,
 
   initialize : function() {
+
+    this.Classes = {
+      'AdminScreen'       : require('./pages/AdminScreen'),
+      'CompareScreen'     : require('./pages/CompareScreen'),
+      'DisconnectScreen'  : require('./pages/DisconnectScreen'),
+      'HomeScreen'        : require('./pages/HomeScreen'),
+      'HystoryScreen'     : require('./pages/HystoryScreen'),
+      'SettingsScreen'    : require('./pages/SettingsScreen'),
+      'WishlistScreen'    : require('./pages/WishlistScreen'),
+      // subs
+      'WishBisScreen'     : require('./pages/subs/WishBisScreen'),
+      'WishProvScreen'    : require('./pages/subs/WishProvScreen'),
+      'WishSpeScreen'     : require('./pages/subs/WishSpeScreen'),
+      // admin
+      'DownScreen'        : require('../admin/pages/DownScreen'),
+      'AttributionScreen' : require('../admin/pages/AttributionScreen'),
+      'FixAttribScreen'   : require('../admin/pages/FixAttribScreen'),
+      'AccountScreen'     : require('../admin/pages/AccountScreen'),
+      'StatScreen'        : require('../admin/pages/StatScreen'),
+      'UpdateScreen'      : require('../admin/pages/UpdateScreen'),
+      'ImportScreen'      : require('../admin/pages/ImportScreen'),
+      'MissingScreen'     : require('../admin/pages/MissingScreen'),
+      'CalendarScreen'    : require('../admin/pages/CalendarScreen'),
+      'CraftScreen'       : require('../admin/pages/CraftScreen'),
+
+    };
+
     console.log('initializing api');
     this.sess = new Session(this);
     this.SCS = new ScreenSwitcher(this);
-    this.parent(this);
+    RaidLeadManager.parent.initialize.call(this, this);
   },
 
   init : function() {
-    var load_ready = {};
+    var self = this,
+        load_ready = {};
 
-    this.addEvent('init', function(step) {
+    self.addEvent('init', function(step) {
       load_ready[step] = true;
       console.info("Load ", step, " > Finish");
 
       if(load_ready.templates && load_ready.locales) {
-        this.show_content();
+        self.show_content();
       }
     });
-    this.load_config();
+    self.load_config();
   },
 
   load_config : function() {
@@ -50,22 +86,24 @@ var RaidLeadManager = new Class ({
   },
 
   make_nav : function() {
-    var navigation = new Array(),
+    var self = this,
+        navigation = new Array(),
         i = 0;
-    Object.each(this.config.rubrics, function(data, screen) {
+    forIn(self.config.rubrics, function(data, screen) {
       RaidLeadManager[screen] = screen;
-      var link = this.SCS.register(new window[data.className](this, RaidLeadManager[screen], data));
-      if (link !== false) {
-        navigation[i] = link;
-        i++;
+      if (data.className) {
+        var link = self.SCS.register(new self.Classes[data.className](self, RaidLeadManager[screen], data));
+        if (link !== false) {
+          navigation[i] = link;
+          i++;
+        }
       }
-    }.bind(this));
-    this.navigation = navigation;
-    var dom_nav = this.render('navbar', {'navigation' : this.navigation}),
-        that = this;
+    });
+    self.navigation = navigation;
+    var dom_nav = self.render('navbar', {'navigation' : self.navigation});
     dom_nav.inject(document.getElementById('navbar').empty());
     $('.nav_link').click(function() {
-      that.SCS.switchRubric(RaidLeadManager[this.get('id')]);
+      self.SCS.switchRubric(RaidLeadManager[self.get('id')]);
     });
   },
 
@@ -123,7 +161,7 @@ var RaidLeadManager = new Class ({
     } else {
       // default value for login page
       RaidLeadManager['HOME'] = 'HOME';
-      this.SCS.register(new HomeScreen(this, 'HOME', this.config.rubrics.HOME));
+      this.SCS.register(new Classes['HomeScreen'](this, 'HOME', this.config.rubrics.HOME));
       this.SCS.screens_list.HOME.show_login_panel();
     }
 
@@ -192,3 +230,5 @@ var RaidLeadManager = new Class ({
   }
 
 });
+
+module.exports = RaidLeadManager;

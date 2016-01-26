@@ -1,3 +1,8 @@
+"use strict";
+
+var Class          = require('uclass'),
+    WishlistScreen = require('../WishlistScreen');
+
 var WishProvScreen = new Class ({
 
   Extends : WishlistScreen,
@@ -5,13 +10,15 @@ var WishProvScreen = new Class ({
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
-    this.parent(app, screen_id, screen_data);
+    WishProvScreen.parent.initialize.call(this, app, screen_id, screen_data);
     this.SCS = this.app.SCS;
     this.parentID = "WISH_LIST";
   },
 
   show : function(args) {
     this.parent(args);
-  },
+  }
 
 });
+
+module.exports = WishProvScreen;

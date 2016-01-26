@@ -1,25 +1,29 @@
+"use strict";
+
+var Class                = require('uclass'),
+    ScreenGlobalsMethods = require('../globales/ScreenGlobalsMethods');
+
 var HomeScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
 
-  Binds : ['show', 'callback_login'],
+  Binds : ['show'],
 
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
-    this.parent(app);
-    this.SCS = this.app.SCS;
+    HomeScreen.parent.initialize.call(this, app, screen_data);
+    this.SCS = app.SCS;
   },
 
-
   show_login_panel : function() {
-    this.parent();
+    HomeScreen.parent.show_login_panel.call(this);
     var dom = document.getElementById('main_container'),
         zone = this.SCS.switchPanel('login_tpl', dom);
   },
 
   show : function(args) {
-    this.parent(args);
+    HomeScreen.parent.show.call(this, args);
   },
 
   items_list : function() {
@@ -38,6 +42,8 @@ var HomeScreen = new Class ({
       item++;
     });
     return context;
-  },
+  }
 
 });
+
+module.exports = HomeScreen;

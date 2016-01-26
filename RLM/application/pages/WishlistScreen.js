@@ -1,3 +1,8 @@
+"use strict";
+
+var Class                = require('uclass'),
+    ScreenGlobalsMethods = require('../globales/ScreenGlobalsMethods');
+
 var WishlistScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
@@ -7,13 +12,13 @@ var WishlistScreen = new Class ({
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
-    this.parent(app);
+    WishlistScreen.parent.initialize.call(this, app, screen_data);
     this.SCS = this.app.SCS;
   },
 
   show : function(args) {
     console.log(this.ID);
-    this.parent(args);
+    WishlistScreen.parent.show.call(this, args);
   },
 
   show_add_item_page : function(slot) {
@@ -84,3 +89,5 @@ var WishlistScreen = new Class ({
   }
 
 });
+
+module.exports = WishlistScreen;

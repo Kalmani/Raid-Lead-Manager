@@ -1,13 +1,14 @@
 var ScreenGlobalsMethods = new Class ({
 
-  Binds : ['build_panel'],
+  Binds : ['initialize', 'build_panel'],
 
   active : false,
   link : false,
   subs : false,
 
-  initialize : function(app) {
+  initialize : function(app, data) {
     this.app = app;
+    this.data = data;
     this.is_active();
     this.get_nav_component();
   },
@@ -17,25 +18,28 @@ var ScreenGlobalsMethods = new Class ({
   },
 
   get_nav_component : function() {
-    if (this.active === false)
+    var self = this;
+
+    if (self.active === false)
       return false;
-    this.link = {
-      'title' : this.app.translate("Menu." + this.ID + ".Title"),
-      'id' : this.ID
+    self.link = {
+      'title' : self.app.translate("Menu." + self.ID + ".Title"),
+      'id' : self.ID
     };
     // not recursive, it sucks hard for now
-    if (this.data.subs) {
-      this.link.subs = new Array();
-      this.link.has_sub = true;
+    if (self.data.subs) {
+      self.link.subs = new Array();
+      self.link.has_sub = true;
       var i = 0;
-      Object.each(this.data.subs, function(data, screen) {
-        RaidLeadManager[screen] = screen;
-        var sub = this.app.SCS.register(new window[data.className](this.app, RaidLeadManager[screen], data));
+      Object.each(self.data.subs, function(data, screen) {
+        self.app[screen] = screen;
+        console.log(data.className);
+        var sub = self.app.SCS.register(new self.app.Classes[data.className](self.app, self.app[screen], data));
         if (sub !== false) {
-          this.link.subs[i] = sub;
+          self.link.subs[i] = sub;
           i++;
         }
-      }.bind(this));
+      });
     }
   },
 
@@ -115,3 +119,5 @@ var ScreenGlobalsMethods = new Class ({
   }
 
 });
+
+module.exports = ScreenGlobalsMethods;

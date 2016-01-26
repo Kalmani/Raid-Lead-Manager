@@ -1,4 +1,6 @@
-ScreenEvents.actions.wishlist = {
+"use strict";
+
+module.exports = {
   rub_name : 'wishlist',
 
   dispatch_action : function(elem, app, id, rubric) {

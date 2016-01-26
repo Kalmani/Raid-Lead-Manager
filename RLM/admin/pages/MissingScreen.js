@@ -1,3 +1,8 @@
+"use strict";
+
+var Class                = require('uclass'),
+    ScreenGlobalsMethods = require('../../application/globales/ScreenGlobalsMethods');
+
 var MissingScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
@@ -5,7 +10,7 @@ var MissingScreen = new Class ({
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
-    this.parent(app);
+    MissingScreen.parent.initialize.call(this, app, screen_data);
     this.SCS = this.app.SCS;
   },
 
@@ -15,3 +20,5 @@ var MissingScreen = new Class ({
   },
 
 });
+
+module.exports = MissingScreen;

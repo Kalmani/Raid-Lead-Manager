@@ -27,37 +27,6 @@
   "RLM/application/globales/screenSwitcher.js" : {"jscs" : true, "jshint" : true},
   "RLM/application/globales/session.js" : {"jscs" : true, "jshint" : true},
 
-  "RLM/application/globales/ScreenEvents.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/globales/rubrics/home.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/globales/rubrics/settings.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/globales/rubrics/wishlist.js" : {"jscs" : true, "jshint" : true},
-
-  "RLM/application/globales/screenGlobalsMethods.js" : {"jscs" : true, "jshint" : true},
-
-  "RLM/application/pages/HomeScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/SettingsScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/WishlistScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/CompareScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/HystoryScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/DisconnectScreen.js" : {"jscs" : true, "jshint" : true},
-
-  "RLM/application/pages/subs/WishBisScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/subs/WishProvScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/pages/subs/WishSpeScreen.js" : {"jscs" : true, "jshint" : true},
-
-  "RLM/application/pages/AdminScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/AccountScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/AttributionScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/CalendarScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/CraftScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/DownScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/FixAttribScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/ImportScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/MissingScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/StatScreen.js" : {"jscs" : true, "jshint" : true},
-  "RLM/admin/pages/UpdateScreen.js" : {"jscs" : true, "jshint" : true},
-
-  "RLM/application/raid_lead_manager.js" : {"jscs" : true, "jshint" : true},
   "RLM/_bootstrap.js" : {"jscs" : true, "jshint" : true}
  }
 }

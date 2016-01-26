@@ -1,4 +1,6 @@
-ScreenEvents.actions.home = {
+"use strict";
+
+module.exports = {
 
   rub_name : 'home',
 
@@ -97,6 +99,5 @@ ScreenEvents.actions.home = {
         };
     this.app.ask_server('character', 'import_item', params, options);
   }*/
-
 
 };

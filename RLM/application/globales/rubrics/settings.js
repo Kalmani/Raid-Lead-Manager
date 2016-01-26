@@ -1,4 +1,6 @@
-ScreenEvents.actions.settings = {
+"use strict";
+
+module.exports = {
   rub_name : 'settings',
 
   dispatch_action : function(elem, app, id, rubric) {

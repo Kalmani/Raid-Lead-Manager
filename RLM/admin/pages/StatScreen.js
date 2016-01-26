@@ -1,3 +1,8 @@
+"use strict";
+
+var Class                = require('uclass'),
+    ScreenGlobalsMethods = require('../../application/globales/ScreenGlobalsMethods');
+
 var StatScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
@@ -5,7 +10,7 @@ var StatScreen = new Class ({
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
-    this.parent(app);
+    StatScreen.parent.initialize.call(this, app, screen_data);
     this.SCS = this.app.SCS;
   },
 
@@ -15,3 +20,5 @@ var StatScreen = new Class ({
   },
 
 });
+
+module.exports = StatScreen;

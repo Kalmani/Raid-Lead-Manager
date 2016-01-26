@@ -1,3 +1,8 @@
+"use strict";
+
+var Class                = require('uclass'),
+    ScreenGlobalsMethods = require('../globales/ScreenGlobalsMethods');
+
 var AdminScreen = new Class ({
 
   Extends : ScreenGlobalsMethods,
@@ -5,7 +10,7 @@ var AdminScreen = new Class ({
   initialize : function(app, screen_id, screen_data) {
     this.data = screen_data;
     this.ID = screen_id;
-    this.parent(app);
+    AdminScreen.parent.initialize.call(this, app, screen_data);
     this.SCS = this.app.SCS;
   },
 
@@ -14,3 +19,5 @@ var AdminScreen = new Class ({
   },
 
 });
+
+module.exports = AdminScreen;

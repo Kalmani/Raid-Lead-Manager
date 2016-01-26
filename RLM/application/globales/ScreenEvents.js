@@ -1,3 +1,7 @@
+"use strict";
+
+var Class        = require('uclass');
+
 var ScreenEvents = new Class ({
 
   initialize : function(app) {
@@ -16,7 +20,7 @@ var ScreenEvents = new Class ({
         }
       }
       if (elem_id) {
-        var screen_id = RaidLeadManager[app.current_screen],
+        var screen_id = this[app.current_screen],
             rubric = app.SCS.screens_list[screen_id],
             rubric_id = elem_id.split('_')[0];
         if (ScreenEvents.actions[rubric_id])
@@ -27,4 +31,10 @@ var ScreenEvents = new Class ({
 
 });
 
-ScreenEvents.actions = {};
+ScreenEvents.actions = {
+  'home'     : require('./rubrics/home.js'),
+  'settings' : require('./rubrics/settings.js'),
+  'wishlist' : require('./rubrics/wishlist.js')
+};
+
+module.exports = ScreenEvents;
