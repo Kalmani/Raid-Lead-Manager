@@ -15,7 +15,7 @@ var CraftScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    CraftScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

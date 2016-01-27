@@ -15,7 +15,7 @@ var CalendarScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    CalendarScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

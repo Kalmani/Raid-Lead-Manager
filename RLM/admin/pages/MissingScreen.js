@@ -15,7 +15,7 @@ var MissingScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    MissingScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

@@ -15,7 +15,7 @@ var ImportScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    ImportScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

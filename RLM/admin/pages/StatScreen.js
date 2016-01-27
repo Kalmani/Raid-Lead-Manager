@@ -15,7 +15,7 @@ var StatScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    StatScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

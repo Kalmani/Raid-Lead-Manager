@@ -15,7 +15,7 @@ var AccountScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    AccountScreen.parent.show.call(this, args);
     console.log(this.ID);
   }
 

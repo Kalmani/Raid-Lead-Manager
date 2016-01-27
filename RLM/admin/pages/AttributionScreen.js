@@ -15,7 +15,7 @@ var AttributionScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    AttributionScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

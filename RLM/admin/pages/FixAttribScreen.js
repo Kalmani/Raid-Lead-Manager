@@ -15,7 +15,7 @@ var FixAttribScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    FixAttribScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 

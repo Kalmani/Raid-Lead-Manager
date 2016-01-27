@@ -15,7 +15,7 @@ var UpdateScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    UpdateScreen.parent.show.call(this, args);
     console.log(this.ID);
   },
 
