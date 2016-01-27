@@ -33,7 +33,6 @@ var ScreenGlobalsMethods = new Class ({
       var i = 0;
       Object.each(self.data.subs, function(data, screen) {
         self.app[screen] = screen;
-        console.log(data.className);
         var sub = self.app.SCS.register(new self.app.Classes[data.className](self.app, self.app[screen], data));
         if (sub !== false) {
           self.link.subs[i] = sub;
