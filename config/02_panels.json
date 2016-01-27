@@ -45,7 +45,7 @@
       {
         "settings" : {"cols" : 2},
         "list" : [
-    {"id" : "wish_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment_wish"}
+          {"id" : "wish_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment_wish"}
         ]
       }
     ],
@@ -87,6 +87,10 @@
         "list" : [
           {"id" : "import_items", "animate" : "fadeIn"}
         ]
+      },
+      {
+        "settings" : {"cols" : 0},
+        "list" : []
       }
     ]
   }

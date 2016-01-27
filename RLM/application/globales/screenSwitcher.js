@@ -33,7 +33,7 @@ var ScreenSwitcher = new Class ({
   },
 
   switchScreen : function(screen_tpl_id, screen_dom) {
-    renderedScreen = this.app.render(screen_tpl_id, this.context);
+    var renderedScreen = this.app.render(screen_tpl_id, this.context);
     renderedScreen.inject(screen_dom.empty());
     Object.each(this.panels_list, function(datas, tpl_id) {
       this.serial_implement = true;
