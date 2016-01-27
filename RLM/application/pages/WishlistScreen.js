@@ -60,7 +60,7 @@ var WishlistScreen = new Class ({
       var context = {
             'item' : item
           },
-          element = this.app.render('item_bloc', context);
+          element = this.app.render('item_bloc', context),
           bloc_container = new Element('div', {'class' : "col-md-6 col-sm-12 col-xs-12"});
       element.inject(bloc_container);
       bloc_container.inject(container);
