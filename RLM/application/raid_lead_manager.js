@@ -105,7 +105,7 @@ var RaidLeadManager = new Class ({
     var dom_nav = self.render('navbar', {'navigation' : self.navigation});
     dom_nav.inject(document.getElementById('navbar').empty());
     $('.nav_link').click(function() {
-      self.SCS.switchRubric(self[this.get('id')]);
+      self.SCS.switchRubric(this.get('id'));
     });
   },
 

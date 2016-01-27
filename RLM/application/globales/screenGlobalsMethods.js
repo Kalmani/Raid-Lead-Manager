@@ -59,13 +59,14 @@ var ScreenGlobalsMethods = new Class ({
   },
 
   get_panels : function() {
+    var self = this;
     // take panels from config
-    this.panels_list = this.app.config.panels[this.ID];
-    Array.each(this.panels_list, function(datas, key_c) {
-      this.current_col = key_c;
-      this.build_column(datas.settings, key_c);
-      Array.each(datas.list, this.build_panel);
-    }.bind(this));
+    self.panels_list = self.app.config.panels[self.ID];
+    Array.each(self.panels_list, function(datas, key_c) {
+      self.current_col = key_c;
+      self.build_column(datas.settings, key_c);
+      Array.each(datas.list, self.build_panel);
+    });
   },
 
   build_column : function(settings, id) {
