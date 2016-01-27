@@ -13,6 +13,12 @@ class Items_datas {
     $this->armory = $armory;
     $this->mysqli = $mysqli;
 
+    $this->modes = array(
+      'normal',
+      'heroic',
+      'mythic'
+    );
+
     switch ($this->action) {
       case 'list_items' :
         echo json_encode($this->list_items(), JSON_UNESCAPED_UNICODE);
@@ -118,14 +124,8 @@ class Items_datas {
   }
 
   private function get_last_item() {
-
-    $modes = array(
-      'normal',
-      'heroic',
-      'mythic'
-    );
     $last_item = array('id' => 0);
-    foreach ($modes as $mode) {
+    foreach ($this->modes as $mode) {
       $r = "SELECT * FROM larmes_items_".$mode." ORDER BY id DESC LIMIT 1";
       $res = $this->mysqli->query($r);
       $new_item = $res->fetch_assoc();
@@ -145,12 +145,53 @@ class Items_datas {
     $this->armory->UTF8(true);
     $this->armory->setLocale('fr_FR');
     $item = $this->armory->getItem($item_id);
-    $itemname = $item->getName();
-
-    if (!$itemname) {
+    $itemdatas = $item->getData();
+    if (!$itemdatas['raid-normal']) {
       return array('no_item' => $item_id, 'next_id' => $next_id);
     } else {
-      print_r($item);
+      foreach ($this->modes as $key=>$mode) {
+        $itm = $itemdatas['raid-' . $mode];
+        $gems = (isset($itm['socketInfo'])) ? serialize($itm['socketInfo']['sockets']) : '';
+        $gem_bonus = (isset($itm['socketInfo'])) ? $itm['socketInfo']['socketBonus'] : '';
+        $r = "INSERT INTO larmes_items_" . $mode ."
+              VALUES (
+                  '".$itm['id']."',
+                  '".utf8_decode($itm['name'])."'
+                  '".$item->getIcon()."',
+                  '".$itm['inventoryType']."',
+                  '".$itm['itemClass']."',
+                  '".$itm['itemSubClass']."',
+                  '".$itm['itemLevel']."',
+                  '".$itm['quality']."',
+                  '".$itm['baseArmor']."',
+                  '".$itm['itemSource']['sourceId']."',
+
+
+
+
+
+                 /* '".$itm['maxDurability']."',
+                  '".$itm['requiredLevel']."',
+                  '".$gems."',
+                  '".addslashes($gem_bonus)."',
+                  '".$itm['itemSource']['sourceType']."',*/
+              )";
+        echo $r;
+        $result = $this->mysqli->query($r);
+        if ($result) {
+          foreach ($itm['bonusStats'] as $stat){
+            $r = "INSERT INTO larmes_items_stats VALUES ('', '".$itm['id']."', '".$stat['stat']."', '".$stat['amount']."')";
+            $result = $this->mysqli->query($r);
+          }
+          if (isset($itm['itemSpells']) && !empty($itm['itemSpells'])){
+            foreach ($itm['itemSpells'] as $spell){
+              $r = "INSERT INTO larmes_items_spells VALUES ('', '".$itm['id']."', '".utf8_decode($spell['spell']['name'])."', '".utf8_decode($spell['spell']['description'])."', '".$spell['trigger']."')";
+              $result = $this->mysqli->query($r);
+            }
+          }
+        }
+      }
+
       return array('item_id' => $item_id, 'next_id' => $next_id);
     }
   }
