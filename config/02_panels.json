@@ -85,7 +85,7 @@
       {
         "settings" : {"cols" : 3},
         "list" : [
-          {"id" : "import_items", "animate" : "fadeIn"}
+          {"id" : "import_items", "animate" : "fadeIn", "namespace" : "items", "action" : "get_last_item"}
         ]
       },
       {

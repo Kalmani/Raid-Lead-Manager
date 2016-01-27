@@ -20,6 +20,12 @@ class Items_datas {
       case 'show_item' :
         echo json_encode($this->show_item(), JSON_UNESCAPED_UNICODE);
         break;
+      case 'get_last_item' :
+        echo json_encode($this->get_last_item(), JSON_UNESCAPED_UNICODE);
+        break;
+      case 'import_item' :
+        echo json_encode($this->import_item(), JSON_UNESCAPED_UNICODE);
+        break;
       /*case 'get_all_ids_item' :
         echo json_encode($this->get_all_ids_item());
         break;
@@ -109,6 +115,44 @@ class Items_datas {
       $i++;
     }
     return array('new_item'=>$new_item);
+  }
+
+  private function get_last_item() {
+
+    $modes = array(
+      'normal',
+      'heroic',
+      'mythic'
+    );
+    $last_item = array('id' => 0);
+    foreach ($modes as $mode) {
+      $r = "SELECT * FROM larmes_items_".$mode." ORDER BY id DESC LIMIT 1";
+      $res = $this->mysqli->query($r);
+      $new_item = $res->fetch_assoc();
+      if ($new_item['id'] > $last_item['id']) {
+        $last_item = $new_item;
+      }
+    }
+    $last_item['name'] = utf8_encode($last_item['name']);
+    $last_item['item_url'] = 'item='.$last_item['id'];
+    $last_item['img_url'] = "http://eu.media.blizzard.com/wow/icons/56/".$last_item['icon'].".jpg";
+    return array('last_item' => $last_item);
+  }
+
+  private function import_item() {
+    $item_id = $this->params['item_id'];
+    $next_id = $item_id + 1;
+    $this->armory->UTF8(true);
+    $this->armory->setLocale('fr_FR');
+    $item = $this->armory->getItem($item_id);
+    $itemname = $item->getName();
+
+    if (!$itemname) {
+      return array('no_item' => $item_id, 'next_id' => $next_id);
+    } else {
+      print_r($item);
+      return array('item_id' => $item_id, 'next_id' => $next_id);
+    }
   }
 }
 

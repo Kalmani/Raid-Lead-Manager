@@ -4,6 +4,28 @@
     <div class="panel panel-default">
       <div class="panel-heading">admin test import</div>
       <div class="panel-body">
+
+        Dernier item synchronisé : <strong>{{last_item.id}}<br />
+        <br />
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td width="60" class="equipement_icon">
+              <img src="{{last_item.img_url}}" />
+              <span class="frame frame_{{last_item.quality}} item_color"> </span>
+            </td>
+            <td align="left">
+              <span class="color-{{last_item.quality}}">
+                {{last_item.name}}
+              </span>
+              <br />
+              <span style="color:#ffd200;">
+                {{last_item.level}}
+              </span>
+            </td>
+          </tr>
+        </table>
+        <a href="#" rel="{{last_item.item_url}}" class="wowheadlink"> </a>
+        <br />
         <input type="text" id="start_id" />
         <span class="btn btn-success" id="import_import_items">test import</span>
         <div id="listing"></div>
