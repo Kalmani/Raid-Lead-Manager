@@ -4,19 +4,17 @@
     <div>
       <div class="panel panel-default">
         <div class="panel-heading" style="padding:7px 15px;">
-          <a data-toggle="collapse" data-target="#collapseOne">
-            {{character.pseudo}}
-            <div class="dropdown pull-right">
-              <span class="dropdown-toggle" data-toggle="dropdown">
-                $Home.Profile.OtherProfile; <b class="caret"> </b>
-              </span>
-              <ul class="dropdown-menu" role="menu">
-                {{#guild_characters}}
-                  <li>{{pseudo}}</li>
-                {{/guild_characters}}
-              </ul>
-            </div>
-          </a>
+          {{character.pseudo}}
+          <div class="dropdown pull-right">
+            <span class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer;">
+              $Home.Profile.OtherProfile; <b class="caret"> </b>
+            </span>
+            <ul class="dropdown-menu" role="menu">
+              {{#guild_characters}}
+                <li><a href="javascript:void(0);">{{pseudo}}</a></li>
+              {{/guild_characters}}
+            </ul>
+          </div>
         </div>
         <div class="panel-body" id="collapseOne">
           <div class="row nomargin" style="margin-bottom:10px;">
