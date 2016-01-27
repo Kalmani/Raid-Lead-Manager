@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mustache>
-  <script id="admin_test" type="text/template">
+  <script id="import_items" type="text/template">
     <div class="panel panel-default">
       <div class="panel-heading">admin test import</div>
       <div class="panel-body">
-        <!--<span class="btn btn-success" id="home_test_impot">test import</span>
-        <div id="listing"></div>-->
+        <input type="text" id="start_id" />
+        <span class="btn btn-success" id="import_import_items">test import</span>
+        <div id="listing"></div>
       </div>
     </div>
   </script>
