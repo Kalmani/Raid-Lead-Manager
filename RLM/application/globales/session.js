@@ -1,3 +1,7 @@
+"use strict";
+
+var Class = require('uclass');
+
 var Session = new Class ({
 
   character : null,
@@ -27,3 +31,5 @@ var Session = new Class ({
   }
 
 });
+
+module.exports = Session;

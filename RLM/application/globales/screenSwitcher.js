@@ -1,3 +1,7 @@
+"use strict";
+
+var Class = require('uclass');
+
 var ScreenSwitcher = new Class ({
 
   Binds : ['switchPanel', 'switchScreen'],
@@ -21,7 +25,7 @@ var ScreenSwitcher = new Class ({
   },
 
   switchPanel : function(tpl, dom, animate) {
-    renderedPanel = this.app.render(tpl, this.context);
+    var renderedPanel = this.app.render(tpl, this.context);
     if (animate)
       $(renderedPanel).children().addClass('animated ' + animate);
     renderedPanel.inject(dom.empty());
@@ -46,6 +50,8 @@ var ScreenSwitcher = new Class ({
     if(!screen)
       return;
     return screen.show(args);
-  },
+  }
 
 });
+
+module.exports = ScreenSwitcher;

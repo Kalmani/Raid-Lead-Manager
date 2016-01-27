@@ -1,10 +1,12 @@
 "use strict";
 
-var Class        = require('uclass'),
-    Events       = require('uclass/events'),
+var Class          = require('uclass'),
+    Events         = require('uclass/events'),
 
-    forIn        = require('mout/object/forIn'),
-    ScreenEvents = require('./globales/ScreenEvents');
+    forIn          = require('mout/object/forIn'),
+    ScreenEvents   = require('./globales/ScreenEvents'),
+    ScreenSwitcher = require('./globales/ScreenSwitcher'),
+    Session        = require('./globales/Session');
 
 // instanciate all pages
 var RaidLeadManager = new Class ({
@@ -103,7 +105,7 @@ var RaidLeadManager = new Class ({
     var dom_nav = self.render('navbar', {'navigation' : self.navigation});
     dom_nav.inject(document.getElementById('navbar').empty());
     $('.nav_link').click(function() {
-      self.SCS.switchRubric(RaidLeadManager[self.get('id')]);
+      self.SCS.switchRubric(self[this.get('id')]);
     });
   },
 
@@ -149,20 +151,21 @@ var RaidLeadManager = new Class ({
   },
 
   show_content : function() {
-    var context = {
+    var self = this,
+        context = {
           'guild_emblem' : 'http://www.larmes-nebuleuses.fr/Portail/emblem.png',
           'guild_name' : 'Larmes Nébuleuses',
           'server' : 'Dalaran'
         },
-        dom = this.render('global_main', context).inject(document.body);
-    if (this.sess.user) {
-      this.make_nav();
-      this.SCS.switchRubric('HOME');
+        dom = self.render('global_main', context).inject(document.body);
+    if (self.sess.user) {
+      self.make_nav();
+      self.SCS.switchRubric('HOME');
     } else {
       // default value for login page
       RaidLeadManager['HOME'] = 'HOME';
-      this.SCS.register(new Classes['HomeScreen'](this, 'HOME', this.config.rubrics.HOME));
-      this.SCS.screens_list.HOME.show_login_panel();
+      self.SCS.register(new self.Classes['HomeScreen'](self, 'HOME', self.config.rubrics.HOME));
+      self.SCS.screens_list.HOME.show_login_panel();
     }
 
   },
