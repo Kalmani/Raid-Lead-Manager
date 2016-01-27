@@ -34,7 +34,9 @@ var ScreenEvents = new Class ({
 ScreenEvents.actions = {
   'home'     : require('./rubrics/home.js'),
   'settings' : require('./rubrics/settings.js'),
-  'wishlist' : require('./rubrics/wishlist.js')
+  'wishlist' : require('./rubrics/wishlist.js'),
+  //admin
+  'import'   : require('./rubrics/admin/import.js'),
 };
 
 module.exports = ScreenEvents;
