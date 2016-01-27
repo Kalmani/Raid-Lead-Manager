@@ -57,3 +57,4 @@ RLM/actions/config.prod.php
 server/
 .ftppass
 ftp/ftpaccess.json
+RLM/_bootstrap.js
