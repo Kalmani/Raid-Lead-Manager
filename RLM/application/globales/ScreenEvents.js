@@ -5,8 +5,8 @@ var Class        = require('uclass');
 var ScreenEvents = new Class ({
 
   initialize : function(app) {
-    var elem_id = null;
     document.addEvent('click', function(evt) {
+      var elem_id = null;
       var el = evt.target;
       if (el.get && el.get('id')) {
         elem_id = el.get('id');
