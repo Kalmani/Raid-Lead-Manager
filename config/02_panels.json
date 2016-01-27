@@ -45,7 +45,7 @@
       {
         "settings" : {"cols" : 2},
         "list" : [
-	  {"id" : "wish_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment_wish"}
+    {"id" : "wish_list_panel", "animate" : "fadeIn", "namespace" : "character", "action" : "show_equipment_wish"}
         ]
       }
     ],
@@ -61,7 +61,7 @@
       {
         "settings" : {"cols" : 2},
         "list" : [
-	  {"id" : "wish_list_panel", "animate" : "fadeIn"}
+          {"id" : "wish_list_panel", "animate" : "fadeIn"}
         ]
       }
     ],
@@ -78,20 +78,15 @@
         "settings" : {"cols" : 2},
         "list" : [
           {"id" : "wish_list_panel", "animate" : "fadeIn"}
-	]
+        ]
       }
     ],
-    "ADMIN" : [
+    "IMPORT" : [
       {
         "settings" : {"cols" : 3},
         "list" : [
-          {"id" : "admin_test", "animate" : "fadeIn"}
-	]
-      },
-      {
-        "settings" : {"cols" : 3},
-        "list" : [
-	]
+          {"id" : "import_items", "animate" : "fadeIn"}
+        ]
       }
     ]
   }
