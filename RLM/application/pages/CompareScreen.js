@@ -15,7 +15,7 @@ var CompareScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    CompareScreen.parent.show.call(this, args);
   },
 
 });

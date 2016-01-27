@@ -15,7 +15,7 @@ var DisconnectScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    DisconnectScreen.parent.show.call(this, args);
     this.app.sess.disconnect();
     document.location.reload();
   },

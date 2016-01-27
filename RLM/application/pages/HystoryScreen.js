@@ -15,7 +15,7 @@ var HystoryScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    HystoryScreen.parent.show.call(this, args);
   },
 
 });

@@ -24,9 +24,6 @@
   "RLM/dependencies/jquery/jQuery.1.11.2.min.js" : {"jshint" : false},
   "RLM/dependencies/bootstrap/js/bootstrap.js" : {"jshint" : false},
 
-  "RLM/application/globales/screenSwitcher.js" : {"jscs" : true, "jshint" : true},
-  "RLM/application/globales/session.js" : {"jscs" : true, "jshint" : true},
-
   "RLM/_bootstrap.js" : {"jscs" : true, "jshint" : true}
  }
 }

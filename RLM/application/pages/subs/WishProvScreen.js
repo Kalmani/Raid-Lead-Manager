@@ -16,7 +16,7 @@ var WishProvScreen = new Class ({
   },
 
   show : function(args) {
-    this.parent(args);
+    WishProvScreen.parent.show.call(this, args);
   }
 
 });
