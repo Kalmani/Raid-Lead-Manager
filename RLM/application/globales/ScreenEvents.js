@@ -20,7 +20,7 @@ var ScreenEvents = new Class ({
         }
       }
       if (elem_id) {
-        var screen_id = this[app.current_screen],
+        var screen_id = app.current_screen,
             rubric = app.SCS.screens_list[screen_id],
             rubric_id = elem_id.split('_')[0];
         if (ScreenEvents.actions[rubric_id])
