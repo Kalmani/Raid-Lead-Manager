@@ -21,6 +21,8 @@
               <span style="color:#ffd200;">
                 {{last_item.level}}
               </span>
+              <div id="total_container"> </div>
+              <div id="current_status_container"> </div>
             </td>
           </tr>
         </table>
