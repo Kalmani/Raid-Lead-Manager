@@ -155,28 +155,17 @@ class Items_datas {
         $gem_bonus = (isset($itm['socketInfo'])) ? $itm['socketInfo']['socketBonus'] : '';
         $r = "INSERT INTO larmes_items_" . $mode ."
               VALUES (
-                  '".$itm['id']."',
-                  '".utf8_decode($itm['name'])."'
-                  '".$item->getIcon()."',
-                  '".$itm['inventoryType']."',
-                  '".$itm['itemClass']."',
-                  '".$itm['itemSubClass']."',
-                  '".$itm['itemLevel']."',
-                  '".$itm['quality']."',
-                  '".$itm['baseArmor']."',
-                  '".$itm['itemSource']['sourceId']."',
-
-
-
-
-
-                 /* '".$itm['maxDurability']."',
-                  '".$itm['requiredLevel']."',
-                  '".$gems."',
-                  '".addslashes($gem_bonus)."',
-                  '".$itm['itemSource']['sourceType']."',*/
+                '".$itm['id']."',
+                '".utf8_decode($itm['name'])."',
+                '".$itm['icon']."',
+                '".$itm['inventoryType']."',
+                '".$itm['itemClass']."',
+                '".$itm['itemSubClass']."',
+                '".$itm['itemLevel']."',
+                '".$itm['quality']."',
+                '".$itm['baseArmor']."',
+                '".$itm['itemSource']['sourceId']."'
               )";
-        echo $r;
         $result = $this->mysqli->query($r);
         if ($result) {
           foreach ($itm['bonusStats'] as $stat){
