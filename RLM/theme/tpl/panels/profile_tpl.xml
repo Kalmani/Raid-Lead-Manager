@@ -3,6 +3,15 @@
   <script id="profile_panel" type="text/template">
     <div>
       <div class="panel panel-default">
+        {{#no_character}}
+        <div class="panel-heading" style="padding:7px 15px;">
+          Aucun personnage lié au compte
+        </div>
+        <div class="panel-body" id="collapseOne" style="text-align:center;">
+          <span class="btn btn-primary btn-large" id="home_import_character">Importer un personnage</span>
+        </div>
+        {{/no_character}}
+        {{#has_character}}
         <div class="panel-heading" style="padding:7px 15px;">
           {{character.pseudo}}
           <div class="dropdown pull-right">
@@ -110,6 +119,7 @@
             </div>
           </div>
         </div>
+        {{/has_character}}
       </div>
     </div>
   </script>

@@ -13,6 +13,12 @@ module.exports = {
       case 'login_try' : 
         this.login_try();
         break;
+      case 'import_character' :
+        this.rubric.import_character_screen();
+        break;
+      case 'import_character_valid' :
+        this.import_character_valid();
+        break;
       default :
         console.info('No bind on button ' + this.id);
         break;
@@ -50,6 +56,21 @@ module.exports = {
     this.app.generate_callback(response, zone, callback);
   },
 
+  import_character_valid : function() {
+    var name = document.id('character_name').value.trim();
+    console.log(name);
+    var options = {
+          'success' : this.callback_import_character.bind(this)
+        },
+        params = {
+          'name' : name
+        };
+    this.app.ask_server('character', 'find_character', params, options);
+  },
+
+  callback_import_character : function(data) {
+
+  }
 
   /*test_import_update : function(response) {
     if (response === undefined) {

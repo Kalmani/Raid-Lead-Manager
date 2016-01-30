@@ -4,6 +4,10 @@
     <div class="panel panel-default">
       <div class="panel-heading">$Items.Equipment;</div>
       <div class="panel-body">
+        {{#no_character}}
+          Aucun personnage lié au compte.
+        {{/no_character}}
+        {{#has_character}}
         <div class="row">
           <div class="col-lg-6 col-md-12">
             <table class="table-condensed" width="100%">
@@ -100,6 +104,7 @@
             </table>
           </div>
         </div>
+        {{/has_character}}
       </div>
     </div>
   </script>

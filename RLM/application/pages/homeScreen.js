@@ -42,6 +42,12 @@ var HomeScreen = new Class ({
       item++;
     });
     return context;
+  },
+
+  import_character_screen : function() {
+    var self = this;
+
+    self.app.SCS.switchPanel('import_character', document.getElement('#cell_profile_panel .panel-body'), 'fadeIn');
   }
 
 });

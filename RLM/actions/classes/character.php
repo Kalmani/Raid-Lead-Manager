@@ -22,7 +22,13 @@ class Character_datas {
     $this->armory->UTF8(true);
     $this->armory->setLocale('fr_FR'); //conf
     $this->user_datas = (array) json_decode($_COOKIE['RLM_user']);
-    $this->character = $this->armory->getCharacter(utf8_decode($this->user_datas['user_perso']));
+
+    if ($this->user_datas['user_perso']) {
+      $this->character = $this->armory->getCharacter(utf8_decode($this->user_datas['user_perso']));
+    } else {
+      $this->character = false;
+    }
+
     switch ($this->action) {
       case 'show_profile' :
         echo json_encode($this->show_profile());
@@ -38,6 +44,9 @@ class Character_datas {
         break;
       case 'bind_bis' :
         echo json_encode($this->bind_bis());
+        break;
+      case 'find_character' :
+        echo json_encode($this->find_character());
         break;
     }
   }
@@ -96,6 +105,9 @@ class Character_datas {
 
   private function show_profile() {
 
+    if (!$this->character)
+      return array('no_character' => true);
+
     $class = $this->character->getClassName();
     $spe = $this->character->getActiveTalents();
     $datas = $this->character->getData();
@@ -103,7 +115,9 @@ class Character_datas {
     $professions = $this->character->getPrimaryProfessions();
     $ilvl = $datas['items']['averageItemLevelEquipped'];
     //$ilvlwish = $this->session['wish_ilvl'];
-    $context = array();
+    $context = array(
+      'has_character' => true
+    );
     $context['character'] = array(
       'pseudo' => $this->user_datas['user_perso'],
       'classe' => $class,
@@ -140,13 +154,17 @@ class Character_datas {
 
   private function show_equipment() {
     //expected output
+    if (!$this->character)
+      return array('no_character' => true);
+
     $items = $this->character->getGear();
     unset($items['averageItemLevel']);
     unset($items['averageItemLevelEquipped']);
 
     $context = array(
       'left'  => array(),
-      'right' => array()
+      'right' => array(),
+      'has_character' => true
     );
     $i = 0;
     foreach ($items as $slot => $item) {
@@ -212,9 +230,17 @@ class Character_datas {
   private function bind_bis() {
     return $this->params;
   }
+
+  private function find_character() {
+    print_r($this->params);
+    echo $guild_name;
+    $loaded_character = $this->armory->getCharacter(utf8_decode($this->params['name']));
+    print_r($loaded_character);
+  }
 }
 
 $mysqli = new mysqli($host, $user, $pass, $db);
+$params['guild_name'] = $GLOBAL['guild_name'];
 $character = new Character_datas($action, $armory, $mysqli, $params);
 
 ?>
