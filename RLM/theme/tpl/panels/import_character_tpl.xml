@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mustache>
+  <script id="import_character" type="text/template">
+    <div class="panel panel-default">
+      <label for="character_name" class="control-label col-lg-5 col-md-12 col-sm-12">Nom du personnage :</label>
+      <input type="text" id="character_name" name="character_name col-lg-7 col-md-12 col-sm-12" class="form-control" />
+      <div style="clear:both; height:10px;"> </div>
+      <span class="col-lg-12 btn btn-success" id="home_import_character_valid">Importer</span>
+    </div>
+  </script>
+</mustache>
