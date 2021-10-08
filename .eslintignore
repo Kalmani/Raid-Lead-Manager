@@ -1,0 +1,5 @@
+/www/
+/node_modules/
+rsrcs/vendors.js
+app/_vendors.js
+_archive/

@@ -1,0 +1,357 @@
+body {
+  background-color: #62210f;
+  background-image: url("../rsc/background-v2.gif");
+  background-repeat: repeat-x;
+  color: #333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.panel-default {
+  border-color: #3a1107;
+}
+.panel {
+  background-color: #46160a;
+}
+
+.panel-default > .panel-heading {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #591c0b 0%, #8e341b 100%);
+  background-repeat: repeat-x;
+  border-color: #6f2715;
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  background-image: url("../rsc/background-navigation.gif");
+  background-repeat: repeat-x;
+  /*height: 50px;
+  width: 100%;*/
+  margin: 0px;
+}
+
+.navbar-inverse{
+  background-color: transparent;
+  border: none !important;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #c53517;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #62210f;
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li:hover > a {
+  background-color: #62210f;
+  color: #fff;
+}
+
+.collapse {
+  background-color: #1A0500;
+  border-bottom: 2px solid;
+  border-color: #62210f !important;
+}
+
+.navbar-collapse {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #7B2B15;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #7B2B15 !important;
+}
+
+.collapse.in, .navbar-collapse.in {
+  overflow-y: inherit !important;
+}
+
+.collapse.in .navbar-nav {
+  background-image: none !important;
+}
+
+.navbar-brand {
+  margin-left: 0px !important;
+  color: #fff !important;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-header {
+  background-color: #1A0500 !important;
+}
+
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  color: #FFF !important;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li:hover > a {
+  background-color: #62210f !important;
+}
+
+.btn-success {
+  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
+  background-repeat: repeat-x;
+  border-color: #3e8f3e;
+}
+
+.btn {
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+  border-color: #ffd200;
+}
+
+.dropdown-menu {
+    background-color: #080808;
+    border: 2px solid #62210f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none outside none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown-menu > li > a {
+    clear: both;
+    color: #c53517;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: transparent;
+  color: #FFF;
+}
+
+.loader{
+  display: block;
+  margin: auto;
+}
+
+.class_wow {
+    background-color: #6f2715;
+    border-radius: 18px;
+    color: #fff;
+    font-weight: bold;
+    height: 36px;
+}
+
+.class_wow img {
+    margin-right: 10px;
+}
+
+.table-striped > tbody > tr, .table-striped > thead > tr {
+    color: #fff;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) {
+    background-color: #6f2715;
+    color: #fff;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #671f0d;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.table > thead > tr > th {
+    border-bottom: none;
+}
+
+.control-label {
+    color: #fff;
+}
+
+.main_profil_img{
+  width:90%;
+  max-width: 230px;
+  display: block;
+  margin: 0px auto 10px;
+}
+
+.panel-warning > .panel-heading {
+  background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);
+  background-repeat: repeat-x;
+}
+
+table tr td.equipement_icon img {
+  display: block;
+  height: 44px;
+  width: 44px;
+  margin: 3px 0px 0px 3px;
+}
+
+span.color-1 {
+  color: #ffffff;
+}
+span.color-2 {
+  color: #1eff00;
+}
+span.color-3 {
+  color: #0081ff;
+}
+span.color-4 {
+  color: #c600ff;
+}
+span.color-5 {
+  color: #ff8000;
+}
+
+.jumbotron span {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.loading_stuff{
+  opacity: 0.2;
+}
+
+.item{
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  background-color: #1A0500;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.item:hover{
+  box-shadow: 0 2px 2px rgba(255, 210, 0, 0.6);
+}
+
+span.frame{
+  background-image:url('../rsc/inventory-slots.png');
+  height:49px;
+  width:49px;
+  position:absolute;
+  margin-top:-47px;
+}
+span.frame_0{
+  background-image:none;
+}
+span.frame_1{
+}
+span.frame_2{
+}
+span.frame_3{
+}
+span.frame_4{
+  background-position: -245px 0;
+}
+
+.ariane{
+  margin-bottom: 52px !important;
+  background-color: #1a0500 !important;
+}
+
+.ariane li {
+  color: #FFF !important;
+}
+
+.wowheadlink {
+  display:block;
+  width:100%;
+  height:60px;
+  margin-top:-60px;
+}
+
+.add_item, .refresh_item{
+  color:#419641;
+  cursor: pointer;
+}
+
+.add_item:hover, .refresh_item:hover{
+  color:#5cb85c;
+}
+
+.wishlist_status {
+  color: #FFF;
+  text-align: center;
+}
+
+.warning, .error, .done {
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  margin-left: -20px;
+  background-size: 60px;
+}
+
+.warning {
+  background-image: url("../rsc/bg_warning.png");
+}
+
+.error {
+  background-image: url("../rsc/bg_error.png");
+}
+
+.done {
+  background-image: url("../rsc/bg_done.png");
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
+}

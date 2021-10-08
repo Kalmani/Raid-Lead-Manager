@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:ivs/browser-stage3",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "react/jsx-no-undef": "off",
+    "react/no-deprecated": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off"
+  },
+  "plugins": ["ivs"],
+  "env": {
+    "ivs/react": true
+  },
+  "globals" : {
+    "Filestack"        : true,
+    "ScrollArea"       : true,
+    "DragDrop"         : true,
+    "ReactTransitions" : true,
+    "ReactColor"       : true,
+    "ReactRouter"      : true,
+    "ReactSortable"    : true,
+    "RouterHistory"    : true,
+    "SimpleBar"        : true
+  }
+}
