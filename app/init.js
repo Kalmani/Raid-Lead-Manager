@@ -1,19 +1,34 @@
 'use strict';
 
-//const Provider      = ReactRedux.Provider;
+const Provider               = ReactRedux.Provider;
+const {createBrowserHistory} = RouterHistory;
 
-//const store           = require('./store');
-const RaidLeadManager = require('./views/Manager');
+const {
+  Router,
+  Route,
+  Switch
+} = ReactRouter;
 
-//const {initApp}     = require('./store/actions');
+const store           = require('./store');
+const Routes          = require('./Routes');
+
+const history         = createBrowserHistory();
+
+const {initApp}     = require('./store/actions');
 
 const render = () => {
   ReactDom.render(
-    (<RaidLeadManager />),
+    (<Provider store={store}>
+      <Router history={history} basename="/">
+        <Switch>
+          <Route component={Routes} />
+        </Switch>
+      </Router>
+    </Provider>),
     document.getElementById('root')
   );
 };
 
-//store.subscribe(render);
+store.subscribe(render);
 render();
-//store.dispatch(initApp());
+store.dispatch(initApp());

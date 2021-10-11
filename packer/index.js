@@ -8,16 +8,19 @@ const glob        = require('glob').sync;
 const uglify      = require('uglify-es');
 const watchify    = require('watchify');
 
+const deepMixIn   = require('mout/object/deepMixIn');
 const copyFiles   = require('nyks/fs/copyFiles');
 const deleteFold  = require('nyks/fs/deleteFolderRecursive');
 const mkdirpSync  = require('nyks/fs/mkdirpSync');
 const defer       = require('nyks/promise/defer');
 const sprintf     = require('nyks/string/format');
 
+const pkg_content = require('../package.json');
+
 class Packer {
 
   constructor() {
-    this.log = debug('RML:Packer');
+    this.log = debug('RLM:Packer');
   }
 
   clean_app(deploy_dir) /**
@@ -34,7 +37,22 @@ class Packer {
 
     this.clean_app(deploy_dir);
     this.copy_statics(deploy_dir);
+
     await this.build_app(deploy_dir);
+    await this.config(deploy_dir);
+  }
+
+  async config(deploy_dir) /**
+  * @param string [deploy_dir=www]
+  */ {
+    this.log(`Building config.json file in ${deploy_dir}`);
+
+    mkdirpSync(deploy_dir);
+
+    let config_file_path = `${deploy_dir}/config.json`;
+    let json             = this._config();
+
+    fs.writeFileSync(config_file_path, JSON.stringify(json, null, 2));
   }
 
   async build_app(deploy_dir) /**
@@ -75,7 +93,8 @@ class Packer {
     });
 
     //b.plugin(discify);
-    //b.transform('browserify-shim');
+
+    b.transform('browserify-shim');
 
     if(watching) {
       b.plugin(watchify);
@@ -98,7 +117,7 @@ class Packer {
           defered.resolve();
       };
 
-      b.once('discified', end);
+      target.on('close', end);
 
       b.bundle((err) => {
         if(err) {
@@ -111,7 +130,7 @@ class Packer {
             return defered.reject(err);
           }
         }
-        self.log('', 'Updated files.');
+        self.log('Updated files.');
       }).pipe(target);
     };
 
@@ -119,6 +138,25 @@ class Packer {
     bundle();
 
     return defered;
+  }
+
+  _config() {
+    let files = glob('config/*.json');
+
+    files.sort();
+
+    let json = {};
+
+    for(let filepath of files)
+      deepMixIn(json, JSON.parse(fs.readFileSync(filepath)));
+
+    var version = pkg_content.version;
+
+    this.log('Add version number in configuration : ', version);
+
+    json['version'] = version;
+
+    return json;
   }
 
   async copy_statics(deploy_dir) /**

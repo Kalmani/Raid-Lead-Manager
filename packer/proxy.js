@@ -14,7 +14,7 @@ const HTTP_PORT = 8000;
 class Proxy {
 
   constructor() {
-    this.log    = debug('RML:Proxy');
+    this.log    = debug('RLM:Proxy');
     this.packer = new Packer();
   }
 
