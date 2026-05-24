@@ -1,0 +1,51 @@
+{
+  "characters": [
+    {
+      "id": "kalmani",
+      "pseudo": "Kalmani",
+      "className": "Druide",
+      "classIcon": "spell_nature_healingtouch",
+      "activeSpec": "Restauration",
+      "profileImage": "/theme/rsc/background-v2.gif",
+      "ilvl": 678,
+      "accomplishedPercent": 72,
+      "lootsByRaid": "1.4",
+      "professions": [
+        {"name": "Herboristerie", "level": 700, "max": 700},
+        {"name": "Alchimie", "level": 700, "max": 700}
+      ],
+      "guildCharacters": [
+        {"pseudo": "Deewan"},
+        {"pseudo": "Efcaia"},
+        {"pseudo": "Faytas"},
+        {"pseudo": "Grimnak"},
+        {"pseudo": "Harokar"},
+        {"pseudo": "Ilmiris"},
+        {"pseudo": "Kalhan"},
+        {"pseudo": "Kelarno"},
+        {"pseudo": "Rotkappchen"},
+        {"pseudo": "Telvia"},
+        {"pseudo": "Valhalla"},
+        {"pseudo": "Warana"},
+        {"pseudo": "Zhalob"}
+      ],
+      "equipment": {
+        "head": 1001,
+        "neck": 1004,
+        "shoulder": 1007,
+        "back": 1010,
+        "chest": 1013,
+        "wrist": 1016,
+        "hands": 1019,
+        "waist": 1022,
+        "legs": 1025,
+        "feet": 1028,
+        "finger1": 1031,
+        "finger2": 1034,
+        "trinket1": 1037,
+        "trinket2": 1040,
+        "offHand": 1043
+      }
+    }
+  ]
+}

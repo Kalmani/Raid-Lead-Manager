@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "user_id": 1,
+      "user_log": "admin",
+      "user_pass": "admin",
+      "user_mail": "admin@raidleadmanager.com",
+      "user_perso": "Sän",
+      "user_ilvl_wish": 685,
+      "user_statut": 1,
+      "perso_class": 11,
+      "ilvl_moy": 678,
+      "character_id": "kalmani",
+      "character_name": "Sän",
+      "realm_slug": "La Croisade écarlate",
+      "region": "eu",
+      "locale": "fr_FR"
+    }
+  ]
+}

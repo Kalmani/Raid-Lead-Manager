@@ -1,0 +1,22 @@
+{
+  "updates": [
+    {
+      "id": 3,
+      "author": "Kalmani",
+      "date": "2026-05-20",
+      "note": "Le backend PHP a ete remplace par une API Express avec stockage JSON."
+    },
+    {
+      "id": 2,
+      "author": "Kalmani",
+      "date": "2026-05-19",
+      "note": "La wishlist BIS, provisoire et Spe 2 est maintenant persistee cote Node."
+    },
+    {
+      "id": 1,
+      "author": "Kalmani",
+      "date": "2026-05-18",
+      "note": "Le frontend React sert desormais depuis le meme serveur que l'API."
+    }
+  ]
+}

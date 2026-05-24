@@ -1,21 +1,43 @@
 Raid-Lead-Manager
 =================
 
+Etat actuel
+-----------
+
+Le frontend historique est remplace par un frontend React et le backend PHP est remplace par un serveur Node/Express.
+
+Nouvelle structure :
+
+* `clientside/app` : sources React
+* `clientside/theme` : styles SCSS
+* `clientside/packer` : build maison inspiré du packer de `lisieredumorvan`
+* `backend` : API Express et stockage JSON
+* sortie cible : `RLM/` servie par le backend Node
+
+Nouvelles commandes :
+
+* `npm start`
+* `npm run build`
+* `npm run watch`
+* `npm run serve`
+* `npm run dev`
+
 Création d'un environnement de travail :
 
-1. Installer npm sur votre machine [How to install npm on windows](http://stackoverflow.com/questions/16000173/install-npm-node-js-package-manager-on-windows-w-o-using-node-js-msi)
-2. Installer un serveur php/Mysql (WampServer2 par exemple)
-3. Lancer une invite de commandes dans le répertoire www de votre wamp (Shift+Clic droit, Ouvrir une fenêtre de commande ici)
-4. Cloner le projet dans ce répertoire - "git clone https://github.com/Kalmani/Raid-Lead-Manager.git"
-5. Récupérer les sous modules - "git submodule update --init"
-6. Lancer la commande "npm install" - toutes les dépendances grunt seront installées
-7. Copier les fichier suivant au même emplacement et en retirant l'extention ".example"
-  * ftp/ftpaccess.json.example
-  * RLM/actions/config.php.example
-  * RLM/actions/config.prod.php.example
-    * Le fichier config.prod.php ne concerne que la version déployée sur server distant et n'aura donc aucun impact sur votre environnement de dev local.
-    * les api_key et share_key sont distribuées via [l'interface blizzard api](https://dev.battle.net/), si vous faites parti de la guilde LN, contactez moi pour obtenir notre api key
-8. uploader les fichiers sql contenus dans le dossier du même nom dans votre phpMyAdmin afin d'avoir une base d'items
-9. Dans votre invite de commandes, lancer la commande "grunt" afin de compiler les fichiers js/xml/css existants
-10. Lancer la commande "grunt watch", qui compilera tous les fichiers modifiés en temps réel
-11. Enjoy
+1. Installer Node.js et npm
+2. Cloner le projet
+3. Lancer `npm install`
+4. Copier `.env.example` vers `.env`
+5. Renseigner `BLIZZARD_CLIENT_ID` et `BLIZZARD_CLIENT_SECRET` dans `.env` si tu veux activer le mode live Battle.net
+6. Lancer `npm run build` pour produire les assets dans `RLM/`
+7. Lancer `npm start` pour servir l'application sur `http://127.0.0.1:8000`
+8. Utiliser `npm run watch` pour rebuilder automatiquement le frontend
+9. Utiliser `npm run dev` pour builder, watcher puis servir localement
+10. Les donnees mockees sont dans `backend/data/*.json`
+
+Configuration Blizzard :
+
+* `BLIZZARD_CLIENT_ID` et `BLIZZARD_CLIENT_SECRET` activent les appels live vers les API Battle.net
+* `BLIZZARD_REGION` et `BLIZZARD_LOCALE` peuvent surcharger les valeurs par defaut (`eu`, `fr_FR`)
+* `HOST` et `PORT` sont aussi lus depuis `.env`
+* sans ces variables, le backend continue de fonctionner sur les fichiers JSON mockes

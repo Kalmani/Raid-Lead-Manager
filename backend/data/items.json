@@ -1,0 +1,63 @@
+{
+  "items": [
+    {"id": 1001, "slot": "head", "name": "Diademe des marais calmes", "icon": "inv_helmet_136", "itemLevel": 678, "quality": 4, "stats": [{"name": "Intelligence", "amount": 351}, {"name": "Hate", "amount": 228}, {"name": "Maitrise", "amount": 184}]},
+    {"id": 1002, "slot": "head", "name": "Couronne des spores veilleurs", "icon": "inv_helmet_mail_dungeonmail_c_01", "itemLevel": 685, "quality": 4, "stats": [{"name": "Intelligence", "amount": 366}, {"name": "Critique", "amount": 241}, {"name": "Maitrise", "amount": 199}]},
+    {"id": 1003, "slot": "head", "name": "Capuche de pluie druidique", "icon": "inv_helmet_leather_raiddruid_k_01", "itemLevel": 691, "quality": 4, "stats": [{"name": "Intelligence", "amount": 380}, {"name": "Versatilite", "amount": 252}, {"name": "Hate", "amount": 210}]},
+
+    {"id": 1004, "slot": "neck", "name": "Torque des eaux dormantes", "icon": "inv_jewelry_necklace_116", "itemLevel": 676, "quality": 4, "stats": [{"name": "Endurance", "amount": 412}, {"name": "Critique", "amount": 214}, {"name": "Maitrise", "amount": 201}]},
+    {"id": 1005, "slot": "neck", "name": "Collier de brume albatre", "icon": "inv_jewelry_necklace_100", "itemLevel": 684, "quality": 4, "stats": [{"name": "Endurance", "amount": 429}, {"name": "Hate", "amount": 230}, {"name": "Maitrise", "amount": 205}]},
+    {"id": 1006, "slot": "neck", "name": "Parure des cimes argentees", "icon": "inv_jewelry_necklace_110", "itemLevel": 690, "quality": 4, "stats": [{"name": "Endurance", "amount": 445}, {"name": "Versatilite", "amount": 246}, {"name": "Critique", "amount": 214}]},
+
+    {"id": 1007, "slot": "shoulder", "name": "Spaulieres du reverdi", "icon": "inv_shoulder_leather_raiddruid_k_01", "itemLevel": 677, "quality": 4, "stats": [{"name": "Intelligence", "amount": 332}, {"name": "Maitrise", "amount": 220}, {"name": "Critique", "amount": 176}]},
+    {"id": 1008, "slot": "shoulder", "name": "Epaules des spores fines", "icon": "inv_shoulder_leather_raiddruid_p_01", "itemLevel": 686, "quality": 4, "stats": [{"name": "Intelligence", "amount": 349}, {"name": "Hate", "amount": 236}, {"name": "Maitrise", "amount": 188}]},
+    {"id": 1009, "slot": "shoulder", "name": "Mantelet du jardin profond", "icon": "inv_shoulder_123", "itemLevel": 692, "quality": 4, "stats": [{"name": "Intelligence", "amount": 364}, {"name": "Versatilite", "amount": 248}, {"name": "Hate", "amount": 196}]},
+
+    {"id": 1010, "slot": "back", "name": "Voile des roseaux", "icon": "inv_misc_cape_cataclysm_healer_d_01", "itemLevel": 675, "quality": 4, "stats": [{"name": "Intelligence", "amount": 287}, {"name": "Hate", "amount": 201}, {"name": "Critique", "amount": 173}]},
+    {"id": 1011, "slot": "back", "name": "Cape du vent tiede", "icon": "inv_misc_cape_cataclysm_caster_d_01", "itemLevel": 683, "quality": 4, "stats": [{"name": "Intelligence", "amount": 304}, {"name": "Maitrise", "amount": 217}, {"name": "Hate", "amount": 184}]},
+    {"id": 1012, "slot": "back", "name": "Drap druidique de marais", "icon": "inv_misc_cape_cataclysm_tank_d_01", "itemLevel": 689, "quality": 4, "stats": [{"name": "Intelligence", "amount": 319}, {"name": "Versatilite", "amount": 229}, {"name": "Critique", "amount": 194}]},
+
+    {"id": 1013, "slot": "chest", "name": "Tunique des pousses calmes", "icon": "inv_chest_leather_raiddruid_k_01", "itemLevel": 679, "quality": 4, "stats": [{"name": "Intelligence", "amount": 414}, {"name": "Maitrise", "amount": 277}, {"name": "Critique", "amount": 233}]},
+    {"id": 1014, "slot": "chest", "name": "Robe de senecon nocturne", "icon": "inv_chest_leather_raidrogue_p_01", "itemLevel": 687, "quality": 4, "stats": [{"name": "Intelligence", "amount": 429}, {"name": "Hate", "amount": 289}, {"name": "Maitrise", "amount": 242}]},
+    {"id": 1015, "slot": "chest", "name": "Corselet de croissance lente", "icon": "inv_chest_leather_raidmonk_k_01", "itemLevel": 693, "quality": 4, "stats": [{"name": "Intelligence", "amount": 446}, {"name": "Versatilite", "amount": 298}, {"name": "Hate", "amount": 251}]},
+
+    {"id": 1016, "slot": "wrist", "name": "Brassards de pluie douce", "icon": "inv_bracer_leather_raiddruid_k_01", "itemLevel": 674, "quality": 4, "stats": [{"name": "Intelligence", "amount": 266}, {"name": "Maitrise", "amount": 180}, {"name": "Critique", "amount": 148}]},
+    {"id": 1017, "slot": "wrist", "name": "Poignets du verger humide", "icon": "inv_bracer_leather_raiddruid_p_01", "itemLevel": 682, "quality": 4, "stats": [{"name": "Intelligence", "amount": 278}, {"name": "Hate", "amount": 194}, {"name": "Maitrise", "amount": 162}]},
+    {"id": 1018, "slot": "wrist", "name": "Liens des racines vives", "icon": "inv_bracer_66", "itemLevel": 688, "quality": 4, "stats": [{"name": "Intelligence", "amount": 291}, {"name": "Versatilite", "amount": 202}, {"name": "Hate", "amount": 171}]},
+
+    {"id": 1019, "slot": "hands", "name": "Gants de lichen solaire", "icon": "inv_glove_leather_raiddruid_k_01", "itemLevel": 678, "quality": 4, "stats": [{"name": "Intelligence", "amount": 337}, {"name": "Critique", "amount": 221}, {"name": "Maitrise", "amount": 182}]},
+    {"id": 1020, "slot": "hands", "name": "Poignes du ruissellement", "icon": "inv_glove_leather_raiddruid_p_01", "itemLevel": 686, "quality": 4, "stats": [{"name": "Intelligence", "amount": 351}, {"name": "Hate", "amount": 233}, {"name": "Maitrise", "amount": 194}]},
+    {"id": 1021, "slot": "hands", "name": "Mitaines du mycelium sage", "icon": "inv_glove_leather_raidrogue_k_01", "itemLevel": 692, "quality": 4, "stats": [{"name": "Intelligence", "amount": 366}, {"name": "Versatilite", "amount": 244}, {"name": "Critique", "amount": 206}]},
+
+    {"id": 1022, "slot": "waist", "name": "Ceinture du bourbier lumineux", "icon": "inv_belt_leather_raiddruid_k_01", "itemLevel": 676, "quality": 4, "stats": [{"name": "Intelligence", "amount": 318}, {"name": "Maitrise", "amount": 208}, {"name": "Hate", "amount": 177}]},
+    {"id": 1023, "slot": "waist", "name": "Sangle des racines sages", "icon": "inv_belt_leather_raiddruid_p_01", "itemLevel": 684, "quality": 4, "stats": [{"name": "Intelligence", "amount": 332}, {"name": "Critique", "amount": 221}, {"name": "Maitrise", "amount": 188}]},
+    {"id": 1024, "slot": "waist", "name": "Cordeliere de la mousse lourde", "icon": "inv_belt_95", "itemLevel": 690, "quality": 4, "stats": [{"name": "Intelligence", "amount": 347}, {"name": "Versatilite", "amount": 235}, {"name": "Hate", "amount": 194}]},
+
+    {"id": 1025, "slot": "legs", "name": "Jambieres du saule profond", "icon": "inv_pants_leather_raiddruid_k_01", "itemLevel": 679, "quality": 4, "stats": [{"name": "Intelligence", "amount": 404}, {"name": "Maitrise", "amount": 266}, {"name": "Critique", "amount": 224}]},
+    {"id": 1026, "slot": "legs", "name": "Cuissards de pluie fertile", "icon": "inv_pants_leather_raiddruid_p_01", "itemLevel": 688, "quality": 4, "stats": [{"name": "Intelligence", "amount": 421}, {"name": "Hate", "amount": 279}, {"name": "Maitrise", "amount": 236}]},
+    {"id": 1027, "slot": "legs", "name": "Jambes de la tourbiere claire", "icon": "inv_pants_leather_raidmonk_k_01", "itemLevel": 694, "quality": 4, "stats": [{"name": "Intelligence", "amount": 436}, {"name": "Versatilite", "amount": 294}, {"name": "Hate", "amount": 247}]},
+
+    {"id": 1028, "slot": "feet", "name": "Bottes du sentier detrempe", "icon": "inv_boots_leather_raiddruid_k_01", "itemLevel": 677, "quality": 4, "stats": [{"name": "Intelligence", "amount": 331}, {"name": "Critique", "amount": 218}, {"name": "Hate", "amount": 181}]},
+    {"id": 1029, "slot": "feet", "name": "Pas de mousse tenace", "icon": "inv_boots_leather_raiddruid_p_01", "itemLevel": 685, "quality": 4, "stats": [{"name": "Intelligence", "amount": 346}, {"name": "Maitrise", "amount": 232}, {"name": "Critique", "amount": 192}]},
+    {"id": 1030, "slot": "feet", "name": "Soleret de brume tiede", "icon": "inv_boots_08", "itemLevel": 691, "quality": 4, "stats": [{"name": "Intelligence", "amount": 359}, {"name": "Versatilite", "amount": 243}, {"name": "Hate", "amount": 205}]},
+
+    {"id": 1031, "slot": "finger1", "name": "Anneau du lagon pale", "icon": "inv_jewelry_ring_87", "itemLevel": 676, "quality": 4, "stats": [{"name": "Endurance", "amount": 398}, {"name": "Critique", "amount": 214}, {"name": "Maitrise", "amount": 188}]},
+    {"id": 1032, "slot": "finger1", "name": "Bague de spore claire", "icon": "inv_jewelry_ring_108", "itemLevel": 684, "quality": 4, "stats": [{"name": "Endurance", "amount": 414}, {"name": "Hate", "amount": 226}, {"name": "Maitrise", "amount": 199}]},
+    {"id": 1033, "slot": "finger1", "name": "Cercle des pluies lentes", "icon": "inv_jewelry_ring_80", "itemLevel": 690, "quality": 4, "stats": [{"name": "Endurance", "amount": 429}, {"name": "Versatilite", "amount": 239}, {"name": "Critique", "amount": 209}]},
+
+    {"id": 1034, "slot": "finger2", "name": "Sceau de marais ancien", "icon": "inv_jewelry_ring_90", "itemLevel": 677, "quality": 4, "stats": [{"name": "Endurance", "amount": 401}, {"name": "Maitrise", "amount": 218}, {"name": "Hate", "amount": 190}]},
+    {"id": 1035, "slot": "finger2", "name": "Annelet du calme vegetal", "icon": "inv_jewelry_ring_81", "itemLevel": 685, "quality": 4, "stats": [{"name": "Endurance", "amount": 417}, {"name": "Critique", "amount": 231}, {"name": "Maitrise", "amount": 201}]},
+    {"id": 1036, "slot": "finger2", "name": "Bague du torrent couvert", "icon": "inv_jewelry_ring_95", "itemLevel": 691, "quality": 4, "stats": [{"name": "Endurance", "amount": 433}, {"name": "Versatilite", "amount": 244}, {"name": "Hate", "amount": 213}]},
+
+    {"id": 1037, "slot": "trinket1", "name": "Talisman de sevres dormantes", "icon": "inv_misc_trinket6oih_ironhorde", "itemLevel": 678, "quality": 4, "stats": [{"name": "Intelligence", "amount": 367}, {"name": "Maitrise", "amount": 255}]},
+    {"id": 1038, "slot": "trinket1", "name": "Essence de pluie immobile", "icon": "inv_misc_trinket6oih_orgrimmarraid", "itemLevel": 686, "quality": 4, "stats": [{"name": "Intelligence", "amount": 382}, {"name": "Hate", "amount": 269}]},
+    {"id": 1039, "slot": "trinket1", "name": "Idole du jardin noyé", "icon": "inv_misc_trinket6oih_ogre", "itemLevel": 692, "quality": 4, "stats": [{"name": "Intelligence", "amount": 396}, {"name": "Versatilite", "amount": 281}]},
+
+    {"id": 1040, "slot": "trinket2", "name": "Relique du saule humide", "icon": "inv_misc_trinket6oih_shadowmoon", "itemLevel": 677, "quality": 4, "stats": [{"name": "Intelligence", "amount": 364}, {"name": "Critique", "amount": 251}]},
+    {"id": 1041, "slot": "trinket2", "name": "Spores de reve tenace", "icon": "inv_misc_trinket6oih_blackrockore", "itemLevel": 685, "quality": 4, "stats": [{"name": "Intelligence", "amount": 379}, {"name": "Maitrise", "amount": 264}]},
+    {"id": 1042, "slot": "trinket2", "name": "Fiole des nappes claires", "icon": "inv_misc_trinket6oih_gronn", "itemLevel": 691, "quality": 4, "stats": [{"name": "Intelligence", "amount": 394}, {"name": "Hate", "amount": 277}]},
+
+    {"id": 1043, "slot": "offHand", "name": "Idole des eaux stables", "icon": "inv_misc_book_07", "itemLevel": 678, "quality": 4, "stats": [{"name": "Intelligence", "amount": 338}, {"name": "Maitrise", "amount": 224}, {"name": "Critique", "amount": 182}]},
+    {"id": 1044, "slot": "offHand", "name": "Totem de bruine sage", "icon": "inv_misc_orb_05", "itemLevel": 686, "quality": 4, "stats": [{"name": "Intelligence", "amount": 352}, {"name": "Hate", "amount": 236}, {"name": "Maitrise", "amount": 193}]},
+    {"id": 1045, "slot": "offHand", "name": "Grimoire des mares vertes", "icon": "inv_offhand_1h_primalistraid_d_01", "itemLevel": 692, "quality": 4, "stats": [{"name": "Intelligence", "amount": 367}, {"name": "Versatilite", "amount": 247}, {"name": "Critique", "amount": 205}]}
+  ]
+}

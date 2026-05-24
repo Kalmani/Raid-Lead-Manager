@@ -1,0 +1,228 @@
+{
+  "raid": {
+    "title": "Attribution du raid",
+    "instance": "Citadelle de la Couronne de glace",
+    "difficulty": "25 joueurs",
+    "weekLabel": "Semaine du 2026-05-18"
+  },
+  "drops": [
+    {
+      "id": "drop_royal_seal",
+      "date": "2026-05-20",
+      "boss": "Sindragosa",
+      "itemId": 1036,
+      "note": "Drop principal de fin de lockout.",
+      "status": "pending",
+      "candidates": [
+        {
+          "id": "san_resto",
+          "pseudo": "San",
+          "displayName": "Sän",
+          "className": "Druide",
+          "spec": "Restauration",
+          "role": "Heal",
+          "wishKind": "bis",
+          "score": 98,
+          "reason": "BIS declare et upgrade net sur un anneau moyen.",
+          "replacementOptions": [
+            {
+              "slot": "finger1",
+              "currentItemId": 1031,
+              "deltaItemLevel": 15
+            },
+            {
+              "slot": "finger2",
+              "currentItemId": 1034,
+              "deltaItemLevel": 14
+            }
+          ]
+        },
+        {
+          "id": "efcaia_shadow",
+          "pseudo": "Efcaia",
+          "displayName": "Efcaia",
+          "className": "Pretre",
+          "spec": "Ombre",
+          "role": "DPS",
+          "wishKind": "prov",
+          "score": 82,
+          "reason": "Grosse progression mais piece seulement en provisoire.",
+          "replacementOptions": [
+            {
+              "slot": "finger1",
+              "currentItemId": 1032,
+              "deltaItemLevel": 7
+            }
+          ]
+        },
+        {
+          "id": "grimnak_blood",
+          "pseudo": "Grimnak",
+          "displayName": "Grimnak",
+          "className": "Chevalier de la mort",
+          "spec": "Sang",
+          "role": "Tank",
+          "wishKind": "hors",
+          "score": 56,
+          "reason": "Besoin defensif ponctuel mais hors wishlist.",
+          "replacementOptions": [
+            {
+              "slot": "finger2",
+              "currentItemId": 1035,
+              "deltaItemLevel": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drop_garden_idol",
+      "date": "2026-05-20",
+      "boss": "Professeur Putricide",
+      "itemId": 1039,
+      "note": "Bijou discute entre heal et caster.",
+      "status": "pending",
+      "candidates": [
+        {
+          "id": "san_resto",
+          "pseudo": "San",
+          "displayName": "Sän",
+          "className": "Druide",
+          "spec": "Restauration",
+          "role": "Heal",
+          "wishKind": "bis",
+          "score": 95,
+          "reason": "Le joueur l'a place en BIS et peut choisir quel bijou remplacer.",
+          "replacementOptions": [
+            {
+              "slot": "trinket1",
+              "currentItemId": 1037,
+              "deltaItemLevel": 14
+            },
+            {
+              "slot": "trinket2",
+              "currentItemId": 1040,
+              "deltaItemLevel": 15
+            }
+          ]
+        },
+        {
+          "id": "deewan_arcane",
+          "pseudo": "Deewan",
+          "displayName": "Deewan",
+          "className": "Mage",
+          "spec": "Arcane",
+          "role": "DPS",
+          "wishKind": "spe2",
+          "score": 69,
+          "reason": "Upgrade reel mais sur la seconde specialisation.",
+          "replacementOptions": [
+            {
+              "slot": "trinket1",
+              "currentItemId": 1038,
+              "deltaItemLevel": 6
+            }
+          ]
+        },
+        {
+          "id": "harokar_ele",
+          "pseudo": "Harokar",
+          "displayName": "Harokar",
+          "className": "Chaman",
+          "spec": "Elementaire",
+          "role": "DPS",
+          "wishKind": "prov",
+          "score": 80,
+          "reason": "Le gain est solide mais moins prioritaire qu'un BIS heal.",
+          "replacementOptions": [
+            {
+              "slot": "trinket2",
+              "currentItemId": 1041,
+              "deltaItemLevel": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drop_marsh_crown",
+      "date": "2026-05-19",
+      "boss": "Le Conseil de sang",
+      "itemId": 1002,
+      "note": "Casque discute entre plusieurs casters cuir.",
+      "status": "pending",
+      "candidates": [
+        {
+          "id": "san_resto",
+          "pseudo": "San",
+          "displayName": "Sän",
+          "className": "Druide",
+          "spec": "Restauration",
+          "role": "Heal",
+          "wishKind": "bis",
+          "score": 88,
+          "reason": "Deja present en BIS, upgrade propre mais moins fort que les anneaux/bijoux.",
+          "replacementOptions": [
+            {
+              "slot": "head",
+              "currentItemId": 1001,
+              "deltaItemLevel": 7
+            }
+          ]
+        },
+        {
+          "id": "faytas_feral",
+          "pseudo": "Faytas",
+          "displayName": "Faytas",
+          "className": "Druide",
+          "spec": "Feral",
+          "role": "DPS",
+          "wishKind": "prov",
+          "score": 74,
+          "reason": "Upgrade fort en provisoire pour stabiliser le roster melee.",
+          "replacementOptions": [
+            {
+              "slot": "head",
+              "currentItemId": 1001,
+              "deltaItemLevel": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "id": "hist_001",
+      "dropId": "hist_drop_001",
+      "date": "2026-05-18",
+      "boss": "Dame Murmemort",
+      "itemId": 1029,
+      "playerId": "valhalla_holy",
+      "playerName": "Valhalla",
+      "className": "Paladin",
+      "spec": "Sacre",
+      "wishKind": "bis",
+      "replacementSlot": "feet",
+      "replacementItemId": 1028,
+      "score": 91,
+      "note": "Attribue prioritairement pour stabiliser le roster heal."
+    },
+    {
+      "id": "hist_002",
+      "dropId": "hist_drop_002",
+      "date": "2026-05-18",
+      "boss": "Saurcroc",
+      "itemId": 1042,
+      "playerId": "rotkappchen_fire",
+      "playerName": "Rotkappchen",
+      "className": "Mage",
+      "spec": "Feu",
+      "wishKind": "prov",
+      "replacementSlot": "trinket2",
+      "replacementItemId": 1040,
+      "score": 77,
+      "note": "Donne hors BIS pour compenser une mauvaise serie de drops."
+    }
+  ]
+}
